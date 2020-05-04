@@ -18,13 +18,17 @@
             </div>
 
             <div class="in">
-                ISBN-10: <input type="text" name="isbn" value="<?php $isbn; ?>">
+                Category: <input type="text" name="cat" value="<?php $cat; ?>">
+                <span class="error"><?php echo $catErr; ?></span>
+            </div>
+
+            <div class="in">
+                ISBN-10: <input type="numeric" name="isbn" value="<?php $isbn; ?>">
                 <span class="error"><?php echo $isbnErr; ?></span>
             </div>
 
             <div class="in">
-                Professor: <input type="text" name="prof" 
-                                  value="<?php $prof; ?>">
+                Professor: <input type="text" name="prof" value="<?php $prof; ?>">
 
                 <datalist id="profs">
                     <?php

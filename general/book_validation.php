@@ -1,7 +1,7 @@
 <?php
 
-$titleErr = $isbnErr = $profErr = "";
-$title = $isbn = $prof = "";
+$titleErr = $catErr = $isbnErr = $profErr = "";
+$title = $cat = $isbn = $prof = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

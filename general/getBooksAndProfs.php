@@ -6,18 +6,16 @@ $offset = isset($_SESSION['offset']) ? $_SESSION['offset'] + 5 : 5; //move to me
 
 //if (empty($_SESSION['books'])) {
 
-$conn = mysqli_connect("localhost", "root", "", "bookswap");
-if ($conn->connect_errno) {
-    exit();
-}
+$conn = initDb();
+exitIfErr($conn);
 
-$db = 'book';
-$result = selectQuery($conn, $offset, $db);
-addToSessionArr($db, 'title', $result);
+$table = 'book';
+$result = selectQuery($conn, $offset, $table);
+addToSessionArr($table, 'title', $result);
 
-$db = 'professor';
-$result = selectQuery($conn, $offset,  $db);
-addToSessionArr($db, 'name', $result);
+$table = 'professor';
+$result = selectQuery($conn, $offset,  $table);
+addToSessionArr($table, 'name', $result);
 
 mysqli_free_result($result);
 mysqli_close($conn);

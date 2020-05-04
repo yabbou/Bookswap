@@ -3,6 +3,18 @@ session_start();
 
 //sql  
 
+function initDb()
+{
+    return mysqli_connect("localhost", "root", "", "bookswap");
+}
+
+function exitIfErr($conn)
+{
+    if ($conn->connect_errno) {
+        exit();
+    }
+}
+
 function selectQuery($conn, $offset, $db) // look into prep staements
 {
     $sql = "SELECT * FROM $db LIMIT $offset"; //should get every 5...
@@ -10,17 +22,25 @@ function selectQuery($conn, $offset, $db) // look into prep staements
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //error msg without db info
 }
 
+function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
+{
+    $sql = "INSERT INTO $table (TITLE,CATEGORY,`ISBN-10`,`ISBN-13`, PROFESSOR) 
+    VALUES ('$title','$category',$isbn10,NULL,'$prof')";
+
+    return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //dry
+}
+
 function addToSessionArr($db, $nameType, $res)
 {
     $_SESSION[$db] = initSessionArray($db);
 
-    while ($row = mysqli_fetch_array($res)) { 
+    while ($row = mysqli_fetch_array($res)) {
         $_SESSION[$db][] = $row[$nameType];
     }
 }
 
 function sqlToArray_Users($sql) //dry
-{  
+{
     $users = array();
 
     while ($row = mysqli_fetch_assoc($sql)) {
