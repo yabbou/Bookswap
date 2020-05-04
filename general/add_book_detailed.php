@@ -5,7 +5,7 @@
         <?php
         include "getBooksAndProfs.php";
         include "book_validation.php";
-        include 'methods.php';
+        include_once 'methods.php';
         ?>
 
         <h3>Sell Book</h3>

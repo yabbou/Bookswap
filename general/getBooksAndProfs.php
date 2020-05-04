@@ -1,6 +1,4 @@
-<?php
-
-include 'methods.php';
+<?php include_once 'methods.php';
 
 $profsList;
 $booksList;
@@ -14,11 +12,11 @@ if ($conn->connect_errno) {
 }
 
 $db = 'book';
-$result = getQueryResults($conn, $offset, $db);
+$result = selectQuery($conn, $offset, $db);
 addToSessionArr($db, 'title', $result);
 
 $db = 'professor';
-$result = getQueryResults($conn, $offset,  $db);
+$result = selectQuery($conn, $offset,  $db);
 addToSessionArr($db, 'name', $result);
 
 mysqli_free_result($result);

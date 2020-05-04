@@ -1,6 +1,6 @@
 <?php
 
-include 'methods.php';
+include_once 'methods.php';
 include 'header.php';
 
 function displayBookInfo($title, $isbn, $prof) {

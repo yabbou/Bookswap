@@ -1,12 +1,13 @@
 <?php
+session_start();
 
 //sql  
 
-function getQueryResults($conn, $offset, $db) // look into prep staements
+function selectQuery($conn, $offset, $db) // look into prep staements
 {
-    $sql = "SELECT * FROM $db LIMIT $offset"; //should get every 5
+    $sql = "SELECT * FROM $db LIMIT $offset"; //should get every 5...
 
-    return mysqli_query($conn, $sql) or die( mysqli_error($conn)); //error msg without db info
+    return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //error msg without db info
 }
 
 function addToSessionArr($db, $nameType, $res)
