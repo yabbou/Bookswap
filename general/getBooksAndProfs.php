@@ -2,8 +2,8 @@
 
 include 'methods.php';
 
-$profsList = initSessionArray('profs');
-$booksList = initSessionArray('books');
+$profsList;
+$booksList;
 $offset = isset($_SESSION['offset']) ? $_SESSION['offset'] + 5 : 5; //move to methods.php
 
 //if (empty($_SESSION['books'])) {
@@ -13,11 +13,13 @@ if ($conn->connect_errno) {
     exit();
 }
 
-$result = getQueryResults($conn, $offset, 'book');
-$_SESSION['books'] = arr_push('books', 'title', $result); //if-else inside method...
+$db = 'book';
+$result = getQueryResults($conn, $offset, $db);
+addToSessionArr($db, 'title', $result);
 
-$result = getQueryResults($conn, $offset, 'profs'); 
-$_SESSION['profs'] = arr_push('profs', 'name', $result);
+$db = 'professor';
+$result = getQueryResults($conn, $offset,  $db);
+addToSessionArr($db, 'name', $result);
 
 mysqli_free_result($result);
 mysqli_close($conn);

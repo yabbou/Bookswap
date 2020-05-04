@@ -2,25 +2,24 @@
 
 //sql  
 
-function getQueryResults($conn, $offset, $db) {
-    return mysqli_query($conn,"SELECT * FROM $db "
-                    . "OFFSET $offset ROWS FETCH NEXT 10 ROWS ONLY");
+function getQueryResults($conn, $offset, $db) // look into prep staements
+{
+    $sql = "SELECT * FROM $db LIMIT $offset"; //should get every 5
+
+    return mysqli_query($conn, $sql) or die( mysqli_error($conn)); //error msg without db info
 }
 
-function arr_push($db, $name, $sql) {
-    return array_push($_SESSION[$db], sqlToArray_Reg($sql, $name));
-}
+function addToSessionArr($db, $nameType, $res)
+{
+    $_SESSION[$db] = initSessionArray($db);
 
-function sqlToArray_Reg($sql, $nameType) {
-    $arr = array();
-
-    while ($row = mysqli_fetch_array($sql)) { //error here 
-        $arr[] = $row[$nameType];
+    while ($row = mysqli_fetch_array($res)) { 
+        $_SESSION[$db][] = $row[$nameType];
     }
-    return $arr;
 }
 
-function sqlToArray_Users($sql) { //dry 
+function sqlToArray_Users($sql) //dry
+{  
     $users = array();
 
     while ($row = mysqli_fetch_assoc($sql)) {
@@ -29,14 +28,15 @@ function sqlToArray_Users($sql) { //dry
     return $users;
 }
 
-
 //general
 
-function initSessionArray($arr) {
+function initSessionArray($arr)
+{
     return isset($_SESSION[$arr]) ? $_SESSION[$arr] : array();
 }
 
-function redirectToHomepage() {
+function redirectToHomepage()
+{
     echo "<br>Redirecting...";
     echo "<meta http-equiv=\"refresh\" content=\"5;URL=index.php\" />";
 }
