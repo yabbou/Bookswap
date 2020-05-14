@@ -20,12 +20,13 @@ $title = filter_input(INPUT_POST, 'title');
 $category = filter_input(INPUT_POST, 'cat');
 $isbn10 = filter_input(INPUT_POST, 'isbn');
 $prof = filter_input(INPUT_POST, 'prof');
-
 displayBookInfo($title, $category, $isbn10, $prof);
 
 $conn = initDb();
 exitIfErr($conn);
-$result = insertQuery_Book($conn, 'book', $title, $category, $isbn10, $prof);
+insertQuery_Book($conn, 'book', $title, $category, $isbn10, $prof);
+
+//forgot if missing something
 
 redirectToHomepage();
 

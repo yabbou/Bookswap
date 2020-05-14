@@ -22,8 +22,9 @@
                 <span class="error"><?php echo $catErr; ?></span>
             </div>
 
-            <div class="in">
-                ISBN-10: <input type="numeric" name="isbn" value="<?php $isbn; ?>">
+            <div class="in"> 
+                <!-- to numeric -->
+                ISBN-10: <input type="text" name="isbn" value="<?php $isbn; ?>">
                 <span class="error"><?php echo $isbnErr; ?></span>
             </div>
 
@@ -32,7 +33,7 @@
 
                 <datalist id="profs">
                     <?php
-                    foreach ($_SESSION['profs'] as $prof) {
+                    foreach ($_SESSION['professor'] as $prof) {
                         echo '<option>$prof</option>';
                     }
                     ?>

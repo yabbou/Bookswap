@@ -15,28 +15,30 @@ function exitIfErr($conn)
     }
 }
 
-function selectQuery($conn, $offset, $db) // look into prep staements
+function selectQuery($conn, $offset, $table) // look into prep staements
 {
-    $sql = "SELECT * FROM $db LIMIT $offset"; //should get every 5...
-
-    return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //error msg without db info
+    $sql = "SELECT * FROM $table LIMIT $offset"; //should get every 5...
+    return mysqli_query($conn,$sql) or exit(mysqli_error($conn)); //error msg without db info
 }
 
 function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
 {
     $sql = "INSERT INTO $table (TITLE,CATEGORY,`ISBN-10`,`ISBN-13`, PROFESSOR) 
     VALUES ('$title','$category',$isbn10,NULL,'$prof')";
+    //add prof also to prof table
 
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //dry
 }
 
-function addToSessionArr($db, $nameType, $res)
+function addToSessionArr($table, $nameType, $res)
 {
-    $_SESSION[$db] = initSessionArray($db);
+    $arr = initSessionArray($table);
 
     while ($row = mysqli_fetch_array($res)) {
-        $_SESSION[$db][] = $row[$nameType];
+        $arr[] = $row[$nameType];
     }
+
+    return $arr;
 }
 
 function sqlToArray_Users($sql) //dry

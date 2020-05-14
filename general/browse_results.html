@@ -4,15 +4,26 @@
 for now, all books: -->
 
 <html>
-    <head>
-        <title>Books</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-  
-    <!--get from database with php-->
-    <body>
-        <div></div>
-    </body>
+
+<head>
+    <title>Books</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<!--get from database with php-->
+
+<body>
+    <div></div>
+
+    <select name="owner">
+        <?php 
+            $sql = mysqli_query($connection, "SELECT username FROM users");
+            while ($row = $sql->fetch_assoc()){
+            echo "<option value=\"owner1\">" . $row['username'] . "</option>";
+            }
+            ?>
+    </select>
+</body>
 
 </html>

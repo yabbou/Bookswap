@@ -15,7 +15,7 @@ body {
     background-size: cover;
     /*background-image: "img/book-and-grass.webp";*/
 }
-input[type=text], input[type=password], input[type=email]{
+input[type=text], input[type=password], input[type=email], input[type=numeric]{
     border: 0;
     outline: 0;
     background: transparent;
