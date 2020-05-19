@@ -4,7 +4,7 @@ include_once 'getBooksAndProfs.php';
 // echo "<table>";
 echo "<ul>";
 
-$_SESSION['book'][] = array('title' => 'macro', 'isbn-10' => 10, 'professor' => 'prof asif', 'major' => 'eben');
+// $_SESSION['book'][] = array('title' => 'macro', 'isbn-10' => 10, 'professor' => 'prof asif', 'major' => 'eben');
 $row = $_SESSION['book']; //rename
 
 for ($i = 0; $i < count($_SESSION['book']); $i++) {

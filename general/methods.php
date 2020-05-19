@@ -15,11 +15,11 @@ function exitIfErr($conn)
     }
 }
 
-function selectQuery($conn, $col, $table, $offset) // look into prep staements
-{
-    $sql = "SELECT $col FROM $table LIMIT $offset"; //should get every 5...
-    return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //error msg without db info
-}
+// function selectQuery($conn, $col, $table, $offset) // look into prep staements
+// {
+//     $sql = "SELECT `$col` FROM `$table` LIMIT $offset"; //should get every 5...
+//     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //error msg without db info
+// }
 
 function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
 {

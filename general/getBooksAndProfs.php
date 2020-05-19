@@ -1,17 +1,14 @@
 <?php include_once 'methods.php';
-
-// $profsList;
-// $booksList;
 $offset = 5; //move to methods.php //incfermrent sesion var by 5
 
 $conn = initDb();
 exitIfErr($conn);
 
 $table = 'book';
-echo "1st san: " . print_r($_SESSION[$table]); //san
-$result = selectQuery($conn, 'title', $table, $offset); //doesnt work
-$_SESSION[$table] = addToSessionArr($table, 'title', $result);
-echo "2nd san: " . print_r($_SESSION[$table]); //san
+$result = mysqli_query($conn, "SELECT title FROM book LIMIT $offset"); 
+// $_SESSION[$table] = addToSessionArr($table, 'title', $result); //move to sellbook.php
+
+echo print_r($_SESSION[$table]); //san
 
 // $table = 'professor';
 // $result = selectQuery($conn, $offset,  $table);

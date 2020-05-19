@@ -15,7 +15,7 @@ if (empty($_SESSION['users'])) {
     mysqli_close($conn);
 }
 
-// echo print_r($_SESSION['users']); //san test
+echo print_r($_SESSION['users']); //san test
 
 include "header.php";
 include "login.html";
