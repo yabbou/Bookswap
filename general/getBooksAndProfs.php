@@ -1,23 +1,17 @@
 <?php include_once 'methods.php';
 
-$profsList;
-$booksList;
+// $profsList;
+// $booksList;
 $offset = 5; //move to methods.php //incfermrent sesion var by 5
-
-//if (empty($_SESSION['books'])) {
 
 $conn = initDb();
 exitIfErr($conn);
 
 $table = 'book';
-$result = selectQuery($conn, $offset, $table);
-
-while ($row = $result->fetch_assoc) {
-    echo $row['title'];
-}
-
+echo "1st san: " . print_r($_SESSION[$table]); //san
+$result = selectQuery($conn, 'title', $table, $offset); //doesnt work
 $_SESSION[$table] = addToSessionArr($table, 'title', $result);
-
+echo "2nd san: " . print_r($_SESSION[$table]); //san
 
 // $table = 'professor';
 // $result = selectQuery($conn, $offset,  $table);

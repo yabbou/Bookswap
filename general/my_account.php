@@ -8,7 +8,7 @@ if (empty($_SESSION['users'])) {
     $conn = initDb();
     exitIfErr($conn);
 
-    $result = $conn->query("SELECT email, password FROM AuthorizedUsers LIMIT 5");
+    $result = mysqli_query($conn, "SELECT name, password FROM AuthorizedUsers LIMIT 5"); //replace with selectQuery()
     $_SESSION['users'] = sqlToArray_Users($result);
 
     mysqli_free_result($result);
