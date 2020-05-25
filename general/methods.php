@@ -15,11 +15,11 @@ function exitIfErr($conn)
     }
 }
 
-function selectQuery($conn, $offset, $table) // look into prep staements
-{
-    $sql = "SELECT * FROM $table LIMIT $offset"; //should get every 5...
-    return mysqli_query($conn,$sql) or exit(mysqli_error($conn)); //error msg without db info
-}
+// function selectQuery($conn, $col, $table, $offset) // look into prep staements
+// {
+//     $sql = "SELECT `$col` FROM `$table` LIMIT $offset"; //should get every 5...
+//     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //error msg without db info
+// }
 
 function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
 {
@@ -30,23 +30,23 @@ function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //dry
 }
 
-function addToSessionArr($table, $nameType, $res)
+function addToSessionArr($table, $nameType, $sql)
 {
     $arr = initSessionArray($table);
 
-    while ($row = mysqli_fetch_array($res)) {
-        $arr[] = $row[$nameType];
+    if (count($_SESSION[$table]) < mysqli_num_rows($sql)) {
+        while ($row = mysqli_fetch_array($sql)) {
+            $arr[] = $row[$nameType];
+        }
     }
-
     return $arr;
 }
 
 function sqlToArray_Users($sql) //dry
 {
     $users = array();
-
     while ($row = mysqli_fetch_assoc($sql)) {
-        $users[$row['email']] = $row['password'];
+        $users[$row['name']] = $row['password']; //change to email
     }
     return $users;
 }

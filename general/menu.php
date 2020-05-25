@@ -4,7 +4,7 @@
 
 <ul class="navbar-list">
     <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="add_book.php">Sell Book</a></li>
+    <li class="nav-item"><a class="nav-link" href="sell_book.php">Sell Book</a></li>
     <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
     <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>      
     <li class="nav-item">
