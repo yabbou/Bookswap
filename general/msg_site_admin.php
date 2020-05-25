@@ -1,4 +1,4 @@
-<?php include 'contact_us.php'; //better
+<?php include 'contact_us.php'; 
 
 $formEntries = array(
     'name' => filter_input(INPUT_POST, 'nameEntry'),
