@@ -42,6 +42,16 @@ function addToSessionArr($table, $nameType, $sql)
     return $arr;
 }
 
+function sqlArray_Book($ar, $sql) //curently resets the arr each time
+{
+    $arr = initSessionArray($ar); //automate
+
+    while ($row = mysqli_fetch_assoc($sql)) {
+        $arr[] = array($row['title'], $row['isbn-10'], $row['professor'], $row['category']);
+    }
+    return $arr;
+}
+
 function sqlToArray_Users($sql) //dry
 {
     $users = array();

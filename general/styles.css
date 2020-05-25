@@ -1,110 +1,124 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-
 /*
 note: 
 period - when on same line as tag, 
 spaces - when inside tag
 */
 
-*{
+* {
     font-family: 'Lato', sans-serif;
 }
 
 /* general */
+
 body {
     background-size: cover;
     /*background-image: "img/book-and-grass.webp";*/
 }
-input[type=text], input[type=password], input[type=email], input[type=numeric]{
+
+input[type=text], input[type=password], input[type=email], input[type=numeric] {
     border: 0;
     outline: 0;
     background: transparent;
     border-bottom: 1px solid black;
-   
     margin-bottom: 5px;
 }
 
 /* img */
-.logo-and-company-name{
+
+.logo-and-company-name {
     display: inline;
 }
 
-.img-cropper{
+.img-cropper {
     width: 30px;
     height: 30px;
     /*position: relative;*/
     overflow: hidden;
     border-radius: 50%;
 }
-img.logo{
+
+img.logo {
     display: inline;
     margin: 0;
-    margin-left: -25%; 
+    margin-left: -25%;
     height: 100%;
     width: auto;
 }
 
 /* navbar */
-.nav-title{
-    color: #53A7DB; 
-    font-size: 140%; 
-    font-weight: bold;
-    /*    font-family: 'Lato', sans-serif;*/
-    line-height: 1.5rem;
 
-    display: inline;
+.nav-title {
+    color: #53A7DB;
+    font-size: 140%;
+    font-weight: bold;
+    line-height: 1.5rem;
     font-weight: bold;
 }
-.navbar{
+
+.navbar {
     overflow: hidden;
-    /*position: fixed;*/
-    top: 0;
+    display: flex;
+
+    /* top: 0; */
     width: 100%;
 
-    /*font-family: 'Lato', sans-serif;*/
     text-transform: uppercase;
     font-weight: bold;
     font-size: .9rem;
-
     letter-spacing: .1rem;
-    background: rgba(255, 255, 255, 0.87)!important; 
+    background: rgba(255, 255, 255, 0.87)!important;
 }
-.navbar-nav ul li{
-    padding-right: .7rem; 
+
+.navbar-nav ul li {
+    padding-right: .7rem;
     display: flex;
     flex-direction: row;
 }
-ul li{
+
+ul li {
     list-style-type: none;
-    display:inline-block;
+    display: inline-block;
 }
+
 .navbar-nav .nav-link {
-    color:#666666; 
+    color: #666666;
     height: 55px;
     vertical-align: middle;
     padding-top: 1rem;
 }
-.nav-link{
+
+.nav-link {
     text-decoration: none;
 }
-a{
+
+a {
     color: darkslateblue;
 }
+
 a:hover {
-    color: #53A7DB; 
+    color: #53A7DB;
 }
 
-/* form */
+/* login form */
 
-.login-form{
+.login-form {
     border: solid grey 1px;
     width: 50%;
 }
-#frm{
+
+#frm {
     width: 20%;
     padding: 2px;
     /*continue later...*/
 }
 
-.error {color: #FF0000;}
+/* contact form */
 
+.form-container{
+    position: relative; /*stack child elts*/
+}
+
+.error {
+    color: #FF0000;
+}
