@@ -1,15 +1,15 @@
 <HTML>
 
-    <HEAD>
-        <LINK rel="stylesheet" href="styles.css" type="text/css" />
-    </HEAD>
+<head>
+    <title>Bookswap</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
 
-    <BODY  style="background-image: url('img/book-and-grass.webp')">
-        
+<body style="background-image: url('img/book-and-grass.webp')">
+    <header>
         <nav class="navbar">
-            <!--<DIV class="logo-and-company-name">-->
-                <div class="img-cropper"><img class="logo" src="img/book-rows.webp"></div>
-                <H3 class="nav-title">College Book Swap</H3>
-            <!--</DIV>-->
+            <div class="img-cropper"><img class="logo" src="img/book-rows.webp"></div>
+            <H3 class="nav-title">College Book Swap</H3>
             <?php include "menu.php"; ?>
         </nav>
+    </header>
