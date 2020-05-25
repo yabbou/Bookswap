@@ -34,10 +34,11 @@ function addToSessionArr($table, $nameType, $sql)
 {
     $arr = initSessionArray($table);
 
-    while ($row = mysqli_fetch_array($sql)) {
-        $arr[] = $row[$nameType];
+    if (count($_SESSION[$table]) < mysqli_num_rows($sql)) {
+        while ($row = mysqli_fetch_array($sql)) {
+            $arr[] = $row[$nameType];
+        }
     }
-
     return $arr;
 }
 

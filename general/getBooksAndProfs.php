@@ -5,8 +5,8 @@ $conn = initDb();
 exitIfErr($conn);
 
 $table = 'book';
-$result = mysqli_query($conn, "SELECT title FROM book LIMIT $offset"); 
-// $_SESSION[$table] = addToSessionArr($table, 'title', $result); //move to sellbook.php
+$result = mysqli_query($conn, "SELECT title FROM book"); // LIMIT $offset
+$_SESSION[$table] = addToSessionArr($table, 'title', $result); //move to sellbook.php
 
 echo print_r($_SESSION[$table]); //san
 

@@ -21,6 +21,7 @@ for ($i = 0; $i < count($_SESSION['book']); $i++) {
     echo '<p>ISBN-10: ' . $row[$i]['isbn-10'] . '</p>';
     echo '<p>Prof: ' . $row[$i]['professor'] . '</p>'; //tab
     echo '<p>Major: ' . $row[$i]['major'] . '</p>';
+    // num available
     echo '</li>';
 }
 // echo "</table>";
