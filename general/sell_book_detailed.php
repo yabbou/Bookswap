@@ -22,7 +22,7 @@
                 ?>
             </datalist>
             <span class="error"><?php echo $titleErr; ?></span>
-        <!-- 
+            <!-- 
         if (!preg_match("/^[a-zA-Z0-9 ]*$/", avoidSQLInjection($_POST["title"]))) {
             $titleErr = "Only letters, numbers, and white space allowed.";
         } -->
@@ -57,5 +57,15 @@
     </form>
 
 </body>
+
+<script>
+    function check(input) {
+        if (input.validity.typeMismatch) {
+            input.setCustomValidity("Only letters, numbers, and white space allowed.");
+        } else {
+            input.setCustomValidity("");
+        }
+    }
+</script>
 
 </html>
