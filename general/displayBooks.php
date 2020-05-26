@@ -1,14 +1,13 @@
 <?php include 'header.php';
 include_once 'methods.php';
 
-// echo "<table>";
-echo "<ul>";
 
 $_SESSION['bookResults'] = sqlArray_Book('bookResults', mysqli_query(initDb(), "SELECT * FROM book")); //rename //dry
 $row = $_SESSION['bookResults'];
 
 echo print_r($row);
 
+echo "<ul>";
 for ($i = 0; $i < count($row); $i++) { //foreach
     echo '<li class="list-group">';
     echo '<h4><a href="">' . $row[$i]['title'] . '</a></h4>';
@@ -18,7 +17,6 @@ for ($i = 0; $i < count($row); $i++) { //foreach
     // num available
     echo '</li>';
 }
-// echo "</table>";
 echo "</ul>";
 
 include 'footer.php';

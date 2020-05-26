@@ -1,15 +1,13 @@
 <?php include_once 'methods.php';
-$offset = 5; //move to methods.php //incfermrent sesion var by 5
+$offset = 5; //move to methods.php //incremrent session var by 5
 
 $conn = initDb();
 exitIfErr($conn);
 
 $table = 'book';
 $result = mysqli_query($conn, "SELECT title FROM book"); // LIMIT $offset
-// $_SESSION['bookResults'] = sqlArray_Book('bookResults', $result); //qualify
 $_SESSION[$table] = addToSessionArr($table, 'title', $result);
-
-// echo print_r($_SESSION[$table]); //san, replace with logger
+// echo print_r($_SESSION[$table]); //replace with logger
 
 $table = 'professor';
 $result = mysqli_query($conn, "SELECT name FROM professor");
