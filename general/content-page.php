@@ -2,6 +2,8 @@
 <?php include "methods.php"; ?>
 <?php
 
+//deprecated
+
 if ($_SESSION['loggedIn']) {
     echo "Hello " . filter_input(INPUT_COOKIE, 'userCookie');
 }
