@@ -31,7 +31,7 @@ function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //dry
 }
 
-function addToSessionArr($table, $nameType, $sql)
+function sqlToArray_SingleVar($table, $nameType, $sql) //rename
 {
     $arr = initSessionArray($table);
 
@@ -43,12 +43,12 @@ function addToSessionArr($table, $nameType, $sql)
     return $arr;
 }
 
-function sqlArray_Book($ar, $sql) //curently resets the arr each time
+function sqlToArray_Books($ar, $sql) //curently resets the arr each time
 {
     $arr = initSessionArray($ar); //automate
 
     while ($row = mysqli_fetch_assoc($sql)) {
-        $arr[] = array($row['title'], $row['isbn-10'], $row['professor'], $row['category']);
+        $arr[] = array('title'=>$row['Title'], 'isbn-10'=>$row['ISBN-10'], 'prof'=>$row['Professor'], 'cat'=>$row['Category']);
     }
     return $arr;
 }
@@ -60,6 +60,14 @@ function sqlToArray_Users($sql) //dry
         $users[$row['email']] = $row['password']; 
     }
     return $users;
+}
+
+function avoidSQLInjection($data) //integrate into login and sellbook forms
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 
 //general

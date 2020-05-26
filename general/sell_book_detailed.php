@@ -5,16 +5,15 @@
 
     <?php
     include "getBooksAndProfs.php";
-    include "book_validation.php"; //MAKE THIS WORK!!!!
+    $titleErr = "";
+    $profErr = "";
     ?>
 
     <h3>Sell Book</h3>
-
     <form id="book-form" action="sell_book_confim.php" method="post">
 
-        <div class="in">Title:
-
-            <input list="books" type="text" name="title">
+        <div class="in">
+            <input list="books" type="text" name="title" placeholder="Title" pattern="[a-zA-Z0-9 ]" required>
             <datalist id="books">
                 <?php
                 foreach ($_SESSION['book'] as $title) {
@@ -22,24 +21,24 @@
                 }
                 ?>
             </datalist>
-
             <span class="error"><?php echo $titleErr; ?></span>
+        <!-- 
+        if (!preg_match("/^[a-zA-Z0-9 ]*$/", avoidSQLInjection($_POST["title"]))) {
+            $titleErr = "Only letters, numbers, and white space allowed.";
+        } -->
         </div>
 
         <div class="in">
-            Category: <input type="text" name="cat" value="<?php $cat; ?>">
-            <span class="error"><?php echo $catErr; ?></span>
+            <input type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" required>
+        </div>
+
+        <!-- should really also check if not taken by other book -->
+        <div class="in">
+            <input type="number" name="isbn" placeholder="ISBN-10" min="1000000000" max="9999999999" required>
         </div>
 
         <div class="in">
-            <!-- to numeric -->
-            ISBN-10: <input type="text" name="isbn" value="<?php $isbn; ?>">
-            <span class="error"><?php echo $isbnErr; ?></span>
-        </div>
-
-        <div class="in">
-            Professor: <input list="profs" type="text" name="prof" value="<?php $prof; ?>">
-
+            <input list="profs" type="text" name="prof" placeholder="Professor" pattern="[a-zA-Z ]" required>
             <datalist id="profs">
                 <?php
                 foreach ($_SESSION['professor'] as $prof) {
@@ -48,6 +47,10 @@
                 ?>
             </datalist>
             <span class="error"><?php echo $profErr; ?></span>
+            <!-- 
+            if (!preg_match("/^[a-zA-Z ]*$/", avoidSQLInjection($_POST["prof"]))) {
+            $profErr = "Only letters and white space allowed";
+            } -->
         </div>
 
         <input type="submit" name="sell_book" value="Add">
