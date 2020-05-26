@@ -26,8 +26,6 @@ $conn = initDb();
 exitIfErr($conn);
 insertQuery_Book($conn, 'book', $title, $category, $isbn10, $prof);
 
-//forgot if missing something
-
 redirectToHomepage();
 
 include 'footer.php';

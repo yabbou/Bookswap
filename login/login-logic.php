@@ -1,13 +1,12 @@
 <?php
-session_start();
 
-function checkIfValidUser($users, $email, $pwd) {
-   
-    //prevent sql injection here
-    
+function checkIfValidUser($users, $email, $pwd)
+{
+    //todo: prevent sql injection here!!!
+
     if (isset($users[$email])) {
         if ($users[$email] == $pwd) { //fix: works only after second login...
-            setcookie("userCookie", $email, time() + 600); //600 seconds = 10 min
+            setcookie("userCookie", $email, time() + 600); //change to session var
             $_SESSION['loggedIn'] = TRUE;
         } else {
             echo "The email and password do not match. Please try again.";
@@ -22,4 +21,8 @@ function checkIfValidUser($users, $email, $pwd) {
       } */
 }
 
-checkIfValidUser($_SESSION['users'], filter_input(INPUT_POST, 'email'), filter_input(INPUT_POST, 'pwd'));
+checkIfValidUser(
+    $_SESSION['users'],
+    filter_input(INPUT_POST, 'email'),
+    filter_input(INPUT_POST, 'pwd')
+);

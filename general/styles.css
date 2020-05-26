@@ -16,7 +16,7 @@ body {
     /*background-image: "img/book-and-grass.webp";*/
 }
 
-input[type=text], input[type=password], input[type=email], input[type=numeric] {
+input[type=text], input[type=password], input[type=email], input[type=number] { 
     border: 0;
     outline: 0;
     background: transparent;
@@ -39,11 +39,9 @@ input[type=text], input[type=password], input[type=email], input[type=numeric] {
 }
 
 img.logo {
-    display: inline;
     margin: 0;
     margin-left: -25%;
     height: 100%;
-    width: auto;
 }
 
 /* navbar */
@@ -59,26 +57,23 @@ img.logo {
 .navbar {
     overflow: hidden;
     display: flex;
-
-    /* top: 0; */
     width: 100%;
 
     text-transform: uppercase;
     font-weight: bold;
     font-size: .9rem;
-    letter-spacing: .1rem;
+    letter-spacing: .2rem;
     background: rgba(255, 255, 255, 0.87)!important;
 }
 
 .navbar-nav ul li {
     padding-right: .7rem;
-    display: flex;
     flex-direction: row;
 }
 
 ul li {
     list-style-type: none;
-    display: inline-block;
+    display: inline;
 }
 
 .navbar-nav .nav-link {
@@ -115,9 +110,9 @@ a:hover {
 
 /* contact form */
 
-.form-container{
-    position: relative; /*stack child elts*/
-}
+
+
+/* errors */
 
 .error {
     color: #FF0000;
