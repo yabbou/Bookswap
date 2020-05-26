@@ -39,11 +39,9 @@ input[type=text], input[type=password], input[type=email], input[type=numeric] {
 }
 
 img.logo {
-    display: inline;
     margin: 0;
     margin-left: -25%;
     height: 100%;
-    width: auto;
 }
 
 /* navbar */
@@ -78,7 +76,7 @@ img.logo {
 
 ul li {
     list-style-type: none;
-    display: inline-block;
+    display: inline;
 }
 
 .navbar-nav .nav-link {
