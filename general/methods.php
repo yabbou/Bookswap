@@ -56,12 +56,25 @@ function sqlToArray_Users($sql) //dry
 {
     $users = array();
     while ($row = mysqli_fetch_assoc($sql)) {
-        $users[$row['name']] = $row['password']; //change to email
+        $users[$row['email']] = $row['password']; 
     }
     return $users;
 }
 
 //general
+
+function initUsers(){
+    if (empty($_SESSION['users'])) {
+        $conn = initDb();
+        exitIfErr($conn);
+    
+        $result = mysqli_query($conn, "SELECT email, password FROM AuthorizedUsers LIMIT 5"); //replace with selectQuery()
+        $_SESSION['users'] = sqlToArray_Users($result);
+    
+        mysqli_free_result($result);
+        mysqli_close($conn);
+    }
+}
 
 function initSessionArray($arr)
 {

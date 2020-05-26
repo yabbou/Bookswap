@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-function checkIfValidUser($users, $email, $pwd) {
-   
+function checkIfValidUser($users, $email, $pwd)
+{
+
     //prevent sql injection here
-    
+
     if (isset($users[$email])) {
         if ($users[$email] == $pwd) { //fix: works only after second login...
             setcookie("userCookie", $email, time() + 600); //600 seconds = 10 min
@@ -22,4 +23,8 @@ function checkIfValidUser($users, $email, $pwd) {
       } */
 }
 
-checkIfValidUser($_SESSION['users'], filter_input(INPUT_POST, 'email'), filter_input(INPUT_POST, 'pwd'));
+checkIfValidUser(
+    $_SESSION['users'],
+    filter_input(INPUT_POST, 'email'),
+    filter_input(INPUT_POST, 'pwd')
+);
