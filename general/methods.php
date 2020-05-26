@@ -24,7 +24,7 @@ function exitIfErr($conn)
 function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
 {
     $sql = "INSERT INTO $table (TITLE,CATEGORY,`ISBN-10`,`ISBN-13`, PROFESSOR) 
-    VALUES ('$title','$category',$isbn10,NULL,'$prof')";
+    VALUES ('$title','$category',$isbn10,0000000000000,'$prof')";
     //add prof also to prof table
 
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //dry
