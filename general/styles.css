@@ -91,6 +91,11 @@ img.logo {
 
 /* navbar */
 
+.logo-and-title {
+    display: flex;
+    margin: 8px;
+}
+
 .nav-title {
     color: #53A7DB;
     font-size: 140%;
@@ -99,11 +104,6 @@ img.logo {
     font-weight: bold;
     margin: 8px;
     margin-top: 2px;
-}
-
-.logo-and-title {
-    display: flex;
-    margin: 8px;
 }
 
 .navbar {
@@ -117,22 +117,20 @@ img.logo {
     background: rgba(255, 255, 255, 0.87)!important;
 }
 
-.navbar-nav ul li {
-    padding-right: .7rem;
-    flex-direction: row;
-}
-
 ul li {
     list-style-type: none;
     display: inline;
+    padding-right: .7rem;
 }
 
-.navbar-nav .nav-link {
+.navbar .nav-link {
     color: #666666;
     height: 55px;
     vertical-align: middle;
     padding-top: 1rem;
 }
+
+/* browse */
 
 .nav-link {
     text-decoration: none;
@@ -142,8 +140,18 @@ a {
     color: darkslateblue;
 }
 
-a:hover {
+a:hover, a.nav-link:hover {
     color: #53A7DB;
+}
+
+.browse-form {
+    padding-top: 8%;
+    padding-left: 20%;
+}
+
+.browse-form input {
+    width: 350%;
+    background-color: #f2f2f262;
 }
 
 /* login form */
@@ -155,11 +163,17 @@ a:hover {
 
 #frm {
     width: 20%;
-    padding: 2px;
     /*continue later...*/
 }
 
-/* contact form */
+#frm .browse-link {
+    margin: 10px 0;
+}
+
+#frm a, #frm a:visited {
+    font-size: 20px;
+    text-decoration: none;
+}
 
 /* errors */
 

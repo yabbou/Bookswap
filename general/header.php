@@ -4,6 +4,7 @@
     <title>Bookswap</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css" />
+
 </head>
 
 <body>
@@ -16,3 +17,4 @@
             <?php include "menu.php"; ?>
         </nav>
     </header>
+    <script src="active-tab.js"></script>
