@@ -118,17 +118,15 @@ img.logo {
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-ul li {
-    list-style-type: none;
-    display: inline;
-    padding-right: .7rem;
-}
-
 .navbar .nav-link {
     color: #666666;
     height: 55px;
     vertical-align: middle;
     padding-top: 1rem;
+}
+
+.navbar-list{
+    /* position on right of navbar */
 }
 
 /* browse */
