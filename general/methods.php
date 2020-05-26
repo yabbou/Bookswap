@@ -1,5 +1,5 @@
 <?php
-if(session_status() != PHP_SESSION_ACTIVE) {
+if(session_status() != PHP_SESSION_ACTIVE) { //better, move sessoin to header.php?
     session_start();
 }
 //sql  
@@ -19,7 +19,7 @@ function exitIfErr($conn)
 // function selectQuery($conn, $col, $table, $offset) // look into prep staements
 // {
 //     $sql = "SELECT `$col` FROM `$table` LIMIT $offset"; //should get every 5...
-//     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //error msg without db info
+//     return mysqli_query($conn, $sql); //error msg without db info
 // }
 
 function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
