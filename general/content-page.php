@@ -2,7 +2,7 @@
 <?php include "methods.php"; ?>
 <?php
 
-//old page...
+//deprecated
 
 if ($_SESSION['loggedIn']) {
     echo "Hello " . filter_input(INPUT_COOKIE, 'userCookie');

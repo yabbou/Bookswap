@@ -7,7 +7,7 @@ function checkIfValidUser($users, $email, $pwd)
 
     if (isset($users[$email])) {
         if ($users[$email] == $pwd) { //fix: works only after second login...
-            setcookie("userCookie", $email, time() + 600); //600 seconds = 10 min
+            setcookie("userCookie", $email, time() + 600); //change to session var
             $_SESSION['loggedIn'] = TRUE;
         } else {
             echo "The email and password do not match. Please try again.";
