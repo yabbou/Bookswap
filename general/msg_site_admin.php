@@ -1,4 +1,6 @@
-<?php include 'contact_us.php'; //better
+<?php
+include_once 'header.php';
+include 'contact_us.html';
 
 $formEntries = array(
     'name' => filter_input(INPUT_POST, 'nameEntry'),
@@ -8,19 +10,13 @@ $formEntries = array(
 
 foreach ($formEntries as $i => $entry) {
     if (!isset($entry) || empty($entry)) {
-        echo 'All fields are required.'; 
+        echo 'All fields are required.';
         break;
-    } else if ($entry === $formEntries['msg']) { 
-
-        $to = 'bookswap2020@gmail.com';
-        $subject = 'Bookswap message';
-        $message = "Email: ".$formEntries['email']."\n".$formEntries['msg'];
-        $header = 'From: ' . $formEntries['name'];
-
-        if (mail($to, $subject, $message, $header)) {
-            echo 'Message sent.';
-        } else {
-            echo 'Message was not sent. Please try again.';
-        }
+    } else if ($entry === $formEntries['msg']) {
+        $format = "From: %s\nEmail: %s\n\n Message: %s";
+        $_SESSION['emailBody'] = sprintf($format, $formEntries['name'], $formEntries['email'], $formEntries['msg']);
+        include 'mail-server.php';
     }
 }
+
+include_once 'footer.php';
