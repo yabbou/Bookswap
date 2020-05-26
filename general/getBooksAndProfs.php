@@ -5,7 +5,7 @@ $conn = initDb();
 exitIfErr($conn);
 
 $table = 'book';
-$result = mysqli_query($conn, "SELECT title FROM book"); // LIMIT $offset
+$result = mysqli_query($conn, "SELECT title FROM book"); // LIMIT $offset //make only if not yet run
 $_SESSION[$table] = sqlToArray_SingleVar($table, 'title', $result);
 // echo print_r($_SESSION[$table]); //replace with logger
 

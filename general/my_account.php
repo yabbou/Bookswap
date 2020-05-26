@@ -1,5 +1,4 @@
 <?php 
-
 include_once "methods.php";
 include_once "getBooksAndProfs.php";
 include "../login/login-logic.php";

@@ -2,8 +2,7 @@
 
 function checkIfValidUser($users, $email, $pwd)
 {
-
-    //prevent sql injection here
+    //todo: prevent sql injection here!!!
 
     if (isset($users[$email])) {
         if ($users[$email] == $pwd) { //fix: works only after second login...

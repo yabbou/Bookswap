@@ -62,6 +62,14 @@ function sqlToArray_Users($sql) //dry
     return $users;
 }
 
+function avoidSQLInjection($data) //integrate into login and sellbook forms
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 //general
 
 function initUsers(){
