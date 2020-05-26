@@ -1,11 +1,12 @@
-<?php include_once "methods.php";
+<?php 
+
+include_once "methods.php";
 include_once "getBooksAndProfs.php";
+include "../login/login-logic.php";
+include "header.php";
 
 $_SESSION['users'] = initSessionArray('users');
 initUsers(); //necc?
-echo $_SESSION['loggedIn'];
-
-include "header.php";
 
 if ($_SESSION['loggedIn']) {
     echo "<h4>Hello " . filter_input(INPUT_COOKIE, 'userCookie') . "!<h4>";
