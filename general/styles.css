@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-/*
-note: 
-period - when on same line as tag, 
-spaces - when inside tag
-*/
+/* note: period - when on same line as tag, spaces - when inside tag */
 
 * {
     font-family: 'Lato', sans-serif;
@@ -12,8 +8,9 @@ spaces - when inside tag
 /* general */
 
 body {
+    margin: 0;
     background-size: cover;
-    /*background-image: "img/book-and-grass.webp";*/
+    background-image: url('img/book-and-grass.webp');
 }
 
 input[type=text], input[type=password], input[type=email], input[type=number] {
@@ -46,7 +43,7 @@ textarea {
     margin-right: 100%;
 }
 
-button{
+button {
     margin-top: 8px;
 }
 
@@ -60,11 +57,23 @@ div.container, form.container {
     margin-right: 45%;
 }
 
-/* img */
-
-.logo-and-company-name {
-    display: inline;
+footer {
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    background: #2D2D2D;
+    border-top: 2px solid #3E3E3E;
+    text-align: center;
+    padding: 8px;
 }
+
+footer p4 {
+    color: aliceblue;
+}
+
+/* img */
 
 .img-cropper {
     width: 30px;
@@ -88,6 +97,13 @@ img.logo {
     font-weight: bold;
     line-height: 1.5rem;
     font-weight: bold;
+    margin: 8px;
+    margin-top: 2px;
+}
+
+.logo-and-title {
+    display: flex;
+    margin: 8px;
 }
 
 .navbar {
