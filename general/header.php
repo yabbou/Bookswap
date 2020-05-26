@@ -11,7 +11,7 @@
         <nav class="navbar">
             <div class="logo-and-title">
                 <div class="img-cropper"><img class="logo" src="img/book-rows.webp"></div>
-                <H3 class="nav-title">College Book Swap</H3>
+                <H3 class="nav-title">College Bookswap</H3>
             </div>
             <?php include "menu.php"; ?>
         </nav>
