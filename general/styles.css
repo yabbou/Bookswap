@@ -16,7 +16,7 @@ body {
     /*background-image: "img/book-and-grass.webp";*/
 }
 
-input[type=text], input[type=password], input[type=email], input[type=number] { 
+input[type=text], input[type=password], input[type=email], input[type=number] {
     border: 0;
     outline: 0;
     background: transparent;
@@ -24,7 +24,7 @@ input[type=text], input[type=password], input[type=email], input[type=number] {
     margin-bottom: 5px;
 }
 
-input[type=text] {
+input[type=text], input[type=number] {
     width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -34,10 +34,29 @@ input[type=text] {
     box-sizing: border-box;
 }
 
-div.container {
+textarea {
+    height: 30%;
+    min-height: 10%;
+    max-height: 80%;
+    min-width: 80%;
+    max-width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 100%;
+}
+
+button{
+    margin-top: 8px;
+}
+
+div.container, form.container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    padding-top: 8px;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 45%;
 }
 
 /* img */
@@ -124,8 +143,6 @@ a:hover {
 }
 
 /* contact form */
-
-
 
 /* errors */
 
