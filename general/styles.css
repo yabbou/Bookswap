@@ -73,10 +73,6 @@ img.logo {
 .navbar {
     overflow: hidden;
     display: flex;
-<<<<<<< HEAD
-    /* top: 0; */
-=======
->>>>>>> c710677ccbf205c786137c0b843ac8ac596a293c
     width: 100%;
     text-transform: uppercase;
     font-weight: bold;
@@ -129,16 +125,9 @@ a:hover {
 
 /* contact form */
 
-<<<<<<< HEAD
-.form-container {
-    position: relative;
-    /*stack child elts*/
-}
-=======
 
 
 /* errors */
->>>>>>> c710677ccbf205c786137c0b843ac8ac596a293c
 
 .error {
     color: #FF0000;
