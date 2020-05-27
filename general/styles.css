@@ -145,12 +145,15 @@ a:hover, a.nav-link:hover {
     color: #53A7DB;
 }
 
-.browse-form {
-    padding-top: 8%;
-    padding-left: 20%;
+#b-form {
+    padding: 8% 21%;
 }
 
-.browse-form input {
+.browse-text input{
+    width: 100%;
+}
+
+#b-form input {
     background-color: #f2f2f262;
 }
 
@@ -208,9 +211,18 @@ ul li a {
     /*continue later...*/
 }
 
-#browse-form .browse-link {
-    margin: 10px 0;
+.browse-link {
+    margin-right: 10px;
+    display: inline;
+    font-size: large;
 }
+
+.browse-link a{
+    text-decoration: none;
+}
+/* .browse-link a:hover{
+    text-decoration: underline;
+} */
 
 #browse-form a, #browse-form a:visited {
     font-size: 20px;
