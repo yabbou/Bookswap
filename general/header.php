@@ -4,7 +4,6 @@
     <title>Bookswap</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css" />
-
 </head>
 
 <body>
@@ -18,3 +17,5 @@
         </nav>
     </header>
     <script src="active-tab.js"></script>
+    
+    <div class="inner-body">

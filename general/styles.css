@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
 /* note: period - when on same line as tag, spaces - when inside tag */
 
 * {
@@ -11,6 +12,11 @@ body {
     margin: 0;
     background-size: cover;
     background-image: url('img/book-and-grass.webp');
+    background-color: #fff9f2;
+}
+
+div.inner-body{
+    padding: 1.5%;
 }
 
 input[type=text], input[type=password], input[type=email], input[type=number] {
@@ -113,7 +119,7 @@ img.logo {
     text-transform: uppercase;
     font-weight: bold;
     font-size: .9rem;
-    letter-spacing: .2rem;
+    letter-spacing: .1rem;
     background: rgba(255, 255, 255, 0.87)!important;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
@@ -123,10 +129,6 @@ img.logo {
     height: 55px;
     vertical-align: middle;
     padding-top: 1rem;
-}
-
-.navbar-list{
-    /* position on right of navbar */
 }
 
 /* browse */
@@ -149,7 +151,6 @@ a:hover, a.nav-link:hover {
 }
 
 .browse-form input {
-    width: 350%;
     background-color: #f2f2f262;
 }
 
@@ -202,16 +203,16 @@ ul li a {
     width: 50%;
 }
 
-#frm {
+#browse-form {
     width: 20%;
     /*continue later...*/
 }
 
-#frm .browse-link {
+#browse-form .browse-link {
     margin: 10px 0;
 }
 
-#frm a, #frm a:visited {
+#browse-form a, #browse-form a:visited {
     font-size: 20px;
     text-decoration: none;
 }
