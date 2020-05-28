@@ -4,6 +4,7 @@
     <title>Bookswap</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
 </head>
 
 <body>
@@ -11,11 +12,11 @@
         <nav class="navbar">
             <div class="logo-and-title">
                 <div class="img-cropper"><img class="logo" src="img/book-rows.webp"></div>
-                <H3 class="nav-title">College Bookswap</H3>
+                <H3 class="nav-title">The College Bookswap</H3>
             </div>
             <?php include "menu.php"; ?>
         </nav>
     </header>
     <script src="active-tab.js"></script>
-    
+
     <div class="inner-body">

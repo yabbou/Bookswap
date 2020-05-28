@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-
 /* note: period - when on same line as tag, spaces - when inside tag */
 
 * {
@@ -11,22 +10,25 @@
 body {
     margin: 0;
     background-size: cover;
-    background-image: url('img/book-and-grass.webp');
-    background-color: #fff9f2;
+    /* background-image: url('img/book-and-grass.webp'); */
+    /* background-color: #fff9f2; */
+    background-color: #53A7DB;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-div.inner-body{
+.inner-body {
     padding: 1.5%;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=number] {
+/* input[type=text], input[type=password], input[type=email], input[type=number] {
     border: 0;
     outline: 0;
     background: transparent;
     border-bottom: 1px solid black;
     margin-bottom: 5px;
     width: 60%;
-}
+} */
 
 input[type=text], input[type=number] {
     width: 80%;
@@ -68,7 +70,6 @@ footer {
     margin: auto;
     width: 100%;
     height: 30px;
-    position: fixed;
     background: #2D2D2D;
     border-top: 2px solid #3E3E3E;
     text-align: center;
@@ -84,9 +85,10 @@ footer p4 {
 .img-cropper {
     width: 30px;
     height: 30px;
-    /*position: relative;*/
+    position: relative;
     overflow: hidden;
     border-radius: 50%;
+    border: #807f7f solid 1px;
 }
 
 img.logo {
@@ -131,7 +133,12 @@ img.logo {
     padding-top: 1rem;
 }
 
-/* browse */
+/* browse form */
+
+.b-form-container {
+    height: 50%;
+    width: 100%;
+}
 
 .nav-link {
     text-decoration: none;
@@ -146,16 +153,19 @@ a:hover, a.nav-link:hover {
 }
 
 #b-form {
-    padding: 8% 21%;
+    padding: 8% 21% 2%;
+    margin: 0;
 }
 
-.browse-text input{
+.browse-text input {
     width: 100%;
 }
 
 #b-form input {
     background-color: #f2f2f262;
 }
+
+/* nav links */
 
 ul {
     display: flex;
@@ -174,7 +184,7 @@ ul li {
     cursor: pointer;
 }
 
-ul li::after {
+ul li.nav-item::after {
     position: absolute;
     content: "";
     top: 100%;
@@ -199,16 +209,30 @@ ul li a {
     transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* books */
+
+.list-group {
+    background-color: #fff9f2cc;
+    margin-right: 10%;
+    border: solid whitesmoke 1px;
+    /* box-shadow: cornflowerblue 1px; */
+    border-radius: 6px;
+    padding-bottom: 10px;
+}
+
+.list-group a {
+    color: #666666;
+}
+
+.list-group p {
+    margin: 10px auto;
+}
+
 /* login form */
 
 .login-form {
     border: solid grey 1px;
     width: 50%;
-}
-
-#browse-form {
-    width: 20%;
-    /*continue later...*/
 }
 
 .browse-link {
@@ -217,16 +241,46 @@ ul li a {
     font-size: large;
 }
 
-.browse-link a{
+.browse-link a {
     text-decoration: none;
 }
-/* .browse-link a:hover{
-    text-decoration: underline;
-} */
 
-#browse-form a, #browse-form a:visited {
-    font-size: 20px;
-    text-decoration: none;
+/* carousel */
+
+.jcarousel {
+    padding: 18px 21%;
+}
+
+.jcarousel ul {
+    background-color: #fff9f252;
+    border-radius: 4px;
+    border: solid #ccc 1.5px;
+    /* height: 220px; */
+    /* overflow: hidden; */
+}
+
+.featured {
+    text-align: center;
+    margin-top: 0;
+    /* color: #2D2D2D; */
+    /* outline: thick #3498db 1px; */
+}
+
+.list-group img {
+    width: 30px;
+    /*position: relative;*/
+    overflow: hidden;
+    border: #807f7f solid 1px;
+    max-width: 100%;
+    padding: 2%;
+}
+
+.slick-track{
+    transform: none!important;
+    display: inline;
+}
+.slick-cloned img{
+    height: 240px;
 }
 
 /* errors */
