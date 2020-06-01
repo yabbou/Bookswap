@@ -8,7 +8,7 @@
 /* general */
 
 body {
-    padding: 1.5%;
+    /* padding: 1.5%; */
     margin: 0;
     /* background-size: cover; */
     background-color: #fff9f2;
@@ -76,6 +76,14 @@ footer p4 {
     color: aliceblue;
 }
 
+/* input, select, textarea{
+    color: #ff0000;
+}
+
+textarea:focus, input:focus {
+    color: #ff0000;
+} */
+
 /* img */
 
 .img-cropper {
@@ -98,6 +106,7 @@ img.logo {
 header {
     position: fixed;
     width: 100%;
+    top: 0;
 }
 
 .logo-and-title {
@@ -137,7 +146,7 @@ header {
 /* browse form */
 
 .b-form-container {
-    height: 60%;
+    height: 80%;
     width: 100%;
     background-image: url('img/book-and-grass.webp');
     background-size: cover;
@@ -156,12 +165,13 @@ a:hover, a.nav-link:hover {
 }
 
 #b-form {
-    padding: 8% 21% 2%;
+    padding: 12% 24%;
     margin: 0;
 }
 
 .browse-text input {
-    width: 100%;
+    width: 90%;
+    height: 45px;
 }
 
 #b-form input {
@@ -251,7 +261,7 @@ ul li a {
 /* carousel */
 
 .carousel-and-title{
-    margin-top: -50px;
+    margin-top: -200px;
 }
 
 .jcarousel {
@@ -295,6 +305,8 @@ ul li a {
 
 .jcarousel img, div.slick-slide.slick-active div div img {
     height: 240px;
+    margin: 3px;
+
 }
 
 /* errors */
