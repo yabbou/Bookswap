@@ -1,5 +1,6 @@
 
 // Code By Webdevtrick ( https://webdevtrick.com )
+
 "use strict";
 var underlineMenuItems = document.querySelectorAll("ul li");
 underlineMenuItems[0].classList.add("active");
