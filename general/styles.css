@@ -10,10 +10,9 @@
 body {
     padding: 1.5%;
     margin: 0;
-    background-size: cover;
-    /* background-image: url('img/book-and-grass.webp'); */
-    /* background-color: #fff9f2; */
-    background-color: #53A7DB;
+    /* background-size: cover; */
+    background-color: #fff9f2;
+    /* background-color: #53A7DB; */
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -96,6 +95,11 @@ img.logo {
 
 /* navbar */
 
+header {
+    position: fixed;
+    width: 100%;
+}
+
 .logo-and-title {
     display: flex;
     margin: 8px;
@@ -133,8 +137,10 @@ img.logo {
 /* browse form */
 
 .b-form-container {
-    height: 40%;
+    height: 60%;
     width: 100%;
+    background-image: url('img/book-and-grass.webp');
+    background-size: cover;
 }
 
 .nav-link {
@@ -244,11 +250,17 @@ ul li a {
 
 /* carousel */
 
+.carousel-and-title{
+    margin-top: -50px;
+}
+
 .jcarousel {
     padding: 18px 21%;
     overflow-x: hidden;
     height: 100%;
     display: flex;
+
+    outline: thick grey 2px;
 }
 
 .jcarousel ul {
@@ -256,7 +268,6 @@ ul li a {
     border-radius: 4px;
     border: solid #ccc 1.5px;
     display: flex;
-
     /* height: 220px; */
     /* overflow: hidden; */
 }
@@ -277,11 +288,12 @@ ul li a {
     padding: 2%;
 }
 
-.slick-track{
+.slick-track {
     transform: none!important;
     display: inline;
 }
-.jcarousel img, div.slick-slide.slick-active div div img{
+
+.jcarousel img, div.slick-slide.slick-active div div img {
     height: 240px;
 }
 
