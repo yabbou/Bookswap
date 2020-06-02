@@ -12,16 +12,8 @@ body {
     background-color: #fff9f2;
     max-width: 100%;
     overflow-x: hidden;
+    z-index: 1;
 }
-
-/* input[type=text], input[type=password], input[type=email], input[type=number] {
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-bottom: 1px solid black;
-    margin-bottom: 5px;
-    width: 60%;
-} */
 
 input[type=text], input[type=number], input[type=email], input[type=password] {
     width: 60%;
@@ -69,15 +61,6 @@ button.send {
     width: 4rem;
     margin-top: 0!important;
 }
-
-/* .carousel-and-title button{
-    display:block;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: 1px solid whitesmoke;
-    margin: 0;
-} */
 
 .slick-prev {
     left: 220px!important;
@@ -144,6 +127,7 @@ header {
     width: 100%;
     height: 10%;
     top: 0;
+    z-index: 3;
 }
 
 .logo-and-title {
@@ -335,13 +319,15 @@ ul li a {
     height: 180px;
     border-radius: 1px;
     border: solid #ccc 1.5px;
-    margin: 22px 0 20px 17px;
+    margin: 18px 0 18px 17px;
 }
 
 .slick-list {
     background-color: #f2f2f282;
     border-radius: 5px;
     height: 27.5%;
+    z-index: 2;
+
 }
 
 /* errors */
