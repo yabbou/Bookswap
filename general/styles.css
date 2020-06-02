@@ -8,11 +8,8 @@
 /* general */
 
 body {
-    /* padding: 1.5%; */
     margin: 0;
-    /* background-size: cover; */
     background-color: #fff9f2;
-    /* background-color: #53A7DB; */
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -51,7 +48,7 @@ button {
     margin-top: 8px;
 }
 
-div.container, form.container {
+div.container, .container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
@@ -260,7 +257,7 @@ ul li a {
 
 /* carousel */
 
-.carousel-and-title{
+.carousel-and-title {
     margin-top: -200px;
 }
 
@@ -269,7 +266,6 @@ ul li a {
     overflow-x: hidden;
     height: 100%;
     display: flex;
-
     outline: thick grey 2px;
 }
 
@@ -306,11 +302,18 @@ ul li a {
 .jcarousel img, div.slick-slide.slick-active div div img {
     height: 240px;
     margin: 3px;
-
 }
 
 /* errors */
 
 .error {
     color: #FF0000;
+}
+
+/* inner-body page */
+
+.inner-body {
+    padding: 20px;
+    margin-top: 6%;
+    min-height:75%;
 }
