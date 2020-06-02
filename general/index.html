@@ -1,14 +1,12 @@
-<div class="browse-form">
-    <form id="frm" action="browse_results.php" method="post">
-        <div class="browse-text ">
-            <h4>Browse</h4>
-            <input type="text" name="browse" required>
+<div class="b-form-container">
+    <form id="b-form" action="browse_results.php" method="get">
+        <div class="browse-text">
+            <input type="text" name="browse" placeholder="Browse our titles" required>
         </div>
 
-        <!--make this option be chosen and input for browse-->
-        <div><a href="">By topic </a></div>
-        <div><a href="">By professor </a></div>
-        <div><a href="displayBooks.php">All books </a></div>
-
+        <!--use get-->
+        <div class="browse-link"><a href="displayBooks_Major.php">By topic </a></div>
+        <div class="browse-link"><a href="displayBooks_Professor.php">By professor </a></div>
+        <div class="browse-link"><a href="displayBooks.php">All books </a></div>
     </form>
 </div>

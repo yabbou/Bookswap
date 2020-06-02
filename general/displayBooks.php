@@ -1,12 +1,14 @@
 <?php include 'header.php';
 include_once 'methods.php';
 
-if (empty($_SESSION['bookResults'])) {
-    $_SESSION['bookResults'] = sqlToArray_Books('bookResults', mysqli_query(initDb(), "SELECT * FROM book")); //rename 
+$bookResults = 'bookResults';
+if (empty($_SESSION[$bookResults])) {
+    $sql = "SELECT * FROM book";
+    $_SESSION[$bookResults] = sqlToArray_Books($bookResults, mysqli_query(initDb(), $sql));
 }
 
-echo "<ul>";
-foreach ($_SESSION['bookResults'] as $i => $row) { //should make interm var?
+echo "<ul class='inner-body'>";
+foreach ($_SESSION[$bookResults] as $i => $row) { //should make interm var?
 
     echo '<li class="list-group">';
     echo '<h4><a href="">' . $row['title'] . '</a></h4>';

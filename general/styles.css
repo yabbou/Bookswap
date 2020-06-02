@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-/*
-note: 
-period - when on same line as tag, 
-spaces - when inside tag
-*/
+/* note: period - when on same line as tag, spaces - when inside tag */
 
 * {
     font-family: 'Lato', sans-serif;
@@ -12,22 +8,24 @@ spaces - when inside tag
 /* general */
 
 body {
-    background-size: cover;
-    /*background-image: "img/book-and-grass.webp";*/
+    margin: 0;
+    background-color: #fff9f2;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=number] {
+/* input[type=text], input[type=password], input[type=email], input[type=number] {
     border: 0;
     outline: 0;
     background: transparent;
     border-bottom: 1px solid black;
     margin-bottom: 5px;
     width: 60%;
-}
+} */
 
-input[type=text], input[type=number] {
-    width: 80%;
-    padding: 12px 20px;
+input[type=text], input[type=number], input[type=email], input[type=password] {
+    width: 60%;
+    padding: 15px 20px;
     margin: 8px 0;
     display: block;
     border: 1px solid #ccc;
@@ -44,13 +42,52 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 100%;
+    padding: 15px 20px;
 }
 
-button{
-    margin-top: 8px;
+button, input[type=submit] {
+    background-color: #70C3F6;
+    color: whitesmoke;
+    font-size: 17px;
+    opacity: 0.75;
+    border: 0;
+    border-radius: 85px;
+    height: 2.2rem;
 }
 
-div.container, form.container {
+button.send {
+    margin-top: 10px;
+    width: 4.5rem;
+}
+
+.btn-add-book {
+    width: 6rem;
+    margin-top: 2px;
+}
+
+.btn-login {
+    width: 4rem;
+    margin-top: 0!important;
+}
+
+/* .carousel-and-title button{
+    display:block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    margin: 0;
+} */
+
+.slick-prev {
+    left: 220px!important;
+}
+
+.slick-next {
+    right: 220px!important;
+}
+
+.container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
@@ -60,18 +97,38 @@ div.container, form.container {
     margin-right: 45%;
 }
 
-/* img */
-
-.logo-and-company-name {
-    display: inline;
+footer {
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 30px;
+    background: #2D2D2D;
+    border-top: 2px solid #3E3E3E;
+    text-align: center;
+    padding: 8px;
 }
+
+footer p4 {
+    color: aliceblue;
+}
+
+/* input, select, textarea{
+    color: #ff0000;
+}
+
+textarea:focus, input:focus {
+    color: #ff0000;
+} */
+
+/* img */
 
 .img-cropper {
     width: 30px;
     height: 30px;
-    /*position: relative;*/
+    position: relative;
     overflow: hidden;
     border-radius: 50%;
+    border: #807f7f solid 1px;
 }
 
 img.logo {
@@ -82,40 +139,54 @@ img.logo {
 
 /* navbar */
 
+header {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    top: 0;
+}
+
+.logo-and-title {
+    display: flex;
+    margin: 8px;
+    margin-left: 16px;
+}
+
 .nav-title {
     color: #53A7DB;
     font-size: 140%;
     font-weight: bold;
     line-height: 1.5rem;
     font-weight: bold;
+    margin: 8px;
+    margin-top: 4px;
 }
 
 .navbar {
-    overflow: hidden;
     display: flex;
     width: 100%;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: .9rem;
-    letter-spacing: .2rem;
+    font-size: 1rem;
+    letter-spacing: .1rem;
     background: rgba(255, 255, 255, 0.87)!important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    align-items: center;
 }
 
-.navbar-nav ul li {
-    padding-right: .7rem;
-    flex-direction: row;
-}
-
-ul li {
-    list-style-type: none;
-    display: inline;
-}
-
-.navbar-nav .nav-link {
+.nav-link {
     color: #666666;
-    height: 55px;
-    vertical-align: middle;
-    padding-top: 1rem;
+    height: 30px;
+    padding-top: 14px;
+}
+
+/* browse form */
+
+.b-form-container {
+    height: 80%;
+    width: 100%;
+    background-image: url('img/book-and-grass.webp');
+    background-size: cover;
 }
 
 .nav-link {
@@ -126,27 +197,163 @@ a {
     color: darkslateblue;
 }
 
-a:hover {
+a:hover, a.nav-link:hover {
     color: #53A7DB;
+}
+
+#b-form {
+    padding: 12% 24%;
+    margin: 0;
+}
+
+.browse-text input {
+    width: 90%;
+    height: 45px;
+}
+
+#b-form input {
+    background-color: #f2f2f262;
+}
+
+/* nav links */
+
+ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul:hover li:not(:hover) a {
+    opacity: 0.2;
+}
+
+ul li {
+    position: relative;
+    padding: 0px 25px;
+    cursor: pointer;
+}
+
+.nav-item {
+    padding-top: 8px;
+    padding-bottom: 16px;
+}
+
+ul li.nav-item::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #3498db;
+    transform: scaleX(0);
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+ul li:hover::after, ul li.active::after {
+    transform: scaleX(1);
+}
+
+ul li a {
+    position: relative;
+    display: flex;
+    color: white;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* books */
+
+.list-group {
+    background-color: #fff9f2cc;
+    margin-right: 10%;
+    border: solid whitesmoke 1px;
+    /* box-shadow: cornflowerblue 1px; */
+    border-radius: 6px;
+    padding-bottom: 10px;
+}
+
+.list-group a {
+    color: #666666;
+}
+
+.list-group p {
+    margin: 10px auto;
 }
 
 /* login form */
 
 .login-form {
-    border: solid grey 1px;
-    width: 50%;
+    width: 55%;
 }
 
-#frm {
-    width: 20%;
-    padding: 2px;
-    /*continue later...*/
+#l-form input {
+    margin: 20px 0;
 }
 
-/* contact form */
+.browse-link {
+    margin-right: 10px;
+    display: inline;
+    font-size: large;
+}
+
+.browse-link a {
+    text-decoration: none;
+}
+
+/* carousel */
+
+.carousel-and-title {
+    margin-top: -200px;
+    height: -webkit-fill-available;
+}
+
+.jcarousel {
+    padding: 18px 21%;
+}
+
+.featured {
+    text-align: center;
+    margin-top: 0;
+}
+
+.list-group img {
+    width: 30px;
+    overflow: hidden;
+    border: #807f7f solid 1px;
+    max-width: 100%;
+    padding: 0;
+}
+
+.slick-slide {
+    height: 25%!important;
+}
+
+.slick-slide img {
+    height: 180px;
+    border-radius: 1px;
+    border: solid #ccc 1.5px;
+    margin: 22px 0 20px 17px;
+}
+
+.slick-list {
+    background-color: #f2f2f282;
+    border-radius: 5px;
+    height: 27.5%;
+}
 
 /* errors */
 
 .error {
     color: #FF0000;
+}
+
+/* inner-body page */
+
+.inner-body {
+    padding: 20px 40px;
+    margin-top: 6%;
+    min-height: 76.2%;
 }

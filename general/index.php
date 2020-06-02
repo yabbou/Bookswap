@@ -1,3 +1,6 @@
-<?php include "header.php"; ?>
-<?php include "index.html"; ?>
-<?php include "footer.php"; ?>
+<?php 
+
+include "header.php";
+include "index.html";
+include "featuredBooks.php";
+include "footer.php";
