@@ -324,17 +324,24 @@ ul li a {
     overflow: hidden;
     border: #807f7f solid 1px;
     max-width: 100%;
-    padding: 2%;
+    padding: 0;
 }
 
 .slick-slide {
     height: 25%!important;
 }
-.slick-slide img{
-    height: 20%;
-    /* continue here... */
+
+.slick-slide img {
+    height: 180px;
     border-radius: 1px;
     border: solid #ccc 1.5px;
+    margin: 22px 0 20px 17px;
+}
+
+.slick-list {
+    background-color: #f2f2f282;
+    border-radius: 5px;
+    height: 27.5%;
 }
 
 /* errors */
