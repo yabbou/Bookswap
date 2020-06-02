@@ -7,7 +7,7 @@ if (empty($_SESSION[$bookResults])) {
     $_SESSION[$bookResults] = sqlToArray_Books($bookResults, mysqli_query(initDb(), $sql));
 }
 
-echo "<ul>";
+echo "<ul class='inner-body'>";
 foreach ($_SESSION[$bookResults] as $i => $row) { //should make interm var?
 
     echo '<li class="list-group">';

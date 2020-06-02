@@ -4,7 +4,8 @@
     <title>Bookswap</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" type="text/css" />
-    <link rel="stylesheet" href="slick.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css" type="text/css" />
 </head>
 
 <header>
