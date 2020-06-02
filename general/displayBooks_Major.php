@@ -7,7 +7,7 @@ if (empty($_SESSION['bookResults'])) {
 
 echo '<form style="" id="browse-form" action="browse_results.php" method="post">
         <div class="browse-text">
-            <h4>Browse</h4>
+            <h3>Browse</h3>
             <input type="text" name="browse" required>
         </div>
 

@@ -8,8 +8,10 @@ $_SESSION['users'] = initSessionArray('users');
 initUsers(); //necc?
 
 if ($_SESSION['loggedIn']) {
-    echo "<h4>Hello " . filter_input(INPUT_COOKIE, 'userCookie') . "!<h4>"; //chanage to session var
-    echo "<h4>Feel free to browse our books, or sell your own :)<h4>";
+    echo "<div class='inner-body'>";
+    echo "<h3>Hello " . filter_input(INPUT_COOKIE, 'userCookie') . "!<h3>"; //chanage to session var
+    echo "<h3>Feel free to browse our books, or sell your own :)<h3>";
+    echo "</div>";
 } else {
     $_SESSION['loggedIn'] = FALSE;
     include "login.html";
