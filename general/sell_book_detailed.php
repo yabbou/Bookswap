@@ -18,11 +18,11 @@ $profErr = "";
         </datalist>
         <span class="error"><?php echo $titleErr; ?></span>
         <!-- 
-        if (!preg_match("/^[a-zA-Z0-9 ]*$/", avoidSQLInjection($_POST["title"]))) {
+        if (!preg_match("/^[a-zA-Z0-9 ]*$/", $_POST["title"])) {
             $titleErr = "Only letters, numbers, and white space allowed.";
         } -->
 
-        <input type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" required>
+        <input type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" pattern="[a-zA-Z ]" required>
 
         <!-- should really also check if not taken by other book -->
         <input type="number" name="isbn" placeholder="ISBN-10" min="1000000000" max="9999999999" required>

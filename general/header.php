@@ -18,10 +18,9 @@
     </nav>
 </header>
 
-<body>
-
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<!-- still need to fix vv -->
-<script type="text/javascript" src="active-tab.js"></script>
+<script type="text/javascript" src="active-tab.js"></script> <!-- still need to fix this one-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+<body>
