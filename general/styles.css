@@ -173,6 +173,13 @@ header {
     background-size: cover;
 }
 
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .nav-link {
     text-decoration: none;
 }
@@ -327,7 +334,6 @@ ul li a {
     border-radius: 5px;
     height: 27.5%;
     z-index: 2;
-
 }
 
 /* errors */
