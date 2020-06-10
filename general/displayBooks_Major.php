@@ -5,18 +5,21 @@ if (empty($_SESSION['bookResults'])) {
     sqlToArray_Books('bookResults', mysqli_query(initDb(), "SELECT * FROM book")); //rename 
 }
 
-echo '<form style="" id="browse-form" action="browse_results.php" method="post">
-        <div class="browse-text">
-            <h3>Browse</h3>
-            <input type="text" name="browse" required>
-        </div>
+echo '<div class="inner-body"></div>';
 
-        <!--make this option be chosen and input for browse-->
-        <div class="browse-link"><a href="displayBooks_Major.php">By topic </a></div>
-        <div class="browse-link"><a href="displayBooks_Professor.php">By professor </a></div>
-        <div class="browse-link"><a href="displayBooks.php">All books </a></div>
 
-    </form>';
+// echo '<form style="" id="browse-form" action="browse_results.php" method="post">
+//         <div class="browse-text">
+//             <h3>Browse</h3>
+//             <input type="text" name="browse" required>
+//         </div>
+
+//         <!--make this option be chosen and input for browse-->
+//         <div class="browse-link"><a href="displayBooks_Major.php">By topic </a></div>
+//         <div class="browse-link"><a href="displayBooks_Professor.php">By professor </a></div>
+//         <div class="browse-link"><a href="displayBooks.php">All books </a></div>
+
+//     </form>';
 
 
     
