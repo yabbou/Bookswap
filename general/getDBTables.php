@@ -13,5 +13,9 @@ $table = 'professor';
 $result = mysqli_query($conn, "SELECT name FROM professor");
 $_SESSION[$table] = sqlToArray_SingleVar($table, 'name', $result);
 
+$table = 'major';
+$result = mysqli_query($conn, "SELECT category FROM major");
+$_SESSION[$table] = sqlToArray_SingleVar($table, 'category', $result);
+
 mysqli_free_result($result);
 mysqli_close($conn);

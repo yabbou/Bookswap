@@ -1,5 +1,5 @@
 <?php
-include "getBooksAndProfs.php";
+include "getDBTables.php";
 $titleErr = "";
 $profErr = "";
 ?>

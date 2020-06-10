@@ -1,6 +1,6 @@
 <?php
 include_once "methods.php";
-include_once "getBooksAndProfs.php";
+include_once "getDBTables.php";
 include "../login/login-logic.php";
 include "header.php";
 

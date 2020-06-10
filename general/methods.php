@@ -18,12 +18,6 @@ function exitIfErr($conn)
     }
 }
 
-// function selectQuery($conn, $col, $table, $offset) // look into prep staements
-// {
-//     $sql = "SELECT `$col` FROM `$table` LIMIT $offset"; //should get every 5...
-//     return mysqli_query($conn, $sql); //error msg without db info
-// }
-
 function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
 {
     $sql = "INSERT INTO $table (TITLE,CATEGORY,`ISBN_10`,`ISBN-13`, PROFESSOR) 
@@ -45,9 +39,9 @@ function sqlToArray_SingleVar($table, $nameType, $sql)
     return $_SESSION[$table];
 }
 
-function sqlToArray_Books($ar, $sql)
+function sqlToArray_Books($ar, $sql) //edit impl params
 {
-    $arr = initSessionArray($ar); //optimization: seperate method that only queries the new books 
+    $arr = array(); //optimization: seperate method that only queries the new books 
 
     while ($row = mysqli_fetch_assoc($sql)) {
         $arr[] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category']);
