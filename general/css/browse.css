@@ -51,14 +51,6 @@
     margin-top: 0;
 }
 
-.list-group img {
-    width: 30px;
-    overflow: hidden;
-    border: #807f7f solid 1px;
-    max-width: 100%;
-    padding: 0;
-}
-
 .slick-slide {
     height: 25%!important;
 }

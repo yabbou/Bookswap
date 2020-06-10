@@ -6,11 +6,13 @@ if (session_status() != PHP_SESSION_ACTIVE) { //better, move sessoin to header.p
 
 //sql  
 
-function initDb() {
+function initDb()
+{
     return mysqli_connect("localhost", "root", "", "bookswap");
 }
 
-function exitIfErr($conn) {
+function exitIfErr($conn)
+{
     if ($conn->connect_errno) {
         exit();
     }
@@ -22,37 +24,39 @@ function exitIfErr($conn) {
 //     return mysqli_query($conn, $sql); //error msg without db info
 // }
 
-function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof) {
-    $sql = "INSERT INTO $table (TITLE,CATEGORY,`ISBN-10`,`ISBN-13`, PROFESSOR) 
+function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
+{
+    $sql = "INSERT INTO $table (TITLE,CATEGORY,`ISBN_10`,`ISBN-13`, PROFESSOR) 
     VALUES ('$title','$category',$isbn10,0000000000000,'$prof')";
     //add prof also to prof table
 
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //dry
 }
 
-function sqlToArray_SingleVar($table, $nameType, $sql) { //rename
-    $arr = initSessionArray($table);
-    $_SESSION[$table];
-
+function sqlToArray_SingleVar($table, $nameType, $sql)
+{ //rename
+    $_SESSION[$table] = initSessionArray($table);
+    
     if (count($_SESSION[$table]) < mysqli_num_rows($sql)) {
         while ($row = mysqli_fetch_array($sql)) {
             $arr[] = $row[$nameType];
         }
     }
-    return $arr;
+    return $_SESSION[$table];
 }
 
-function sqlToArray_Books($ar, $sql) { 
-    $arr = initSessionArray($ar); //automate
-    $_SESSION[$ar]; //move one line up
+function sqlToArray_Books($ar, $sql)
+{
+    $_SESSION[$ar] = initSessionArray($ar); //local var instead?
 
     while ($row = mysqli_fetch_assoc($sql)) {
-        $arr[] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN-10'], 'prof' => $row['Professor'], 'cat' => $row['Category']);
+        $_SESSION[$ar][] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category']);
     }
-    return $arr;
+    return $_SESSION[$ar];
 }
 
-function sqlToArray_Users($sql) { //dry
+function sqlToArray_Users($sql)
+{ //dry 
     $users = array();
     while ($row = mysqli_fetch_assoc($sql)) {
         $users[$row['email']] = $row['password'];
@@ -62,7 +66,8 @@ function sqlToArray_Users($sql) { //dry
 
 //html 
 
-function avoidSQLInjection($data) { //integrate into login and sellbook forms
+function avoidSQLInjection($data)
+{ //integrate into login and sellbook forms
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -71,7 +76,8 @@ function avoidSQLInjection($data) { //integrate into login and sellbook forms
 
 //general
 
-function initUsers() {
+function initUsers()
+{
     if (empty($_SESSION['users'])) {
         $conn = initDb();
         exitIfErr($conn);
@@ -84,11 +90,13 @@ function initUsers() {
     }
 }
 
-function initSessionArray($arr) {
+function initSessionArray($arr)
+{
     return isset($_SESSION[$arr]) ? $_SESSION[$arr] : array();
 }
 
-function redirectToHomepage() {
+function redirectToHomepage()
+{
     echo "<br>Redirecting...";
     echo "<meta http-equiv=\"refresh\" content=\"5;URL=index.php\" />";
 }

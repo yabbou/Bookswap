@@ -170,9 +170,9 @@ ul:hover li:not(:hover) a {
 .list-group {
     background-color: #fff9f2cc;
     margin-right: 10%;
-    border: solid whitesmoke 1px;
+    border-bottom: solid whitesmoke 1px;
     /* box-shadow: cornflowerblue 1px; */
-    border-radius: 6px;
+    /* border-radius: 6px; */
     padding-bottom: 10px;
 }
 
@@ -182,6 +182,11 @@ ul:hover li:not(:hover) a {
 
 .list-group p {
     margin: 10px auto;
+}
+
+.list-group img {
+    width: 170px;
+    border: none;
 }
 
 /* login form */

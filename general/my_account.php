@@ -4,12 +4,12 @@ include_once "getBooksAndProfs.php";
 include "../login/login-logic.php";
 include "header.php";
 
-$_SESSION['users'] = initSessionArray('users');
-initUsers(); //necc?
+$_SESSION['users'] = initSessionArray('users'); //necc?
+initUsers();
 
-if ($_SESSION['loggedIn']) {
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
     echo "<div class='inner-body'>";
-    echo "<h3>Hello " . filter_input(INPUT_COOKIE, 'userCookie') . "!<h3>"; //chanage to session var
+    echo "<h3>Hello " . $_SESSION['currentUser'] . "!<h3>";
     echo "<h3>Feel free to browse our books, or sell your own :)<h3>";
     echo "</div>";
 } else {
