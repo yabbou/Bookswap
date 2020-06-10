@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2c2e467-129a-4d73-bceb-1c10783da1f7" name="Default Changelist" comment="" />
+    <list default="true" id="d2c2e467-129a-4d73-bceb-1c10783da1f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/general/active-tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/general/active-tab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/general/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/methods.php" beforeDir="false" afterPath="$PROJECT_DIR$/general/methods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,10 +43,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="267" y="118" key="FileChooserDialogImpl" timestamp="1591218442131">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="267" y="118" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1591218442131" />
+    <state x="194" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1591218400293">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="194" y="187" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1591218400293" />
+    <state x="0" y="0" key="new project wizard" timestamp="1591218461372">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="0" y="0" key="new project wizard/0.0.1280.720@0.0.1280.720" timestamp="1591218461372" />
   </component>
 </project>

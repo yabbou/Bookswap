@@ -1,10 +1,11 @@
 <HTML>
 
 <head>
-    <title>Bookswap</title>
+    <title>The College Bookswap</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="css/navbar.css" type="text/css" />
+    <link rel="stylesheet" href="css/browse.css" type="text/css" />
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css" type="text/css" />
 </head>
 
@@ -18,10 +19,8 @@
     </nav>
 </header>
 
-<body>
-
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-<script type="text/javascript" src="active-tab.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+<body>

@@ -4,10 +4,12 @@
     </button>
 -->
 
-<ul class="navbar-list">
-    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+<ul class="navbar-group" id="navbar-list">
+    <li class="nav-item current-nav-item"><a class="nav-link" href="index.php">Home</a></li>
     <li class="nav-item"><a class="nav-link" href="sell_book.php">Sell Book</a></li>
     <!-- <li class="nav-item"><a class="nav-link" href="about.php">About</a></li> -->
     <li class="nav-item"><a class="nav-link" href="contact_us.php">Contact</a></li>
     <li class="nav-item"><a class="nav-link" href="my_account.php">My Account</a></li>
 </ul>
+
+<script type="text/javascript" src="active-tab.js"></script>

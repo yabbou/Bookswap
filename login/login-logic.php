@@ -1,12 +1,14 @@
 <?php
 
+include_once 'methods.php';
+
 function checkIfValidUser($users, $email, $pwd)
 {
-    //todo: prevent sql injection here!!!
 
     if (isset($users[$email])) {
-        if ($users[$email] == $pwd) { //fix: works only after second login...
-            setcookie("userCookie", $email, time() + 600); //change to session var
+        if ($users[$email] == $pwd) { 
+            $_SESSION['currentUser'] = avoidSQLInjection(filter_input(INPUT_POST, 'email'));
+            // setcookie("userCookie", $email, time() + 600); //deprecated
             $_SESSION['loggedIn'] = TRUE;
         } else {
             echo "The email and password do not match. Please try again.";
@@ -20,6 +22,8 @@ function checkIfValidUser($users, $email, $pwd)
       $_SESSION['users'] = $users; //necc?
       } */
 }
+
+$_SESSION['users'] = initSessionArray('users');
 
 checkIfValidUser(
     $_SESSION['users'],

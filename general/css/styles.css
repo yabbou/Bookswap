@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+/* note: period - when on same line as tag, spaces - when inside tag */
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #fff9f2;
+    max-width: 100%;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.inner-body {
+    padding: 20px 40px;
+    margin-top: 6%;
+    min-height: 76.2%;
+}
+
+footer {
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 30px;
+    background: #2D2D2D;
+    border-top: 2px solid #3E3E3E;
+    text-align: center;
+    padding: 8px;
+}
+
+footer p4 {
+    color: aliceblue;
+}
+
+/* buttons and inputs */
+
+input[type=text], input[type=number], input[type=email], input[type=password] {
+    width: 60%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 30%;
+    min-height: 10%;
+    max-height: 80%;
+    min-width: 80%;
+    max-width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 100%;
+    padding: 15px 20px;
+}
+
+button, input[type=submit] {
+    background-color: #70C3F6;
+    color: whitesmoke;
+    font-size: 14px;
+    opacity: 0.75;
+    border: 0;
+    border-radius: 85px;
+    height: 2.2rem;
+}
+
+button.send {
+    margin-top: 10px;
+    width: 4.5rem;
+}
+
+.btn-add-book {
+    width: 6rem;
+    margin-top: 2px;
+}
+
+.btn-login {
+    width: 4rem;
+    margin-top: 0!important;
+}
+
+.slick-prev {
+    left: 220px!important;
+}
+
+.slick-next {
+    right: 220px!important;
+}
+
+/* img */
+
+.img-cropper {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: #807f7f solid 1px;
+}
+
+img.logo {
+    margin: 0;
+    margin-left: -25%;
+    height: 100%;
+}
+
+a {
+    color: darkslateblue;
+}
+
+a:hover, a.nav-link:hover {
+    color: #53A7DB;
+}
+
+/* nav links */
+
+/* ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul:hover li:not(:hover) a {
+    opacity: 0.2;
+} */
+
+/* ul li {
+    position: relative;
+    padding: 0px 25px;
+    cursor: pointer;
+} */
+
+/* .nav-item {
+    padding-top: 8px;
+    padding-bottom: 16px;
+} */
+
+/* ul li.nav-item::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #3498db;
+    transform: scaleX(0);
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+} */
+
+/* ul li:hover::after, ul li.active::after {
+    transform: scaleX(1);
+} */
+
+/* ul li a {
+    position: relative;
+    display: flex;
+    color: white;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+} */
+
+/* books */
+
+.list-group {
+    background-color: rgba(79, 181, 245, 0.4);
+    margin: 10px;
+    width: 200px;
+    border-bottom: solid whitesmoke 1px;
+    /* box-shadow: cornflowerblue 1px; */
+    border-radius: 3px;
+    padding: 13px 13px 6px;
+    list-style: none;
+
+}
+
+.list-group a {
+    color: #666666;
+}
+
+.list-group p {
+    margin: 10px auto;
+}
+
+.list-group img {
+    width: 170px;
+    border: none;
+    margin-left: 16px;
+    padding-bottom: 7spx;
+}
+
+/* login form */
+
+.login-form {
+    width: 55%;
+}
+
+#l-form input {
+    margin: 20px 0;
+}
+
+/* errors */
+
+.error {
+    color: #FF0000;
+}
