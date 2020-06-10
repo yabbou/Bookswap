@@ -12,7 +12,7 @@ function displayBookInfo($title, $category, $isbn, $prof) {
     echo $isbn;
     echo "<br>";
     echo $prof;
-    echo "<br><div>";
+    echo "<br>";
 }
 
 $title = avoidSQLInjection(filter_input(INPUT_POST, 'title'));
@@ -26,5 +26,6 @@ exitIfErr($conn);
 insertQuery_Book($conn, 'book', $title, $category, $isbn10, $prof);
 
 redirectToHomepage();
+echo '</div>';
 
 include 'footer.php';
