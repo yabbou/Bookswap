@@ -92,5 +92,5 @@ function initSessionArray($arr)
 function redirectToHomepage()
 {
     echo "<br>Redirecting...";
-    echo "<meta http-equiv=\"refresh\" content=\"5;URL=index.php\" />";
+    echo "<meta http-equiv=\"refresh\" content=\"3;URL=index.php\" />";
 }

@@ -4,7 +4,7 @@ include_once 'methods.php';
 include 'header.php';
 
 function displayBookInfo($title, $category, $isbn, $prof) {
-    echo "<h2>This is your book:</h2>";
+    echo "<div class='inner-body'><h2>This is your book:</h2>";
     echo $title;
     echo "<br>";
     echo $category;
@@ -12,7 +12,7 @@ function displayBookInfo($title, $category, $isbn, $prof) {
     echo $isbn;
     echo "<br>";
     echo $prof;
-    echo "<br>";
+    echo "<br><div>";
 }
 
 $title = avoidSQLInjection(filter_input(INPUT_POST, 'title'));
