@@ -2,14 +2,15 @@
 
 .book-tile {
     background-color: rgba(79, 181, 245, 0.4);
-    margin: 10px;
+    margin: 15px 10px 20px 36px;
     width: 200px;
     border-radius: 2px;
     padding: 13px 10px 15px 12px;
-    /* padding: top right, bottom, left */
+    /* top right, bottom, left */
     list-style: none;
     box-shadow: 2px 2px 5px #888888d8;
     height: 300px;
+    display: inline-table;
 }
 
 .book-tile a {
@@ -33,10 +34,12 @@
 
 .book-tiles {
     margin: 20px;
+    list-style: none;
+    padding: 0 15px;
 }
 
 .book-subgroup {
-    /* display: flex; */
+    margin-bottom: 20px;
 }
 
 /* sidebar */
@@ -44,11 +47,18 @@
 .sidebar {
     background-color: rgba(79, 181, 245, 0.4);
     padding: 25px;
+    min-width: 184px;
+    box-shadow: 1px 1px 3px #888888;
+}
+
+.browse-text-sidebar input {
+    width: 100%;
+    background-color: #f2f2f262;
 }
 
 .sidebar-and-content {
     display: flex;
     /* margin-top: 6%; */
-    min-height: 76.2%;
+    min-height: 81%;
     padding-top: 60px;
 }
