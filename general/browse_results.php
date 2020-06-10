@@ -21,7 +21,7 @@ $rows = $_SESSION[$arr];
 
 for ($i = 0; $i < $size; $i++) {
     echo '<li class="book-tile">';
-    echo "<img src='img/no-image-yet.png'>";
+    echo "<img class='book-tile-img' src='img/no-image-yet.png'>";
     echo "<h4><a href='book/" . $rows[$i]['isbn-10'] . "'>" . $rows[$i]['title'] . '</a></h4>';
     echo '<p>Available: <strong>' . 1 . '</strong></p>'; //make live updated
     echo '</li>';

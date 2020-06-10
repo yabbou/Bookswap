@@ -21,7 +21,7 @@
     margin: 10px auto;
 }
 
-.book-tile img {
+.book-tile-img {
     width: 170px;
     border: none;
     margin-left: 16px;
@@ -40,6 +40,15 @@
 
 .book-subgroup {
     margin-bottom: 20px;
+}
+
+.book-information {
+    display: flex;
+    margin: 30px;
+    height: fit-content;
+}
+.book-dets{
+    margin-left: 20px;
 }
 
 /* sidebar */
