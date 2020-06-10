@@ -166,35 +166,6 @@ ul:hover li:not(:hover) a {
     transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 } */
 
-/* books */
-
-.list-group {
-    background-color: rgba(79, 181, 245, 0.4);
-    margin: 10px;
-    width: 200px;
-    /* border-bottom: solid whitesmoke 1px; */
-    /* box-shadow: cornflowerblue 1px; */
-    border-radius: 2px;
-    padding: 13px 10px 10px 8px;
-    list-style: none;
-    box-shadow: 2px 2px 5px #888888d8;
-}
-
-.list-group a {
-    color: #666666;
-}
-
-.list-group p {
-    margin: 10px auto;
-}
-
-.list-group img {
-    width: 170px;
-    border: none;
-    margin-left: 16px;
-    /* padding-bottom: 7px; */
-}
-
 /* login form */
 
 .login-form {

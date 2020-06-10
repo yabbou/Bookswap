@@ -29,7 +29,7 @@ echo '<div class="inner-body"></div>';
 //<div class="left" style="width: 25%">
 // <a class="gr-hyperlink" href="/genres/art">Art</a><br>
 
-//     echo '<li class="list-group">';
+//     echo '<li class="book-tile">';
 //     echo '<h4><a href="">' . $row['title'] . '</a></h4>';
 //     echo '<p>ISBN-10: ' . $row['isbn-10'] . '</p>';
 //     echo '<p>Prof: ' . $row['prof'] . '</p>'; //tab

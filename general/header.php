@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <link rel="stylesheet" href="css/navbar.css" type="text/css" />
     <link rel="stylesheet" href="css/browse.css" type="text/css" />
+    <link rel="stylesheet" href="css/books.css" type="text/css" />
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css" type="text/css" />
 </head>
 
