@@ -9,7 +9,7 @@ if (empty($_SESSION['bookResults'])) {
 echo "<ul>";
 foreach ($_SESSION['bookResults'] as $i => $row) { //should make interm var?
 
-    echo '<li class="list-group">';
+    echo '<li class="book-tile">';
     echo '<h3><a href="">' . $row['title'] . '</a></h3>';
     echo '<p>ISBN-10: ' . $row['isbn-10'] . '</p>';
     echo '<p>Prof: ' . $row['prof'] . '</p>'; //tab

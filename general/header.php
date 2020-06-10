@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <link rel="stylesheet" href="css/navbar.css" type="text/css" />
     <link rel="stylesheet" href="css/browse.css" type="text/css" />
+    <link rel="stylesheet" href="css/books.css" type="text/css" />
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css" type="text/css" />
 </head>
 
@@ -13,7 +14,7 @@
     <nav class="navbar">
         <div class="logo-and-title">
             <div class="img-cropper"><img class="logo" src="img/book-rows.webp"></div>
-            <H3 class="nav-title">The College Bookswap</H3>
+            <H3 class="nav-title"><a href="index.php">The College Bookswap</a></H3>
         </div>
         <?php include "menu.php"; ?>
     </nav>
