@@ -35,6 +35,10 @@
     text-decoration: none;
 }
 
+.book-tiles {
+    display: flex;
+}
+
 /* carousel */
 
 .carousel-and-title {

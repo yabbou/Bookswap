@@ -168,12 +168,15 @@ ul:hover li:not(:hover) a {
 /* books */
 
 .list-group {
-    background-color: #fff9f2cc;
-    margin-right: 10%;
+    background-color: rgba(79, 181, 245, 0.4);
+    margin: 10px;
+    width: 200px;
     border-bottom: solid whitesmoke 1px;
     /* box-shadow: cornflowerblue 1px; */
-    /* border-radius: 6px; */
-    padding-bottom: 10px;
+    border-radius: 3px;
+    padding: 13px 13px 6px;
+    list-style: none;
+
 }
 
 .list-group a {
@@ -187,6 +190,8 @@ ul:hover li:not(:hover) a {
 .list-group img {
     width: 170px;
     border: none;
+    margin-left: 16px;
+    padding-bottom: 7spx;
 }
 
 /* login form */

@@ -47,12 +47,12 @@ function sqlToArray_SingleVar($table, $nameType, $sql)
 
 function sqlToArray_Books($ar, $sql)
 {
-    $_SESSION[$ar] = initSessionArray($ar); //local var instead?
+    $arr = initSessionArray($ar); //optimization: seperate method that only queries the new books 
 
     while ($row = mysqli_fetch_assoc($sql)) {
-        $_SESSION[$ar][] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category']);
+        $arr[] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category']);
     }
-    return $_SESSION[$ar];
+    return $arr;
 }
 
 function sqlToArray_Users($sql)
