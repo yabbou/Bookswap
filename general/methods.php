@@ -20,23 +20,23 @@ function exitIfErr($conn)
 
 function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
 {
-    $sql = "INSERT INTO $table (TITLE,CATEGORY,`ISBN_10`,`ISBN-13`, PROFESSOR) 
-    VALUES ('$title','$category',$isbn10,0000000000000,'$prof')";
+    $sql = "INSERT INTO $table (TITLE,CATEGORY,`ISBN_10`,`ISBN_13`, PROFESSOR, Image) 
+    VALUES ('$title','$category',$isbn10,0000000000000,'$prof', '/public/img/no-image.png')";
     //add prof also to prof table
-
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //dry
 }
 
 function sqlToArray_SingleVar($table, $nameType, $sql)
 { //rename
-    $_SESSION[$table] = initSessionArray($table);
-    
+    $arr = initSessionArray($table);
+    $_SESSION[$table]=$arr;
+
     if (count($_SESSION[$table]) < mysqli_num_rows($sql)) {
         while ($row = mysqli_fetch_array($sql)) {
             $arr[] = $row[$nameType];
         }
     }
-    return $_SESSION[$table];
+    return $arr;
 }
 
 function sqlToArray_Books($ar, $sql) //edit impl params
@@ -44,7 +44,7 @@ function sqlToArray_Books($ar, $sql) //edit impl params
     $arr = array(); //optimization: seperate method that only queries the new books 
 
     while ($row = mysqli_fetch_assoc($sql)) {
-        $arr[] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category']);
+        $arr[] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category'], 'img'=> $row['Image']);
     }
     return $arr;
 }
@@ -76,7 +76,7 @@ function initUsers()
         $conn = initDb();
         exitIfErr($conn);
 
-        $result = mysqli_query($conn, "SELECT email, password FROM AuthorizedUsers LIMIT 5"); //replace with selectQuery()
+        $result = mysqli_query($conn, "SELECT email, password FROM user LIMIT 5"); //replace with selectQuery()
         $_SESSION['users'] = sqlToArray_Users($result);
 
         mysqli_free_result($result);
