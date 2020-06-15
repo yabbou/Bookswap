@@ -1,10 +1,12 @@
 /* browse form */
 
 .b-form-container {
-    height: 80%;
+    height: 60%;
     width: 100%;
-    background-image: url('../img/book-and-grass.webp');
+    /* background-image: url('../img/book-and-grass.webp'); */
+    background-color: aliceblue;
     background-size: cover;
+    padding: 140px 120px 0 120px;
 }
 
 .parallax {
@@ -14,13 +16,8 @@
     background-size: cover;
 }
 
-#b-form {
-    padding: 12% 24%;
-    margin: 0;
-}
-
 .browse-text input {
-    width: 90%;
+    width: 60%;
     height: 45px;
     background-color: #f2f2f262;
 }
@@ -32,13 +29,18 @@
 }
 
 .browse-link a {
+    font-size: 18px;
     text-decoration: none;
+}
+
+.browse-link a:visited {
+    /* color: black; */
 }
 
 /* carousel */
 
 .carousel-and-title {
-    margin-top: -200px;
+    /* margin-top: -200px; */
     height: -webkit-fill-available;
 }
 
