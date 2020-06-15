@@ -3,7 +3,7 @@ include_once 'methods.php';
 
 $bookResults = 'bookResults';
 $specificBR = 'specificBookResults';
-$_SESSION['lastSearch'];
+$_SESSION['lastSearch'] = isset($_SESSION['lastSearch']) ? $_SESSION['lastSearch'] : array();
 
 if (empty($_SESSION[$bookResults])) { //make retriev every offset...
     $sql = "SELECT * FROM book";
@@ -31,6 +31,6 @@ for ($i = 0; $i < $size; $i++) {
     echo '<p>Available: <strong>' . 1 . '</strong></p>'; //make live updated
     echo '</li>';
 }
-echo "</ul></form></div></div>";
+echo "</ul></div></div>";
 
 include 'footer.php';

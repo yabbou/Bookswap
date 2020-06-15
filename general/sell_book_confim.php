@@ -12,7 +12,7 @@ function displayBookInfo($title, $category, $isbn, $prof) {
     echo $isbn;
     echo "<br>";
     echo $prof;
-    echo "<br>";
+    echo "<br><br>";
 }
 
 $title = avoidSQLInjection(filter_input(INPUT_POST, 'title'));
