@@ -6,7 +6,7 @@ $profErr = "";
 
 <!-- fix pattern mathcing... -->
 <div class="inner-body">
-    <h3>Sell Book</h3>
+    <h3>Sell Your Book or Post Book Wanted</h3>
     <form id="book-form" action="sell_book_confim.php" method="post">
 
         <input list="books" type="text" name="title" placeholder="Title" required>

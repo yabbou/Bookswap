@@ -13,13 +13,13 @@ function setAllBooks()
     $_SESSION[$all] = sqlToArray_Books(mysqli_query(initDb(), $sql));
 }
 
-if ($_SESSION[$all] == null) { 
+if (!isset($_SESSION[$all])) { 
     setAllBooks();
 }
 
 if (isset($_GET['browse']) && $_GET['browse'] != $_SESSION['lastSearch']) {
     $browse = avoidSQLInjection(filter_input(INPUT_GET, 'browse'));
-    $browse = toCol($browse);
+    // $browse = toCol($browse);
     $_SESSION['lastSearch'] = $browse;
 
     global $specific;
