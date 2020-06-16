@@ -94,3 +94,9 @@ function redirectToHomepage()
     echo "Redirecting...";
     echo "<meta http-equiv=\"refresh\" content=\"3;URL=index.php\" />";
 }
+
+function toHref($s){
+    $s = strtolower($s);
+    $s = str_replace(' ', '-',  $s);
+    return $s;
+}
