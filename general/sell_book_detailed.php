@@ -13,7 +13,7 @@ $profErr = "";
         <!-- pattern="[a-zA-Z0-9 ]" -->
         <datalist id="books">
             <?php
-            foreach ($_SESSION['book'] as $title) {
+            foreach ($_SESSION['titles'] as $title) {
                 echo '<option value="' . $title . '">';
             }
             ?>
@@ -24,8 +24,15 @@ $profErr = "";
             $titleErr = "Only letters, numbers, and white space allowed.";
         } -->
 
-        <input type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" required>
+        <input list="cats" type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" required>
         <!-- pattern="[a-zA-Z ]" -->
+        <datalist id="cats">
+            <?php
+            // foreach ($_SESSION['majors'] as $major) {
+            //     echo '<option value="' . $major . '">';
+            // }
+            ?>
+        </datalist>
 
         <!-- should really also check if not taken by other book -->
         <input type="number" name="isbn" placeholder="ISBN-10" min="1000000000" max="9999999999" required>
@@ -34,7 +41,7 @@ $profErr = "";
         <!-- pattern="[a-zA-Z ]"  -->
         <datalist id="profs">
             <?php
-            foreach ($_SESSION['professor'] as $prof) {
+            foreach ($_SESSION['professors'] as $prof) {
                 echo '<option value="' . $prof . '">';
             }
             ?>
@@ -45,7 +52,10 @@ $profErr = "";
             $profErr = "Only letters and white space allowed";
             } -->
 
-        <input class="btn-add-book" type="submit" value="Add Book!">
+        <div class="book-buttons">
+            <input class="btn-add-book" type="submit" name="sell-book" value="Sell Book">
+            <input class="btn-add-book" type="submit" name="ask-book" value="Book Wanted">
+        </div>
     </form>
 
 </div>

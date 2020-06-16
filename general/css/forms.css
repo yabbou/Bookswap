@@ -1,0 +1,9 @@
+#book-form{
+    width: 45%;
+}
+#book-form input{
+    width: 100%;
+}
+#book-form input[type=submit]{
+    /* border-radius: 30px!important; */
+}

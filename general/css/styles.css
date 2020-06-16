@@ -70,7 +70,6 @@ input[type=submit]:hover{
     opacity: 1;
 }
 
-
 .slick-prev {
     left: 220px!important;
 }
@@ -89,6 +88,15 @@ a {
 
 a:hover, a.nav-link:hover, .browse-link a:hover {
     color: #3aa3e4;
+}
+
+.btn-add-book{
+    margin: 0 10px;
+}
+
+.book-buttons{
+    justify-content: space-between;
+    display: flex;
 }
 
 /* nav links */

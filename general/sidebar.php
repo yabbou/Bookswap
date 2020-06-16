@@ -13,7 +13,7 @@ include_once 'getDBTables.php';
     <div>
         <h2>By Major</h2>
         <?php
-        foreach ($_SESSION['major'] as $m) {
+        foreach ($_SESSION['majors'] as $m) {
             echo "<div><a href=?major=" . toHref($m) . ">" . $m . '</a></div>';
         }
         ?>
@@ -22,7 +22,7 @@ include_once 'getDBTables.php';
     <div>
         <h2>By Professor</h2>
         <?php
-        foreach ($_SESSION['professor'] as $m) {
+        foreach ($_SESSION['professors'] as $m) {
             echo '<div><a href=?prof=' . toHref($m) . '>' . $m . '</a></div>';
         }
         ?>

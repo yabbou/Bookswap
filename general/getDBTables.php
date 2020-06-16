@@ -4,16 +4,16 @@ $offset = 5; //move to methods.php //incremrent session var by 5
 $conn = initDb();
 exitIfErr($conn);
 
-$table = 'book';
-$result = mysqli_query($conn, "SELECT title FROM book"); // LIMIT $offset //make only if not yet run
+$table = 'titles';
+$result = isset($_SESSION[$all]) ? $_SESSION[$all] : mysqli_query($conn, "SELECT title FROM book"); // LIMIT $offset 
 $_SESSION[$table] = sqlToArray_SingleVar($table, 'title', $result);
 // echo print_r($_SESSION[$table]); //replace with logger
 
-$table = 'professor';
+$table = 'professors';
 $result = mysqli_query($conn, "SELECT name FROM professor");
 $_SESSION[$table] = sqlToArray_SingleVar($table, 'name', $result);
 
-$table = 'major';
+$table = 'majors';
 $result = mysqli_query($conn, "SELECT category FROM major");
 $_SESSION[$table] = sqlToArray_SingleVar($table, 'category', $result);
 
