@@ -3,7 +3,8 @@ include_once 'methods.php';
 
 $bookResults = 'bookResults';
 $specificBR = 'specificBookResults';
-$_SESSION['lastSearch'] = isset($_SESSION['lastSearch']) ? $_SESSION['lastSearch'] : array();
+// $_SESSION['lastSearch'] = isset($_SESSION['lastSearch']) ? $_SESSION['lastSearch'] : array();
+$_SESSION['lastSearch'] = initSessionArray('lastSearch'); //works?
 
 if (empty($_SESSION[$bookResults])) { //make retriev every offset...
     $sql = "SELECT * FROM book";
