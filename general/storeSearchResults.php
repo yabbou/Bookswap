@@ -1,13 +1,13 @@
 <?php
 include_once 'displayBooks.php';
 
+$all = 'allBooks';
 $specific = 'specific';
 $_SESSION['lastSearch'] = initSessionArray('lastSearch'); //works?
 // $_SESSION['allBooksCount'] = isset($_SESSION[$all]) ? count($_SESSION[$all]) : 0;
 
-function setAllBooks()
-{
-    $all = 'allBooks';
+function setAllBooks(){
+    global $all;
     $sql = "SELECT * FROM book";
     $_SESSION[$all] = sqlToArray_Books($all, mysqli_query(initDb(), $sql));
 }

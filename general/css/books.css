@@ -1,5 +1,10 @@
 /* books */
 
+.tiles-and-content {
+    width: 100%;
+    margin: 5px 0;
+}
+
 .book-tile {
     background-color: aliceblue;
     margin: 15px 10px 20px 36px;
@@ -7,7 +12,9 @@
     border-radius: 3px;
     border: solid .2px #66666696;
     padding: 15px 12px 0 14px;
-    /* top right, bottom, left */
+    /*  padding:
+        top right, bottom, left
+    */
     list-style: none;
     box-shadow: 5px 5px 50px #88888871;
     height: 300px;
@@ -25,11 +32,6 @@
 .book-tile-img {
     width: 170px;
     border: none;
-    /* padding-bottom: 7px; */
-}
-
-.book-tiles-container {
-    padding: 28px;
 }
 
 .book-tiles {
@@ -37,6 +39,7 @@
     list-style: none;
     padding: 0 15px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .book-subgroup {
@@ -60,7 +63,6 @@
     margin: 15px 0;
     padding: 25px;
     min-width: 184px;
-    /* box-shadow: 1px 1px 3px #888888; */
     border-right: solid 1px aliceblue;
 }
 
@@ -72,7 +74,6 @@
 
 .sidebar-and-content {
     display: flex;
-    /* margin-top: 6%; */
     min-height: 81%;
     padding-top: 60px;
 }
