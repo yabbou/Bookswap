@@ -1,19 +1,16 @@
 <?php include 'header.php';
 include_once 'methods.php';
-
-$bookResults = 'bookResults';
-$specificBR = 'specificBookResults';
-
-$_SESSION['lastSearch'] = initSessionArray('lastSearch'); //works?
-include 'setSearchResults.php';
+include 'storeSearchResults.php';
 
 echo "<div class='sidebar-and-content'>";
 include 'sidebar.php';
 
-echo "<div class='tiles-grid'><ul class='book-tiles'>";
-$size = isset($_GET['browse']) ? count($_SESSION[$specificBR])  : count($_SESSION[$bookResults]);
-$rows = isset($_GET['browse']) ? $_SESSION[$specificBR] : $_SESSION[$bookResults];
+$res =  isset($_GET['browse']) ? $_GET['browse'] : "ALL BOOKS"; //fix //temp, until impl major and prof.. then isset
+$rows = isset($_GET['browse']) ? $_SESSION[$specific] : $_SESSION[$all]; //alt: hasSpecificSearch == true...
+$size = count($rows);
 
+echo "<div><h3 class='browse-res'>Searched: ${res} (${size} results)</h3>";
+echo "<div class='tiles-grid'><ul class='book-tiles'>";
 for ($i = 0; $i < $size; $i++) {
     echo '<li class="book-tile">';
     echo "<img class='book-tile-img' src='img/no-image-yet.png'>";
@@ -21,6 +18,6 @@ for ($i = 0; $i < $size; $i++) {
     echo '<p>Available: <strong>' . 1 . '</strong></p>'; //make live updated
     echo '</li>';
 }
-echo "</ul></div></div>";
+echo "</ul></div></div></div>";
 
 include 'footer.php';

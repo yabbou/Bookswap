@@ -79,6 +79,10 @@ input[type=submit]:hover{
     right: 220px!important;
 }
 
+.slick-prev, .slick-next{
+    background-color: rgb(154, 206, 255)!important;
+}
+
 /* img */
 
 .img-cropper {
