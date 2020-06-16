@@ -3,19 +3,9 @@ include_once 'methods.php';
 
 $bookResults = 'bookResults';
 $specificBR = 'specificBookResults';
-$_SESSION['lastSearch'] = isset($_SESSION['lastSearch']) ? $_SESSION['lastSearch'] : array();
 
-if (empty($_SESSION[$bookResults])) { //make retriev every offset...
-    $sql = "SELECT * FROM book";
-    $_SESSION[$bookResults] = sqlToArray_Books($bookResults, mysqli_query(initDb(), $sql));
-}
-if (!isset($_GET['browse']) || $_GET['browse'] != $_SESSION['lastSearch']) {
-    $browse = avoidSQLInjection(filter_input(INPUT_GET, 'browse'));
-    $_SESSION['lastSearch'] = $browse;
-
-    $sql = "SELECT * FROM book WHERE title LIKE '%$browse%'"; //also browse isbn
-    $_SESSION[$specificBR] = sqlToArray_Books($specificBR, mysqli_query(initDb(), $sql));
-}
+$_SESSION['lastSearch'] = initSessionArray('lastSearch'); //works?
+include 'setSearchResults.php';
 
 echo "<div class='sidebar-and-content'>";
 include 'sidebar.php';
