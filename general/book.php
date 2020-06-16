@@ -1,10 +1,12 @@
 <?php
 include 'header.php';
 include_once 'methods.php';
+
 $conn = initDb();
 exitIfErr($conn);
+
 $sql = "SELECT * FROM book WHERE ISBN_10 =" . $_GET['isbn'];
-$_SESSION['bookByISBN'] = sqlToArray_Books('', mysqli_query(initDb(), $sql));
+$_SESSION['bookByISBN'] = sqlToArray_Books(mysqli_query(initDb(), $sql));
 ?>
 
 <div class="sidebar-and-content">

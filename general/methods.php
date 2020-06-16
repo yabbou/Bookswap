@@ -26,25 +26,24 @@ function insertQuery_Book($conn, $table, $title, $category, $isbn10, $prof)
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn)); //dry
 }
 
-function sqlToArray_SingleVar($table, $nameType, $sql)
+function sqlToArray_SingleVar($table, $col, $sql)
 { //rename
     $arr = initSessionArray($table);
-    $_SESSION[$table]=$arr;
+    $_SESSION[$table] = $arr;
 
     if (count($_SESSION[$table]) < mysqli_num_rows($sql)) {
         while ($row = mysqli_fetch_array($sql)) {
-            $arr[] = $row[$nameType];
+            $arr[] = $row[$col];
         }
     }
     return $arr;
 }
 
-function sqlToArray_Books($ar, $sql) //edit impl params
+function sqlToArray_Books($sql)
 {
     $arr = array(); //optimization: seperate method that only queries the new books 
-
     while ($row = mysqli_fetch_assoc($sql)) {
-        $arr[] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category'], 'img'=> $row['Image']);
+        $arr[] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category'], 'img' => $row['Image']);
     }
     return $arr;
 }
@@ -95,7 +94,8 @@ function redirectToHomepage()
     echo "<meta http-equiv=\"refresh\" content=\"3;URL=index.php\" />";
 }
 
-function toHref($s){
+function toHref($s)
+{
     $s = strtolower($s);
     $s = str_replace(' ', '-',  $s);
     return $s;

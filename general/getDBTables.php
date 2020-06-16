@@ -1,5 +1,7 @@
-<?php include_once 'methods.php';
-$offset = 5; //move to methods.php //incremrent session var by 5
+<?php 
+include_once 'methods.php';
+// $offset = 5; //incremrent a session var by 5
+global $all;
 
 $conn = initDb();
 exitIfErr($conn);

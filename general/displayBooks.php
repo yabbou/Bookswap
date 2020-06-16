@@ -1,15 +1,15 @@
 <?php include 'header.php';
 include_once 'methods.php';
-include 'storeSearchResults.php';
 
 echo "<div class='sidebar-and-content'>";
 include 'sidebar.php';
+include 'storeSearchResults.php';
 
-$res =  isset($_GET['browse']) ? $_GET['browse'] : "ALL BOOKS"; //temp, until impl major and prof.. then isset
-$rows = isset($_GET['browse']) ? $_SESSION[$specific] : $_SESSION[$all]; //alt: hasSpecificSearch == true...
+$keyword =  isset($_GET['browse']) ? $_GET['browse'] : "ALL BOOKS"; //until impl major and prof; then isset
+$rows = isset($_GET['browse']) ? $_SESSION[$specific] : $_SESSION[$all]; 
 $size = count($rows);
 
-echo "<div class='tiles-and-content'><h3 class='browse-res'>Searched: ${res} (${size} results)</h3>";
+echo "<div class='tiles-and-content'><h3 class='browse-res'>Searched: ${keyword} (${size} results)</h3>";
 echo "<div class='tiles-grid'><ul class='book-tiles'>";
 for ($i = 0; $i < $size; $i++) {
     echo '<li class="book-tile">';
