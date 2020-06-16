@@ -14,7 +14,7 @@ include_once 'getDBTables.php';
         <h2>By Major</h2>
         <?php
         foreach ($_SESSION['major'] as $m) {
-            echo "<div><a href=?majors=" . toHref($m) . ">" . $m . '</a></div>';
+            echo "<div><a href=?major=" . toHref($m) . ">" . $m . '</a></div>';
         }
         ?>
     </div>

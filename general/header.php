@@ -13,7 +13,7 @@
 <header>
     <nav class="navbar">
         <div class="logo-and-title">
-            <div class="img-cropper"><img class="logo" src="img/book-rows.webp"></div>
+            <div class="img-cropper"><img class="logo" src="img/hand-to-hand.jpg"></div>
             <H3 class="nav-title"><a href="index.php">The College Bookswap</a></H3>
         </div>
         <?php include "menu.php"; ?>

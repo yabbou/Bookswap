@@ -14,9 +14,31 @@ header {
     margin-left: 16px;
 }
 
-.logo-and-title a,.logo-and-title a:visited{
+.logo-and-title a, .logo-and-title a:visited {
     text-decoration: none;
     color: black;
+}
+
+/* img */
+
+.img-cropper {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: #807f7f solid 1px;
+    background-color: #f5f5f5;
+}
+
+img.logo {
+    margin: 0;
+    /* margin-left: -25%;
+    height: 100%; */
+    padding-top: 20%;
+    padding-left: 5%;
+    height: 60%;
+    background-image: url('../img/hand-to-hand.jpg');
 }
 
 ul.navbar a:hover {
