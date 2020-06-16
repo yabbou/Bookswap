@@ -15,7 +15,8 @@ body {
 
 .inner-body {
     padding: 20px 40px;
-    min-height: 76.2%;
+    height: 460px;
+    margin-top: 60px;
 }
 
 footer {
