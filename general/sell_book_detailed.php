@@ -4,11 +4,13 @@ $titleErr = "";
 $profErr = "";
 ?>
 
+<!-- fix pattern mathcing... -->
 <div class="inner-body">
     <h3>Sell Book</h3>
     <form id="book-form" action="sell_book_confim.php" method="post">
 
-        <input list="books" type="text" name="title" placeholder="Title" pattern="[a-zA-Z0-9 ]" required>
+        <input list="books" type="text" name="title" placeholder="Title" required>
+        <!-- pattern="[a-zA-Z0-9 ]" -->
         <datalist id="books">
             <?php
             foreach ($_SESSION['book'] as $title) {
@@ -22,12 +24,14 @@ $profErr = "";
             $titleErr = "Only letters, numbers, and white space allowed.";
         } -->
 
-        <input type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" pattern="[a-zA-Z ]" required>
+        <input type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" required>
+        <!-- pattern="[a-zA-Z ]" -->
 
         <!-- should really also check if not taken by other book -->
         <input type="number" name="isbn" placeholder="ISBN-10" min="1000000000" max="9999999999" required>
 
-        <input list="profs" type="text" name="prof" placeholder="Professor" pattern="[a-zA-Z ]" required>
+        <input list="profs" type="text" name="prof" placeholder="Professor" required>
+        <!-- pattern="[a-zA-Z ]"  -->
         <datalist id="profs">
             <?php
             foreach ($_SESSION['professor'] as $prof) {

@@ -1,14 +1,15 @@
 /* books */
 
 .book-tile {
-    background-color: rgba(79, 181, 245, 0.4);
+    background-color: aliceblue;
     margin: 15px 10px 20px 36px;
     width: 200px;
-    border-radius: 2px;
-    padding: 13px 10px 15px 12px;
+    border-radius: 3px;
+    border: solid .2px #66666696;
+    padding: 15px 12px 0 14px;
     /* top right, bottom, left */
     list-style: none;
-    box-shadow: 2px 2px 5px #888888d8;
+    box-shadow: 5px 5px 50px #88888871;
     height: 300px;
     display: inline-table;
 }
@@ -21,10 +22,9 @@
     margin: 10px auto;
 }
 
-.book-tile img {
+.book-tile-img {
     width: 170px;
     border: none;
-    margin-left: 16px;
     /* padding-bottom: 7px; */
 }
 
@@ -36,23 +36,37 @@
     margin: 20px;
     list-style: none;
     padding: 0 15px;
+    display: flex;
 }
 
 .book-subgroup {
     margin-bottom: 20px;
 }
 
+.book-information {
+    display: flex;
+    margin: 30px;
+    height: fit-content;
+}
+
+.book-dets {
+    margin-left: 20px;
+}
+
 /* sidebar */
 
 .sidebar {
-    background-color: rgba(79, 181, 245, 0.4);
+    /* background-color: rgba(79, 181, 245, 0.4); */
+    margin: 15px 0;
     padding: 25px;
     min-width: 184px;
-    box-shadow: 1px 1px 3px #888888;
+    /* box-shadow: 1px 1px 3px #888888; */
+    border-right: solid 1px aliceblue;
 }
 
 .browse-text-sidebar input {
     width: 100%;
+    margin-top: 0;
     background-color: #f2f2f262;
 }
 
