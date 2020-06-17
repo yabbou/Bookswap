@@ -3,8 +3,8 @@ include_once 'methods.php';
 
 echo "<div class='sidebar-and-content'>";
 include 'sidebar.php';
-include 'storeSearchResults.php';
 
+include 'storeSearchResults.php';
 $keyword =  isset($_GET['browse']) ? $_GET['browse'] : "ALL BOOKS"; //until impl major and prof; then isset
 $rows = isset($_GET['browse']) ? $_SESSION[$specific] : $_SESSION[$all]; 
 $size = count($rows);

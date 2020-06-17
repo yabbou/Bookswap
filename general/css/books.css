@@ -1,5 +1,32 @@
 /* books */
 
+.book-and-tables{
+    margin: 30px;
+    width: 100%;
+}
+.tables{
+    display: flex;
+    margin-top: 15px;
+    /* justify-content: space-between; */
+}
+
+.tables h4.head{
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.selling-wanted{
+    display: inline-block;
+    margin-right: 120px;
+}
+
+.selling-wanted table, .selling-wanted th, .selling-wanted td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 2px 4px;
+}
+
 .tiles-and-content {
     width: 100%;
     margin: 5px 0;
@@ -48,7 +75,7 @@
 
 .book-information {
     display: flex;
-    margin: 30px;
+    /* margin: 30px; */
     height: fit-content;
 }
 
