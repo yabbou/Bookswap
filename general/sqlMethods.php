@@ -45,7 +45,7 @@ function avoidSQLInjection($data)
     return $data;
 }
 
-function displayTradingTable($isWanted, $head, $isbn){
+function displayTradingTable($isWanted, $head, $isbn, $saying){
     $conn = initDb(); //here?
     exitIfErr($conn);
 
@@ -63,7 +63,7 @@ function displayTradingTable($isWanted, $head, $isbn){
         }
         echo "</table></div>";
     } else{
-        echo "<h4>Not yet for sale...</h4></div>";
+        echo "<h4>Not yet ${saying}...</h4></div>";
     }
     mysqli_free_result($result);
     mysqli_close($conn);

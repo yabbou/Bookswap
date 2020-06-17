@@ -24,8 +24,8 @@ $_SESSION['bookByISBN'] = sqlToArray_Books(mysqli_query(initDb(), $sql));
         </div>
         <div class="tables">
             <?php
-            displayTradingTable(0, 'Selling', $row['isbn-10']);
-            displayTradingTable(1, 'Wanted', $row['isbn-10']);
+            displayTradingTable(0, 'Selling', $row['isbn-10'], 'for sale');
+            displayTradingTable(1, 'Wanted', $row['isbn-10'], 'wanted');
             ?>
         </div>
     </div>
