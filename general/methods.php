@@ -1,6 +1,6 @@
 <?php
 include_once 'sqlMethods.php';
-include_once 'arrInitMethods.php';
+include_once 'initMethods.php';
 
 if (session_status() != PHP_SESSION_ACTIVE) { //better, move sessoin to header.php?
     session_start();
