@@ -1,10 +1,10 @@
 <?php
 include_once 'displayBooks.php';
 
-$all = 'allBooks';
+$all = 'books';
 $specific = 'specificBooks';
 $_SESSION['lastSearch'] = initSessionArray('lastSearch'); 
-// $_SESSION['allBooksCount'] = isset($_SESSION[$all]) ? count($_SESSION[$all]) : 0;
+// $_SESSION['booksCount'] = isset($_SESSION[$all]) ? count($_SESSION[$all]) : 0;
 
 function setAllBooks()
 {

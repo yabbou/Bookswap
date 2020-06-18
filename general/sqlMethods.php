@@ -47,10 +47,9 @@ function avoidSQLInjection($data)
 
 function displayTradingTable($isWanted, $head, $isbn, $saying)
 {
-    $conn = initDb(); //here?
+    $conn = initDb(); 
     exitIfErr($conn);
 
-    //dry?
     $sql = "SELECT user.name, user.email
     FROM booksAvailable join user on booksAvailable.userEmail = user.email
     where booksAvailable.isbn_10 = ${isbn} and booksavailable.isWanted = $isWanted";
@@ -70,7 +69,7 @@ function displayTradingTable($isWanted, $head, $isbn, $saying)
     mysqli_close($conn);
 }
 
-function getNumAvailable($isbn10)
+function getNumAvailable($isbn10) //really is dry
 {
     $conn = initDb();
     exitIfErr($conn);
@@ -78,4 +77,14 @@ function getNumAvailable($isbn10)
     $sql = "SELECT * FROM booksAvailable where isbn_10 = ${isbn10} and isWanted = 0";
     $result = mysqli_query($conn, $sql);
     return mysqli_num_rows($result);
+}
+
+function isNotYetInDatabase($table, $col, $val)
+{
+    $conn = initDb();
+    exitIfErr($conn);
+
+    $sql = "SELECT * FROM $table where $col = $val";
+    $result = mysqli_query($conn, $sql);
+    return mysqli_num_rows($result) > 0;
 }

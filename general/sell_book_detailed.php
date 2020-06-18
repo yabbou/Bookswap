@@ -1,19 +1,19 @@
 <?php
-include "getDBTables.php";
+include "setLocalDBTables.php";
 $titleErr = "";
 $profErr = "";
 ?>
 
 <!-- fix pattern mathcing... -->
 <div class="inner-body">
-    <h3>Sell Your Book or Post Book Wanted</h3>
+    <h3>Trade Book</h3>
     <form id="book-form" action="sell_book_confim.php" method="post">
-        
-    <input list="books" type="text" name="title" placeholder="Title" required>
+
+        <input list="books" type="text" name="title" placeholder="Title" required>
         <!-- pattern="[a-zA-Z0-9 ]" -->
         <datalist id="books">
             <?php
-            foreach ($_SESSION['allBooks'] as $book) {
+            foreach ($_SESSION['books'] as $book) {
                 echo '<option value="' . $book['title'] . '">';
             }
             ?>
@@ -28,9 +28,9 @@ $profErr = "";
         <!-- pattern="[a-zA-Z ]" -->
         <datalist id="cats">
             <?php
-            // foreach ($_SESSION['majors'] as $major) {
-            //     echo '<option value="' . $major . '">';
-            // }
+            foreach ($_SESSION['majors'] as $major) {
+                echo '<option value="' . $major['id'] . '">';
+            }
             ?>
         </datalist>
 
