@@ -24,16 +24,17 @@ displayBookInfo($title, $category, $isbn10, $prof);
 $conn = initDb();
 exitIfErr($conn);
 
-$isWanted = isset($_POST['ask-book']); // ? true : false;
-$img = '/public/img/no-image.png';
+$isWanted = isset($_POST['ask-book']); 
+$img = '/public/img/no-image.png'; //unless input string... into input-tag
 
 insertBook($conn, $title, $category, $isbn10, $prof, $img);
-insertBookAvailable($conn, '$title', $isbn10, $isWanted);
+insertBookAvailable($conn, $title, $isbn10, $isWanted);
 insertMajor($conn, '', $category);
 insertProf($conn, $prof, '');
 
 global $all;
 $_SESSION[$all][] = array('title' => $title, 'isbn-10' => $isbn10, 'prof' => $prof, 'cat' => $category, 'img' => $img);
+print_r($_SESSION[$all]);
 
 redirectToHomepage();
 echo '</div>';

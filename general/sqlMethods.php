@@ -14,8 +14,8 @@ function exitIfErr($conn)
 
 function insertBook($conn, $title, $category, $isbn10, $prof, $img)
 {
-    $sql = "INSERT INTO book (TITLE,CATEGORY,`ISBN_10`,`ISBN_13`, PROFESSOR, Image) 
-    VALUES ('$title','$category',$isbn10,0000000000000,'$prof', '$img')";
+    $sql = "INSERT INTO book (TITLE,CATEGORY,`ISBN_10`,`ISBN_13`, PROFESSOR, IMAGE) 
+    VALUES ($title,$category,$isbn10,0000000000000,$prof,$img)";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
@@ -45,7 +45,8 @@ function avoidSQLInjection($data)
     return $data;
 }
 
-function displayTradingTable($isWanted, $head, $isbn, $saying){
+function displayTradingTable($isWanted, $head, $isbn, $saying)
+{
     $conn = initDb(); //here?
     exitIfErr($conn);
 
@@ -57,14 +58,24 @@ function displayTradingTable($isWanted, $head, $isbn, $saying){
 
     echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
     if ($result->num_rows > 0) {
-        echo"<table><tr><th>Name</th><th>Email</th></tr>";
+        echo "<table><tr><th>Name</th><th>Email</th></tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td></tr>";
         }
         echo "</table></div>";
-    } else{
+    } else {
         echo "<h4>Not yet ${saying}...</h4></div>";
     }
     mysqli_free_result($result);
     mysqli_close($conn);
+}
+
+function getNumAvailable($isbn10)
+{
+    $conn = initDb();
+    exitIfErr($conn);
+
+    $sql = "SELECT * FROM booksAvailable where isbn_10 = ${isbn10} and isWanted = 0";
+    $result = mysqli_query($conn, $sql);
+    return mysqli_num_rows($result);
 }

@@ -8,13 +8,13 @@ $profErr = "";
 <div class="inner-body">
     <h3>Sell Your Book or Post Book Wanted</h3>
     <form id="book-form" action="sell_book_confim.php" method="post">
-
-        <input list="books" type="text" name="title" placeholder="Title" required>
+        
+    <input list="books" type="text" name="title" placeholder="Title" required>
         <!-- pattern="[a-zA-Z0-9 ]" -->
         <datalist id="books">
             <?php
-            foreach ($_SESSION['titles'] as $title) {
-                echo '<option value="' . $title . '">';
+            foreach ($_SESSION['allBooks'] as $book) {
+                echo '<option value="' . $book['title'] . '">';
             }
             ?>
         </datalist>
