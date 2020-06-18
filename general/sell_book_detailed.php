@@ -14,7 +14,7 @@ $profErr = "";
         <datalist id="books">
             <?php
             foreach ($_SESSION['books'] as $book) {
-                echo '<option value="' . $book['title'] . '">';
+                echo '<option value="' . $book['Title'] . '">';
             }
             ?>
         </datalist>
@@ -29,7 +29,7 @@ $profErr = "";
         <datalist id="cats">
             <?php
             foreach ($_SESSION['majors'] as $major) {
-                echo '<option value="' . $major['id'] . '">';
+                echo '<option value="' . $major['ID'] . '">';
             }
             ?>
         </datalist>
@@ -42,7 +42,7 @@ $profErr = "";
         <datalist id="profs">
             <?php
             foreach ($_SESSION['professors'] as $prof) {
-                echo '<option value="' . $prof . '">';
+                echo '<option value="' . $prof['name'] . '">';
             }
             ?>
         </datalist>
