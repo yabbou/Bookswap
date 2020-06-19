@@ -25,26 +25,29 @@ $conn = initDb();
 exitIfErr($conn);
 
 $isWanted = isset($_POST['ask-book']);
-$img = '/public/img/no-image.png'; //unless input string... into input-tag
+$img = '/public/img/no-image.png'; //unless input string; requires input tag
 
-insertBook($conn, $title, $category, $isbn10, $prof, $img);
-insertBookAvailable($conn, $title, $isbn10, $isWanted);
-insertMajor($conn, '', $category);
-insertProf($conn, $prof, '');
+// echo print_r($_SESSION['major']); //san
 
-//note: can technically compare count of books/profs/etc with local books... but primary adding is directly thru sell-book page
+$res = insertBook($conn, $title, $category, $isbn10, $prof, $img);
+insertBookAvailable($conn, $_SESSION['currentUser'], $isbn10, $isWanted);
+addToLocalTable('book', 'ISBN_10', $isbn10, $res);
 
-global $all;
-if (isNotYetInDatabase()) {
-    $_SESSION[$all][] = array('title' => $title, 'isbn-10' => $isbn10, 'prof' => $prof, 'cat' => $category, 'img' => $img);
-}
-print_r($_SESSION[$all]);
-$_SESSION['professors'][] = array('category' => $title, 'isbn-10' => $isbn10, 'prof' => $prof, 'cat' => $category, 'img' => $img);
-$_SESSION['majors'][] = array('title' => $title, 'isbn-10' => $isbn10, 'prof' => $prof, 'cat' => $category, 'img' => $img);
+$res = insertMajor($conn, '?', $category); //problem starts here
+addToLocalTable('major', 'ID', $category, $res);
 
-//into [majors] and [professors] too? or query each time load sell_book page?
+$res = insertProf($conn, $prof, '?');
+addToLocalTable('professor', 'Name', $prof, $res);
 
 redirectToHomepage();
 echo '</div>';
 
 include 'footer.php';
+
+function addToLocalTable($sess, $col, $val, $res)
+//note: can technically compare count of books/profs/etc with local books... but primary adding is directly thru sell-book page
+{
+    if (isNotYetInDatabase($sess, $col, $val)) { //otherwise the db will not input it...
+        $_SESSION[$sess.'s'][] = mysqli_fetch_assoc($res);
+    }
+}

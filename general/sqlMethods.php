@@ -14,26 +14,26 @@ function exitIfErr($conn)
 
 function insertBook($conn, $title, $category, $isbn10, $prof, $img)
 {
-    $sql = "INSERT INTO book (TITLE,CATEGORY,`ISBN_10`,`ISBN_13`, PROFESSOR, IMAGE) 
-    VALUES ($title,$category,$isbn10,0000000000000,$prof,$img)";
+    $sql = "INSERT INTO book (Title,Category,ISBN_10,ISBN_13,Professor, Image) 
+    VALUES ('$title','$category',$isbn10,0000000000000,'$prof','$img')";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
 function insertBookAvailable($conn, $email, $isbn10, $isWanted)
 {
-    $sql = "INSERT INTO booksAvailable (userEmail,`ISBN_10`, isWanted) VALUES ($email,$isbn10,$isWanted)";
+    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10, isWanted) VALUES ('$email',$isbn10,$isWanted)";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
 function insertMajor($conn, $category, $id)
 {
-    $sql = "INSERT INTO major (CATEGORY,ID) VALUES ($category,$id)";
+    $sql = "INSERT INTO major (CATEGORY,ID) VALUES ('$category',$id)";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
 function insertProf($conn, $prof, $email)
 {
-    $sql = "INSERT INTO professor (name, email) VALUES ($prof,$email)";
+    $sql = "INSERT INTO professor (name, email) VALUES ('$prof','$email')";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
@@ -47,7 +47,7 @@ function avoidSQLInjection($data)
 
 function displayTradingTable($isWanted, $head, $isbn, $saying)
 {
-    $conn = initDb(); 
+    $conn = initDb();
     exitIfErr($conn);
 
     $sql = "SELECT user.name, user.email
