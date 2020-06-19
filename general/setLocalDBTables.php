@@ -10,7 +10,7 @@ setLocalTable('professors', 'name', 'professor');
 setLocalTable('majors', '*', 'major');
 mysqli_close($conn);
 
-function setLocalTable($sess, $col, $dbTable)
+function setLocalTable($sess, $col, $dbTable) //fix this <<<<<<<
 {
     global $conn;
     $_SESSION[$sess] = initSessionArray($sess);

@@ -21,7 +21,7 @@ function insertBook($conn, $title, $category, $isbn10, $prof, $img)
 
 function insertBookAvailable($conn, $email, $isbn10, $isWanted)
 {
-    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10, isWanted) VALUES ('$email',$isbn10,$isWanted)";
+    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10, isWanted) VALUES ('$email','$isbn10',$isWanted)";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
@@ -71,16 +71,22 @@ function displayTradingTable($isWanted, $head, $isbn, $saying)
 
 function getNumAvailable($isbn10)
 {
-    $areAvailable = isNotYetInDatabase('booksAvailable', 'isbn_10', $isbn10 . ' and isWanted = 0');
-    return $areAvailable ? $areAvailable : 0;
+    return getRowCount('booksAvailable', 'isbn_10', "$isbn10' and isWanted = '0");
 }
 
 function isNotYetInDatabase($table, $col, $val)
 {
+    return getRowCount($table, $col, $val) == 0;
+}
+
+function getRowCount($table, $col, $val)
+{
     $conn = initDb();
     exitIfErr($conn);
 
-    $sql = "SELECT * FROM $table where $col = $val";
+    $sql = "SELECT * FROM $table where $col = '$val'";
+    // echo $sql; //san
+
     $result = mysqli_query($conn, $sql);
-    return mysqli_num_rows($result) > 0;
+    return mysqli_num_rows($result) or exit(mysqli_error($conn));
 }
