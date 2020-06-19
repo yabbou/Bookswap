@@ -27,13 +27,11 @@ exitIfErr($conn);
 $isWanted = isset($_POST['ask-book']);
 $img = '/public/img/no-image.png'; //unless input string; requires input tag
 
-// echo print_r($_SESSION['major']); //san
+// $res = insertBook($conn, $title, $category, $isbn10, $prof, $img);
+// insertBookAvailable($conn, $_SESSION['currentUser'], $isbn10, $isWanted);
+// addToLocalTable('book', 'ISBN_10', $isbn10, $res);
 
-$res = insertBook($conn, $title, $category, $isbn10, $prof, $img);
-insertBookAvailable($conn, $_SESSION['currentUser'], $isbn10, $isWanted);
-addToLocalTable('book', 'ISBN_10', $isbn10, $res);
-
-$res = insertMajor($conn, '?', $category); //problem starts here
+$res = insertMajor($conn, '?', $category); 
 addToLocalTable('major', 'ID', $category, $res);
 
 $res = insertProf($conn, $prof, '?');

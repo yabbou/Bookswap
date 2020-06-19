@@ -27,7 +27,7 @@ function insertBookAvailable($conn, $email, $isbn10, $isWanted)
 
 function insertMajor($conn, $category, $id)
 {
-    $sql = "INSERT INTO major (CATEGORY,ID) VALUES ('$category',$id)";
+    $sql = "INSERT INTO major (Category,ID) VALUES ('$category','$id')";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
@@ -69,14 +69,10 @@ function displayTradingTable($isWanted, $head, $isbn, $saying)
     mysqli_close($conn);
 }
 
-function getNumAvailable($isbn10) //really is dry
+function getNumAvailable($isbn10)
 {
-    $conn = initDb();
-    exitIfErr($conn);
-
-    $sql = "SELECT * FROM booksAvailable where isbn_10 = ${isbn10} and isWanted = 0";
-    $result = mysqli_query($conn, $sql);
-    return mysqli_num_rows($result);
+    $areAvailable = isNotYetInDatabase('booksAvailable', 'isbn_10', $isbn10 . ' and isWanted = 0');
+    return $areAvailable ? $areAvailable : 0;
 }
 
 function isNotYetInDatabase($table, $col, $val)
