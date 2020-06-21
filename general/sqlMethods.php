@@ -71,7 +71,7 @@ function displayTradingTable($isWanted, $head, $isbn, $saying)
 
 function getNumAvailable($isbn10)
 {
-    return getRowCount('booksAvailable', 'isbn_10', "$isbn10' and isWanted = '0");
+    return getRowCount('booksAvailable', 'ISBN_10', "$isbn10' and isWanted = '0");
 }
 
 function isNotYetInDatabase($table, $col, $val)
@@ -88,5 +88,5 @@ function getRowCount($table, $col, $val)
     // echo $sql; //san
 
     $result = mysqli_query($conn, $sql);
-    return mysqli_num_rows($result) or exit(mysqli_error($conn));
+    return mysqli_num_rows($result) ;
 }

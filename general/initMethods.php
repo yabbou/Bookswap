@@ -6,19 +6,27 @@ function initSessionArray($arr)
     return isset($_SESSION[$arr]) ? $_SESSION[$arr] : array();
 }
 
-function sqlToArray_Books($sql)
+function sqlToArray($sql)
 {
+    $conn = initDb();
+    exitIfErr($conn);
+    $res = mysqli_query($conn, $sql);
+
     $arr = array();
-    while ($row = mysqli_fetch_assoc($sql)) {
-        $arr[] = array('title' => $row['Title'], 'isbn-10' => $row['ISBN_10'], 'prof' => $row['Professor'], 'cat' => $row['Category'], 'img' => $row['Image']);
+    while ($row = mysqli_fetch_assoc($res)) {
+        $arr[] = $row;
     }
+
+    // mysqli_free_result($res);
+    // mysqli_close($conn);
+
     return $arr;
 }
 
-function sqlToArray_Users($sql)
+function sqlToArray_Users($res) //unnecc
 {
     $users = array();
-    while ($row = mysqli_fetch_assoc($sql)) {
+    while ($row = mysqli_fetch_assoc($res)) {
         $users[$row['email']] = $row['password'];
     }
     return $users;

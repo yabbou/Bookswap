@@ -11,15 +11,11 @@ $profErr = "";
 
         <input list="books" type="text" name="title" placeholder="Title" required>
         <!-- pattern="[a-zA-Z0-9 ]" -->
-        <datalist id="books">
-            <?php
-            foreach ($_SESSION['books'] as $book) {
-                echo '<option value="' . $book['Title'] . '">';
-            }
-            ?>
-        </datalist>
         <span class="error"><?php echo $titleErr; ?></span>
         <!-- 
+
+        if already in db, then shoudl add from serachbar results...
+
         if (!preg_match("/^[a-zA-Z0-9 ]*$/", $_POST["title"])) {
             $titleErr = "Only letters, numbers, and white space allowed.";
         } -->
