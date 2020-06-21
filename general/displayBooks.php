@@ -12,10 +12,10 @@ if (isset($_GET['browse'])) { //switch, and better routing
     $keyword = $_GET['browse']; //avoidsqlinjectin here
     $rows = getSpecificBooks();
 } else if (isset($_GET['prof'])) {
-    $keyword = $_GET['prof'];
+    $keyword = toCol($_GET['prof']); //do it on itself here... and not later
     $rows = getBooksByProf();
 } else if (isset($_GET['major'])) {
-    $keyword = $_GET['major'];
+    $keyword = toCol($_GET['major']);
     $rows = getBooksByMajor();
 } else {
     $rows = getAllBooks();

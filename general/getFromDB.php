@@ -19,8 +19,7 @@ function getBooksByProf()
     $browse = avoidSQLInjection(filter_input(INPUT_GET, 'prof'));
     $browse = toCol($browse);
 
-    $sql = "SELECT * FROM Professor join book on book.Professor = Professor.Name" +
-        "where book.Professor LIKE %$browse%";
+    $sql = "SELECT * FROM Professor join book on book.Professor = Professor.Name where book.Professor LIKE '%$browse%'";
     return sqlToArray($sql);
 }
 
@@ -29,8 +28,7 @@ function getBooksByMajor()
     $browse = avoidSQLInjection(filter_input(INPUT_GET, 'major'));
     $browse = toCol($browse);
 
-    $sql = "SELECT * FROM Professor join bookon book.Major = Major.ID" +
-        "where Major.ID LIKE %$browse% or Major.Category LIKE %$browse%";
+    $sql = "SELECT * FROM major join book on book.Category = Major.ID where Major.ID LIKE '%$browse%'";
     return sqlToArray($sql);
 }
 
