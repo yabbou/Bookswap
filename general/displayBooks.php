@@ -1,6 +1,6 @@
 <?php include 'header.php';
-include_once 'methods.php';
 include 'getFromDB.php';
+include_once 'methods.php';
 
 echo "<div class='sidebar-and-content'>";
 include 'sidebar.php';

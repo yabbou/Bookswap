@@ -88,5 +88,5 @@ function getRowCount($table, $col, $val)
     // echo $sql; //san
 
     $result = mysqli_query($conn, $sql);
-    return mysqli_num_rows($result) ;
+    return mysqli_num_rows($result);
 }
