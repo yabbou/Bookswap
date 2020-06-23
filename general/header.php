@@ -1,7 +1,8 @@
 <HTML>
+<?php $title = 'The Inside Story'; ?>
 
 <head>
-    <title>The College Bookswap</title>
+    <title><?php echo $title?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <link rel="stylesheet" href="css/navbar.css" type="text/css" />
@@ -15,7 +16,7 @@
     <nav class="navbar">
         <div class="logo-and-title">
             <div class="img-cropper"><img class="logo" src="img/hand-to-hand.jpg"></div>
-            <H3 class="nav-title"><a href="index.php">The College Bookswap</a></H3>
+            <H3 class="nav-title"><a href="index.php"><?php echo $title?></a></H3>
         </div>
         <?php include "menu.php"; ?>
     </nav>
