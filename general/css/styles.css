@@ -99,6 +99,10 @@ a:hover, a.nav-link:hover, .browse-link a:hover {
     display: flex;
 }
 
+th{
+    background-color: aliceblue;
+}
+
 /* nav links */
 
 /* ul {

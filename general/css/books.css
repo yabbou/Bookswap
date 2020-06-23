@@ -1,27 +1,33 @@
 /* books */
 
-.book-and-tables{
+.book-and-tables {
     margin: 30px;
     width: 100%;
 }
-.tables{
+
+.tables {
     display: flex;
     margin-top: 15px;
-    /* justify-content: space-between; */
+    justify-content: space-evenly;
+    border: solid .9px rgb(192, 222, 248);
+    border-radius: 2px;
+    padding: 30px 15px;
+    width: 600px;
 }
 
-.tables h4.head{
+.tables h4.head {
     text-align: center;
+    margin-top: 0;
     margin-bottom: 10px;
     text-decoration: underline;
 }
 
-.selling-wanted{
+.selling-wanted {
     display: inline-block;
-    margin-right: 120px;
+    /* margin-right: 80px; */
 }
 
-.selling-wanted table, .selling-wanted th, .selling-wanted td{
+.selling-wanted table, .selling-wanted th, .selling-wanted td {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 2px 4px;
@@ -75,8 +81,8 @@
 
 .book-information {
     display: flex;
-    /* margin: 30px; */
-    height: fit-content;
+    margin-bottom: 20px;
+    /* height: fit-content; */
 }
 
 .book-dets {
