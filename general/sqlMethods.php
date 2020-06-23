@@ -69,6 +69,30 @@ function displayTradingTable($isWanted, $head, $isbn, $saying)
     mysqli_close($conn);
 }
 
+function displayUserTable($isWanted, $head, $email, $saying) //dry
+{
+    $conn = initDb();
+    exitIfErr($conn);
+
+    $sql = "SELECT book.title, book.ISBN_10
+    FROM booksAvailable join book on booksAvailable.ISBN_10 = book.ISBN_10
+    where booksAvailable.userEmail = '$email' and booksavailable.isWanted = $isWanted";
+    $result = mysqli_query($conn, $sql);
+
+    echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
+    if ($result->num_rows > 0) {
+        echo "<table><tr><th>Title</th><th>ISBN 10</th></tr>";
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td><td>" . $row["ISBN_10"] . "</td></tr>";
+        }
+        echo "</table></div>";
+    } else {
+        echo "<h4>Not yet ${saying}...</h4></div>";
+    }
+    mysqli_free_result($result);
+    mysqli_close($conn);
+}
+
 function getNumAvailable($isbn10)
 {
     return getRowCount('booksAvailable', 'ISBN_10', "$isbn10' and isWanted = '0");

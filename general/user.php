@@ -5,6 +5,13 @@
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <input name="logout" type="submit" type="button" value="Logout" />
             </form>
+
+            <div class="tables">
+                <?php
+                displayUserTable(0, 'Selling', $_SESSION['currentUser'], 'for sale');
+                displayUserTable(1, 'Wanted', $_SESSION['currentUser'], 'wanted');
+                ?>
+            </div>
 </div>
 
 <?php

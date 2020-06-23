@@ -30,8 +30,8 @@ for ($i = 0; $i < $size; $i++) {
     $numAvailable = getNumAvailable($rows[$i]['ISBN_10']);
 
     echo '<li class="book-tile">';
-    echo "<img class='book-tile-img' src='img/no-image-yet.png'>";
-    echo "<h4><a href='book.php?isbn=" . $rows[$i]['ISBN_10'] . "'>" . $rows[$i]['Title'] . '</a></h4>';
+    echo  linkToBook($rows[$i]['ISBN_10'], "<img class='book-tile-img' src='img/no-image-yet.png'>");
+    echo "<h4>" . linkToBook($rows[$i]['ISBN_10'], $rows[$i]['Title']) . '</h4>';
     echo '<p>Available: <strong>' . $numAvailable . '</strong></p>';
     echo '</li>';
 }

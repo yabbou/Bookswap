@@ -18,3 +18,8 @@ function toHref($s)
     $s = str_replace(' ', '-',  $s);
     return $s;
 }
+
+function linkToBook($isbn, $title)
+{
+    return "<a href=book.php?isbn=${isbn}> ${title} </a>";
+}

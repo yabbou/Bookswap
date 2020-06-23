@@ -10,7 +10,7 @@ function getSpecificBooks()
 {
     $browse = avoidSQLInjection(filter_input(INPUT_GET, 'browse'));
 
-    $sql = "SELECT * FROM book WHERE title LIKE '%$browse%'"; //or professor LIKE %$browse% or ISBN_10 LIKE %$browse%
+    $sql = "SELECT * FROM book WHERE title LIKE '%$browse%'"; //or professor LIKE %$browse% or major LIKE %$browse% //add with radio buttons on homepage
     return sqlToArray($sql);
 }
 

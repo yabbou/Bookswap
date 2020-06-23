@@ -16,20 +16,7 @@ function sqlToArray($sql)
     while ($row = mysqli_fetch_assoc($res)) {
         $arr[] = $row;
     }
-
-    // mysqli_free_result($res);
-    // mysqli_close($conn);
-
     return $arr;
-}
-
-function sqlToArray_Users($res) //unnecc
-{
-    $users = array();
-    while ($row = mysqli_fetch_assoc($res)) {
-        $users[$row['email']] = $row['password'];
-    }
-    return $users;
 }
 
 function initUsers()
@@ -44,4 +31,13 @@ function initUsers()
         mysqli_free_result($result);
         mysqli_close($conn);
     }
+}
+
+function sqlToArray_Users($res) //unnecc
+{
+    $users = array();
+    while ($row = mysqli_fetch_assoc($res)) {
+        $users[$row['email']] = $row['password'];
+    }
+    return $users;
 }
