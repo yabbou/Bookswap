@@ -103,6 +103,14 @@ th{
     background-color: aliceblue;
 }
 
+.userPage{
+    display: flex;
+    align-content: space-between;
+}
+.userPage h3{
+    margin-right: 150px;
+}
+
 /* nav links */
 
 /* ul {
