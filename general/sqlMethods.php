@@ -114,3 +114,7 @@ function getRowCount($table, $col, $val)
     $result = mysqli_query($conn, $sql);
     return mysqli_num_rows($result);
 }
+
+function buySellButton($isbn, $isWanted){
+    return ;
+}

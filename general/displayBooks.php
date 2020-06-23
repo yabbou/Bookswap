@@ -27,12 +27,15 @@ echo "<div class='tiles-and-content'><h3 class='browse-res'>Searched: ${keyword}
 echo "<div class='tiles-grid'><ul class='book-tiles'>";
 
 for ($i = 0; $i < $size; $i++) {
-    $numAvailable = getNumAvailable($rows[$i]['ISBN_10']);
+    $isbn = $rows[$i]['ISBN_10'];
+    $numAvailable = getNumAvailable($isbn);
 
     echo '<li class="book-tile">';
-    echo  linkToBook($rows[$i]['ISBN_10'], "<img class='book-tile-img' src='img/no-image-yet.png'>");
-    echo "<h4>" . linkToBook($rows[$i]['ISBN_10'], $rows[$i]['Title']) . '</h4>';
+    echo  linkToBook($isbn, "<img class='book-tile-img' src='img/no-image-yet.png'>");
+    echo "<h4>" . linkToBook($isbn, $rows[$i]['Title']) . '</h4>';
     echo '<p>Available: <strong>' . $numAvailable . '</strong></p>';
+    // echo include 'buySellButtons($isbn,0)';
+    // echo include 'buySellButtons($isbn,1)';
     echo '</li>';
 }
 echo "</ul></div></div></div>";
