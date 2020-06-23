@@ -81,9 +81,9 @@ function displayUserTable($isWanted, $head, $email, $saying) //dry
 
     echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
     if ($result->num_rows > 0) {
-        echo "<table><tr><th>Title</th><th>ISBN 10</th></tr>";
+        echo "<table><tr><th>Title</th><th>ISBN 10</th><th></th></tr>";
         while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td><td>" . $row["ISBN_10"] . "</td></tr>";
+            echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td><td>" . $row["ISBN_10"] . "</td><td>" . file_get_contents("deleteButton.html") . "</td></tr>";
         }
         echo "</table></div>";
     } else {
