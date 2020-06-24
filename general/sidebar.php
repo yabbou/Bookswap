@@ -15,7 +15,7 @@ include_once 'setLocalDBTables.php';
         <?php
         foreach ($_SESSION['majors'] as $m) { //convert to full name
             // if ($m['Category'] != null) 
-                echo "<div><a href=?major=" . toHref($m['ID']) . ">" . $m['ID'] . '</a></div>';
+                echo "<div><a href=displayBooks.php?major=" . toHref($m['ID']) . ">" . $m['ID'] . '</a></div>';
         }
         ?>
     </div>
@@ -25,7 +25,7 @@ include_once 'setLocalDBTables.php';
         <?php
 
         foreach ($_SESSION['professors'] as $p) {
-            echo '<div><a href=?prof=' . toHref($p['name']) . '>' . $p['name'] . '</a></div>';
+            echo '<div><a href=displayBooks.php?prof=' . toHref($p['name']) . '>' . $p['name'] . '</a></div>';
         }
         ?>
     </div>

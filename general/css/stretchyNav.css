@@ -1,13 +1,3 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-
-*, *::after, *::before {
-  /* box-sizing: border-box; */
-}
-
 html {
   font-size: 62.5%;
 }
@@ -15,11 +5,9 @@ html {
 body {
   font-size: 1.6rem;
   color: #012a41;
-  /* background-color: #ffffff; */
 }
 
 a {
-  /* color: #53A7DB; */
   text-decoration: none;
 }
 
