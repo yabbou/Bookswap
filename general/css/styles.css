@@ -45,6 +45,7 @@ input[type=text], input[type=number], input[type=email], input[type=password], t
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: #d8d5d520;
 }
 
 textarea {
@@ -113,7 +114,7 @@ th {
     margin-right: 10px;
 }
 
-.userInfo h4{
+.userInfo h4 {
     margin: 10px 0;
 }
 

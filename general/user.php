@@ -29,9 +29,9 @@ if (isset($_POST['logout'])) {
     session_destroy();
     $_SESSION['loggedIn'] = FALSE;
 
-    $page = $_SERVER['PHP_SELF'];
-    header("url=$page");
-    echo "<meta http-equiv=\"refresh\">";
+    // $page = $_SERVER['PHP_SELF'];
+    // header("url=$page");
+    echo "<meta http-equiv=\"refresh\" content=\"0.1\">";
 }
 
 if (isset($_POST['delete'])) {

@@ -38,7 +38,7 @@ function insertProf($conn, $prof, $email)
 }
 
 function avoidSQLInjection($data)
-{ //integrate into login and sellbook forms
+{ 
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
