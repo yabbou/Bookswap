@@ -1,12 +1,17 @@
 /* browse form */
 
 .b-form-container {
-    height: 60%;
+    height: 100%;
     width: 100%;
-    /* background-image: url('../img/book-and-grass.webp'); */
+    background-image: url('../img/snow-peaks.jpg');
+    /* background-image: url('../img/hand-to-hand.jpg'); */
     background-color: aliceblue;
     background-size: cover;
-    padding: 140px 120px 0 120px;
+    padding-top: 180px;
+}
+
+#b-form {
+    margin: 0 20%;
 }
 
 .parallax {
@@ -16,10 +21,16 @@
     background-size: cover;
 }
 
+.browse-text {
+    margin-bottom: 5px;
+}
+
 .browse-text input {
     width: 60%;
-    height: 45px;
+    /* height: 45px; */
     background-color: #f2f2f262;
+    margin: 0;
+    width: 100%;
 }
 
 .browse-link {
@@ -37,31 +48,74 @@
     /* color: black; */
 }
 
+.browse-res {
+    margin-left: 20px;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
 /* carousel */
 
 .carousel-and-title {
+    height: fit-content;
+}
+
+.routing-group, carousel-and-title {
     /* margin-top: -200px; */
-    height: -webkit-fill-available;
+    height: 400px;
+}
+
+.routing-group.majors {
+    /* background-color: #e6f3ffcf; */
+    background-color: aliceblue;
 }
 
 .jcarousel {
-    padding: 18px 21%;
+    /* padding: 18px 21%; */
+    padding: 0 5%;
 }
 
-.featured {
-    text-align: center;
-    margin-top: 0;
+.featured, .routing-title {
+    /* text-align: center; */
+    padding: 45px 45px 25px;
+    font-size: x-large;
+    /* convert to ::before */
 }
 
 .slick-slide {
     height: 25%!important;
 }
 
+.slick-active>div>div {
+    display: grid!important;
+}
+
+.slick-slider {
+    /* margin-bottom: 100px!important; */
+    width: 95%;
+    margin: 0 20px;
+}
+
 .slick-slide img {
     height: 180px;
     border-radius: 1px;
-    border: solid #ccc 1.5px;
+    /* border: solid #ccc 1px; */
     margin: 18px 0 18px 17px;
+    width: 170px;
+    border: none;
+}
+
+.slick-slide a {
+    color: #464444;
+}
+
+.slick-slide h4 {
+    margin: 10px auto;
+}
+
+.book-tile-img {
+    width: 170px;
+    border: none;
 }
 
 .slick-list {

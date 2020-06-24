@@ -1,5 +1,5 @@
 <?php
-include_once 'getDBTables.php';
+include_once 'setLocalDBTables.php';
 ?>
 
 <div class="sidebar">
@@ -13,8 +13,9 @@ include_once 'getDBTables.php';
     <div>
         <h2>By Major</h2>
         <?php
-        foreach ($_SESSION['major'] as $m) {
-            echo '<div><a href=major/' . $m . '>' . $m . '</a></div>';
+        foreach ($_SESSION['majors'] as $m) { //convert to full name
+            // if ($m['Category'] != null) 
+                echo "<div><a href=?major=" . toHref($m['ID']) . ">" . $m['ID'] . '</a></div>';
         }
         ?>
     </div>
@@ -22,8 +23,9 @@ include_once 'getDBTables.php';
     <div>
         <h2>By Professor</h2>
         <?php
-        foreach ($_SESSION['professor'] as $m) {
-            echo '<div><a href=prof/' . $m . '>' . $m . '</a></div>';
+
+        foreach ($_SESSION['professors'] as $p) {
+            echo '<div><a href=?prof=' . toHref($p['name']) . '>' . $p['name'] . '</a></div>';
         }
         ?>
     </div>

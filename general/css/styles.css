@@ -7,7 +7,7 @@
 
 body {
     margin: 0;
-    background-color:white;
+    background-color: white;
     max-width: 100%;
     overflow-x: hidden;
     z-index: 1;
@@ -66,34 +66,20 @@ button, input[type=submit] {
     margin-top: 5px;
 }
 
-input[type=submit]:hover{
+input[type=submit]:hover {
     opacity: 1;
 }
 
-
 .slick-prev {
-    left: 220px!important;
+    left: 40px!important;
 }
 
 .slick-next {
-    right: 220px!important;
+    right: 40px!important;
 }
 
-/* img */
-
-.img-cropper {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    border: #807f7f solid 1px;
-}
-
-img.logo {
-    margin: 0;
-    margin-left: -25%;
-    height: 100%;
+.slick-prev, .slick-next {
+    background-color: rgb(154, 206, 255)!important;
 }
 
 a {
@@ -104,56 +90,38 @@ a:hover, a.nav-link:hover, .browse-link a:hover {
     color: #3aa3e4;
 }
 
-/* nav links */
-
-/* ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+.btn-add-book {
+    margin: 0 10px;
 }
 
-ul:hover li:not(:hover) a {
-    opacity: 0.2;
-} */
-
-/* ul li {
-    position: relative;
-    padding: 0px 25px;
-    cursor: pointer;
-} */
-
-/* .nav-item {
-    padding-top: 8px;
-    padding-bottom: 16px;
-} */
-
-/* ul li.nav-item::after {
-    position: absolute;
-    content: "";
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #3498db;
-    transform: scaleX(0);
-    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-} */
-
-/* ul li:hover::after, ul li.active::after {
-    transform: scaleX(1);
-} */
-
-/* ul li a {
-    position: relative;
+.book-buttons {
+    justify-content: space-between;
     display: flex;
-    color: white;
-    font-family: Lato, sans-serif;
-    text-decoration: none;
-    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-} */
+}
 
-/* login form */
+th {
+    background-color: aliceblue;
+}
+
+.userPage {
+    display: flex;
+    align-content: space-between;
+}
+
+.userPage h3 {
+    margin-right: 150px;
+}
+
+.userPage input {
+    color: #7c160f;
+    background-color: #ff8b8b;
+}
+
+td>form {
+    margin-bottom: 4px;
+}
+
+/* login */
 
 .login-form {
     width: 55%;
