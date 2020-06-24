@@ -10,7 +10,7 @@
     padding-top: 180px;
 }
 
-#b-form{
+#b-form {
     margin: 0 20%;
 }
 
@@ -21,7 +21,7 @@
     background-size: cover;
 }
 
-.browse-text{
+.browse-text {
     margin-bottom: 5px;
 }
 
@@ -48,25 +48,37 @@
     /* color: black; */
 }
 
-.browse-res{
+.browse-res {
     margin-left: 20px;
     margin-bottom: 0;
+    margin-top: 5px;
 }
 
 /* carousel */
 
 .carousel-and-title {
+    height: fit-content;
+}
+
+.routing-group, carousel-and-title {
     /* margin-top: -200px; */
-    height: -webkit-fill-available;
+    height: 400px;
+}
+
+.routing-group.majors {
+    /* background-color: #e6f3ffcf; */
+    background-color: aliceblue;
 }
 
 .jcarousel {
-    padding: 18px 21%;
+    /* padding: 18px 21%; */
+    padding: 0 5%;
 }
 
-.featured {
-    text-align: center;
-    margin-top: 30px;
+.featured, .routing-title {
+    /* text-align: center; */
+    padding: 45px 45px 25px;
+    font-size: x-large;
     /* convert to ::before */
 }
 
@@ -74,11 +86,36 @@
     height: 25%!important;
 }
 
+.slick-active>div>div {
+    display: grid!important;
+}
+
+.slick-slider {
+    /* margin-bottom: 100px!important; */
+    width: 95%;
+    margin: 0 20px;
+}
+
 .slick-slide img {
     height: 180px;
     border-radius: 1px;
-    border: solid #ccc 1.5px;
+    /* border: solid #ccc 1px; */
     margin: 18px 0 18px 17px;
+    width: 170px;
+    border: none;
+}
+
+.slick-slide a {
+    color: #464444;
+}
+
+.slick-slide h4 {
+    margin: 10px auto;
+}
+
+.book-tile-img {
+    width: 170px;
+    border: none;
 }
 
 .slick-list {

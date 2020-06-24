@@ -5,8 +5,10 @@ include_once 'methods.php';
 $conn = initDb();
 exitIfErr($conn);
 
-$sql = "SELECT * FROM book WHERE ISBN_10 =" . $_GET['isbn'];
-$_SESSION['bookByISBN'] = sqlToArray($sql);
+if (isset($_GET['isbn'])) {
+    $sql = "SELECT * FROM book WHERE ISBN_10 =" . $_GET['isbn'];
+    $_SESSION['bookByISBN'] = sqlToArray($sql);
+}
 ?>
 
 <div class="sidebar-and-content">
@@ -15,7 +17,8 @@ $_SESSION['bookByISBN'] = sqlToArray($sql);
         <div class="book-information">
             <?php
             $row = $_SESSION['bookByISBN'][0]; //global var instead of sess
-            echo "<div><img class='book-tile-img' src='img/no-image-yet.png'></div>";
+
+            echo "<div><img class='book-tile-img' src='". $row['Image'] ."'></div>";
             echo '<div class=\'book-dets\'><p>Title: ' . $row['Title'] . ' </p>';
             echo '<p>ISBN-10: ' . $row['ISBN_10'] . ' </p>';
             echo "<p>Professor: " . $row['Professor'] . ' </p>';

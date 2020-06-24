@@ -6,7 +6,8 @@ $isbn10 = avoidSQLInjection(filter_input(INPUT_POST, 'isbn'));
 $prof = avoidSQLInjection(filter_input(INPUT_POST, 'prof'));
 
 $isWanted = isset($_POST['ask-book']);
-$img = '/public/img/no-image.png'; //unless input string; requires input tag
+// $img = '/public/img/no-image.png'; //unless input string; requires input tag
+$img = 'img/no-image.png'; 
 
 $conn = initDb();
 exitIfErr($conn);
@@ -14,7 +15,7 @@ exitIfErr($conn);
 $table = 'book';
 if (isNotYetInDatabase($table, 'ISBN_10', "$isbn10' or title = '$title")) { 
     $res = insertBook($conn, $title, $category, $isbn10, $prof, $img);
-    $_SESSION[$table . 's'][] = mysqli_fetch_assoc($res);
+    // $_SESSION[$table . 's'][] = mysqli_fetch_assoc($res);
 
     insertBookAvailable($conn, $_SESSION['currentUser'], $isbn10, $isWanted);
 }

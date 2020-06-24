@@ -19,7 +19,7 @@ function displayBookInfo($title, $category, $isbn, $prof)
 
 include 'insertToDbTables.php';
 displayBookInfo($title, $category, $isbn10, $prof);
-// redirectToHomepage();
+redirectToHomepage();
 
 echo '</div>';
 include 'footer.php';

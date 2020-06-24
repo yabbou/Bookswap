@@ -12,6 +12,7 @@ header {
     display: flex;
     margin: 8px;
     margin-left: 16px;
+    align-items: flex-end;
 }
 
 .logo-and-title a, .logo-and-title a:visited {

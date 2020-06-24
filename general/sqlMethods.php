@@ -14,14 +14,14 @@ function exitIfErr($conn)
 
 function insertBook($conn, $title, $category, $isbn10, $prof, $img)
 {
-    $sql = "INSERT INTO book (Title,Category,ISBN_10,ISBN_13,Professor, Image) 
+    $sql = "INSERT INTO book (Title,Category,ISBN_10,ISBN_13,Professor,Image) 
     VALUES ('$title','$category',$isbn10,0000000000000,'$prof','$img')";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
 function insertBookAvailable($conn, $email, $isbn10, $isWanted)
 {
-    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10, isWanted) VALUES ('$email','$isbn10',$isWanted)";
+    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10,isWanted) VALUES ('$email','$isbn10','$isWanted')";
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
@@ -34,7 +34,7 @@ function insertMajor($conn, $category, $id)
 function insertProf($conn, $prof, $email)
 {
     $sql = "INSERT INTO professor (name, email) VALUES ('$prof','$email')";
-    return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    return mysqli_query($conn, $sql);
 }
 
 function avoidSQLInjection($data)
@@ -115,6 +115,14 @@ function getRowCount($table, $col, $val)
     return mysqli_num_rows($result);
 }
 
-function buySellButton($isbn, $isWanted){
-    return ;
+function buySellButton($isbn, $isWanted)
+{
+    return;
+}
+
+function getTopBooks($qty)
+{
+    $sql = "SELECT book.Title, book.ISBN_10, book.Image, count(*) as c FROM booksAvailable join book on book.ISBN_10 = booksavailable.ISBN_10 GROUP BY ISBN_10 ORDER BY c LIMIT $qty";
+    echo $sql;
+    return sqlToArray($sql);
 }

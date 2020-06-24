@@ -95,6 +95,7 @@
     /* background-color: rgba(79, 181, 245, 0.4); */
     margin: 15px 0;
     padding: 25px;
+    padding-top: 0;
     min-width: 184px;
     border-right: solid 1px aliceblue;
 }
@@ -109,4 +110,11 @@
     display: flex;
     min-height: 81%;
     padding-top: 60px;
+}
+
+.sidebar>div>div{
+    margin-bottom: 4px;
+}
+.sidebar a:hover{
+    text-decoration: underline;
 }
