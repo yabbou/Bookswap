@@ -122,6 +122,6 @@ function buySellButton($isbn, $isWanted)
 
 function getTopBooks($qty)
 {
-    $sql = "SELECT book.Title, book.ISBN_10, book.Image, count(*) as c FROM booksAvailable join book on book.ISBN_10 = booksavailable.ISBN_10 GROUP BY ISBN_10 ORDER BY c LIMIT $qty";
+    $sql = "SELECT book.Title, book.ISBN_10, book.Image, count(*) as c FROM booksAvailable join book on book.ISBN_10 = booksavailable.ISBN_10 WHERE isWanted = 0 GROUP BY ISBN_10 ORDER BY c LIMIT $qty";
     return sqlToArray($sql);
 }

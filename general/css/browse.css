@@ -79,6 +79,7 @@
     /* text-align: center; */
     padding: 45px 45px 25px;
     font-size: x-large;
+    margin-bottom: 15px;
     /* convert to ::before */
 }
 
@@ -100,9 +101,10 @@
     height: 180px;
     border-radius: 1px;
     /* border: solid #ccc 1px; */
-    margin: 18px 0 18px 17px;
+    /* margin: 18px 0 18px 17px; */
     width: 170px;
     border: none;
+    margin: 30px auto 10px;
 }
 
 .slick-slide a {
@@ -110,7 +112,7 @@
 }
 
 .slick-slide h4 {
-    margin: 10px auto;
+    margin: 10px auto 20px;
 }
 
 .book-tile-img {
@@ -123,4 +125,5 @@
     border-radius: 5px;
     height: 27.5%;
     z-index: 2;
+    padding: 20px 0!important;
 }

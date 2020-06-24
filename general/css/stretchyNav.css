@@ -19,7 +19,7 @@ img {
   position: fixed;
   z-index: 2;
   top: 15px;
-  right: 1.2%;
+  right: 1.4%;
   pointer-events: none;
 }
 
@@ -29,8 +29,8 @@ img {
   z-index: 1;
   top: 0;
   right: 0;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   border-radius: 30px;
   background: #4da5eed7;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -55,8 +55,8 @@ img {
   z-index: 3;
   top: 0;
   right: 0;
-  height: 45px;
-  width: 45px;
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
   /* replace text with image */
   overflow: hidden;
@@ -144,7 +144,7 @@ img {
 .cd-stretchy-nav ul {
   position: relative;
   z-index: 2;
-  padding: 29px 0 0;
+  padding: 42px 0 0;
   visibility: hidden;
   -webkit-transition: visibility 0.3s;
   -moz-transition: visibility 0.3s;
@@ -155,11 +155,11 @@ img {
 .cd-stretchy-nav ul a {
   position: relative;
   display: block;
-  height: 34px;
+  height: 41px;
   line-height: 20px;
   /* padding: 0 calc(10px + 10px) 0 10px; */
   padding-bottom: 0;
-  padding-right: 55px;
+  padding-right: 63px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.4rem;
   -webkit-transition: color 0.2s;
@@ -191,7 +191,7 @@ img {
   width: 3px;
   height: 25px;
   top: 38%;
-  right: 44.8px;
+  right: 54.8px;
   -webkit-transform: translateX(3px) translateY(-50%) scaleY(0);
   -moz-transform: translateX(3px) translateY(-50%) scaleY(0);
   -ms-transform: translateX(3px) translateY(-50%) scaleY(0);
