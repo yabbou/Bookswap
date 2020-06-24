@@ -100,6 +100,7 @@ ul.navbar a:hover {
 
 #menu span{
     font-size: large;
+    /* text-shadow: #ccccccb0 1px 1px; */
 }
 #menu, #menu ul {
 	list-style: none;

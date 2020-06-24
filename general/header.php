@@ -15,7 +15,6 @@
 </head>
 
 <header>
-
     <div class="logo-and-title">
         <div class="img-cropper"><img class="logo" src="img/hand-to-hand.jpg"></div>
         <H3 class="nav-title"><a href="index.php"><?php echo $title ?></a></H3>
@@ -32,11 +31,9 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-<!-- <script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/modernizr.js"></script>
-<script type="text/javascript" src="../js/min/main-min.js"></script>
-<script type="text/javascript" src="../js/jquery-2.1.4.js"></script> -->
 
+<!-- <script type="text/javascript" src="./hw/js/min/main-min.js"></script> -->
+<!-- <script type="text/javascript" src="./hw/js/modernizr.js"></script> -->
 <script type="text/javascript">
     $(document).ready(function() {
 
@@ -56,6 +53,8 @@
             $(document).on('click', function(event) {
                 (!$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span')) && stretchyNavs.removeClass('nav-is-visible');
             });
+
+            // $( "#menu" ).tabs({ active: 2 });
         }
     });
 </script>

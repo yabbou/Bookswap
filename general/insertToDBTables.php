@@ -23,11 +23,11 @@ if (isNotYetInDatabase($table, 'ISBN_10', "$isbn10' or title = '$title")) {
 $table = 'major';
 if (isNotYetInDatabase($table, 'ID', $category)) {
     $res = insertMajor($conn, '?', $category);
-    $_SESSION[$table . 's'][] = mysqli_fetch_assoc($res);
+    // $_SESSION[$table . 's'][] = mysqli_fetch_assoc($res);
 }
 
 $table = 'professor';
 if (isNotYetInDatabase($table, 'Name', $prof)) {
     $res = insertProf($conn, $prof, '?');
-    $_SESSION[$table . 's'][] = mysqli_fetch_assoc($res);
+    // $_SESSION[$table . 's'][] = mysqli_fetch_assoc($res);
 }

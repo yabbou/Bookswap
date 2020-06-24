@@ -7,12 +7,12 @@
 
 .tables {
     display: flex;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     justify-content: space-evenly;
     border: solid .9px rgb(192, 222, 248);
     border-radius: 2px;
     padding: 30px 15px;
-    width: 600px;
+    width: 65%;
 }
 
 .tables h4.head{
@@ -31,6 +31,7 @@
     border: 1px solid black;
     border-collapse: collapse;
     padding: 2px 4px;
+    /* border-radius: 3px; */
 }
 
 .tiles-and-content {
@@ -46,9 +47,7 @@
     border: solid .2px #85b2f5de;
     padding: 23px;
     padding-bottom: 10px;
-    /*  padding:
-        top right, bottom, left
-    */
+    /*  padding:        top right, bottom, left    */
     list-style: none;
     box-shadow: 5px 5px 50px #88888871;
     height: 300px;
@@ -68,7 +67,7 @@
     margin: 0;
 }
 
-.book-tile-img {
+.book-tile-img, .userImage {
     width: 170px;
     border: none;
     vertical-align: middle;

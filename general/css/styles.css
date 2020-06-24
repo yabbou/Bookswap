@@ -71,20 +71,19 @@ input[type=submit]:hover {
 }
 
 .slick-prev {
-    left: 40px!important;
+    left: 35px!important;
 }
 
 .slick-next {
-    right: 40px!important;
+    right: 35px!important;
 }
 
 .slick-prev, .slick-next {
     background-color: rgb(154, 206, 255)!important;
 }
 
-a {
+a, .cd-stretchy-nav.nav-is-visible ul a.active, .cd-stretchy-nav span {
     color: #0c5c9ed7;
-    /* color: #012a41; */
 }
 
 a:hover, a.nav-link:hover, .browse-link a:hover {
@@ -109,8 +108,13 @@ th {
     align-content: space-between;
 }
 
-.userPage h3 {
-    margin-right: 150px;
+.userInfo {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.userInfo h4{
+    margin: 10px 0;
 }
 
 .userPage input {

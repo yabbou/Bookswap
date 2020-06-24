@@ -1,12 +1,20 @@
-
 <div class='inner-body'>
     <div class='userPage'>
-        <div><?php echo "<h3>Hello " . $_SESSION['currentUser'] . "!<br>Feel free to browse our books, or sell your own :)</h3>"; ?>
+        <div class="userInfo">
             <!-- filter_input(INPUT_COOKIE, 'userCookie')  -->
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                <input name="logout" type="submit" type="button" value="Logout" />
+            <div>
+                <img class="userImage" src="img/no-image.png">
+                <?php echo "<h4>Welcome " . $_SESSION['currentUser'] . "</h4>"; //get name from query
+                ?>
+            </div>
+
+            <form action="" method="POST">
+                <?php //echo $_SERVER['PHP_SELF'];                 
+                ?>
+                <input name="logout" type="submit" value="Logout" />
             </form>
         </div>
+
         <div class="tables">
             <?php
             displayUserTable(0, 'Selling', $_SESSION['currentUser'], 'for sale');
@@ -17,7 +25,7 @@
 </div>
 
 <?php
-if (isset($_POST['logout'])) { 
+if (isset($_POST['logout'])) {
     session_destroy();
     $_SESSION['loggedIn'] = FALSE;
 
@@ -30,6 +38,7 @@ if (isset($_POST['delete'])) {
     $conn = initDb();
     exitIfErr($conn);
 
+    // how to get these vars..
     $sql = "DELETE FROM booksAvailable WHERE email = '${$_SESSION['currentUser']}' AND ISBN_10 = '$isbn' AND isWanted = '$isWanted'";
     $result = mysqli_query($conn, $sql);
 
