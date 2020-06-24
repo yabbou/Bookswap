@@ -15,7 +15,7 @@
     width: 600px;
 }
 
-.tables h4.head {
+.tables h4.head{
     text-align: center;
     margin-top: 0;
     margin-bottom: 10px;
@@ -111,6 +111,11 @@
     border-right: solid 1px aliceblue;
 }
 
+.sidebar a{
+    /* color: #012a41; */
+
+}
+
 .browse-text-sidebar input {
     width: 100%;
     margin-top: 0;
@@ -120,12 +125,12 @@
 .sidebar-and-content {
     display: flex;
     min-height: 81%;
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
 .sidebar>div>div{
     margin-bottom: 4px;
 }
-.sidebar a:hover{
+.sidebar a:hover, .book-tile a:hover {
     text-decoration: underline;
 }

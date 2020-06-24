@@ -83,7 +83,8 @@ input[type=submit]:hover {
 }
 
 a {
-    color: darkslateblue;
+    color: #0c5c9ed7;
+    /* color: #012a41; */
 }
 
 a:hover, a.nav-link:hover, .browse-link a:hover {
