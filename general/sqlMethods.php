@@ -70,20 +70,20 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
         echo "<h4 class='table-msg'>Not yet ${saying}...</h4></div>";
     }
 
-    if (isset($_POST['sell']) || isset($_POST['ask'])) {
+    if (isset($_POST['sell']) || isset($_POST['ask'])) { //convert to ajax
         insertBookAvailable($conn, $_SESSION['currentUser']['user'], $isbn, $isWanted);
-        // refreshPage();
     }
 
     mysqli_free_result($result);
     mysqli_close($conn);
 }
 
-function displayUserTable($isWanted, $head, $email, $saying) //dry
+function displayUserTable($isWanted, $head, $saying) //dry
 {
     $conn = initDb();
     exitIfErr($conn);
 
+    $email = $_SESSION['currentUser']['user'];
     $sql = "SELECT book.title, book.ISBN_10
     FROM booksAvailable join book on booksAvailable.ISBN_10 = book.ISBN_10
     where booksAvailable.userEmail = '$email' and booksavailable.isWanted = $isWanted";

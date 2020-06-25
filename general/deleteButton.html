@@ -3,18 +3,23 @@
 </form>
 
 <script type="text/javascript">
-    $(document).ready();
-
-    function getISBNFromTable() {
-        $('.selling-wanted tbody').on('click', 'tr', function() { //tbody?
-            var rows = $(this).children('td').map(function() {
+    $(document).ready(function getISBNFromTable() {
+        $('.selling-wanted tbody').on('click', 'tr', function () { //tbody?
+            var rows = $(this).children('td').map(function () {
                 return $(this).text();
             }).get();
 
             var isbnIndex = 1;
-            return rows[isbnIndex];
-        })
-    }
-    // getISBNFromTable();
+            console.log(getISBNFromTable());
 
+            // return rows[isbnIndex];
+        });
+    });
+
+
+    // $.ajax({
+    //     // url: "user.php",
+    //     method: "post",
+    //     data: { isbn: getISBNFromTable() }
+    // });
 </script>
