@@ -17,7 +17,7 @@ if (isNotYetInDatabase($table, 'ISBN_10', "$isbn10' or title = '$title")) {
     $res = insertBook($conn, $title, $category, $isbn10, $prof, $img);
     // $_SESSION[$table . 's'][] = mysqli_fetch_assoc($res);
 
-    insertBookAvailable($conn, $_SESSION['currentUser'], $isbn10, $isWanted);
+    insertBookAvailable($conn, $_SESSION['currentUser']['user'], $isbn10, $isWanted);
 }
 
 $table = 'major';

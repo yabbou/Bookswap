@@ -23,7 +23,3 @@ redirectToHomepage();
 
 echo '</div>';
 include 'footer.php';
-
-//NOTE: 
-//can technically compare count of books/profs/etc with local books... 
-//but primary adding is directly thru sell-book page
