@@ -38,14 +38,14 @@ function insertProf($conn, $prof, $email)
 }
 
 function avoidSQLInjection($data)
-{ 
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
 
-function displayTradingTable($isWanted, $head, $isbn, $saying)
+function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
 {
     $conn = initDb();
     exitIfErr($conn);
@@ -55,7 +55,11 @@ function displayTradingTable($isWanted, $head, $isbn, $saying)
     where booksAvailable.isbn_10 = ${isbn} and booksavailable.isWanted = $isWanted";
     $result = mysqli_query($conn, $sql);
 
-    echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
+    echo "<div class='selling-wanted'><div class='flex'>
+    <h4 class='head'>$head</h4>
+    <form mehtod='POST'><input type='submit' name='sell' value='${short}'></form>
+    </div>";
+
     if ($result->num_rows > 0) {
         echo "<table><tr><th>Name</th><th>Email</th></tr>";
         while ($row = $result->fetch_assoc()) {
@@ -65,6 +69,12 @@ function displayTradingTable($isWanted, $head, $isbn, $saying)
     } else {
         echo "<h4>Not yet ${saying}...</h4></div>";
     }
+
+    if (isset($_POST['sell']) || isset($_POST['ask'])) {
+        insertBookAvailable($conn, $_SESSION['currentUser']['user'], $isbn, $isWanted);
+        // refreshPage();
+    }
+
     mysqli_free_result($result);
     mysqli_close($conn);
 }
@@ -91,7 +101,6 @@ function displayUserTable($isWanted, $head, $email, $saying) //dry
     }
     mysqli_free_result($result);
     mysqli_close($conn);
-
 }
 
 function getNumAvailable($isbn10)
@@ -114,11 +123,6 @@ function getRowCount($table, $col, $val)
 
     $result = mysqli_query($conn, $sql);
     return mysqli_num_rows($result);
-}
-
-function buySellButton($isbn, $isWanted)
-{
-    return;
 }
 
 function getTopBooks($qty)

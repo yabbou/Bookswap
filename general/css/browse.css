@@ -39,6 +39,10 @@
     font-size: large;
 }
 
+.browse-text-sidebar a{
+    font-size: initial!important;
+}
+
 .browse-link a {
     font-size: 18px;
     text-decoration: none;

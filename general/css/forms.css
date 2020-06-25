@@ -1,7 +1,7 @@
 #book-form{
     width: 45%;
 }
-#book-form input{
+#book-form input, .ask-sell-buttons input{
     width: 100%;
 }
 #book-form input[type=submit]{

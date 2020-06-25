@@ -1,7 +1,7 @@
 $(document).ready(
 
     function getISBNFromTable() {
-        $('.selling-wanted input').on('click', 'tr', function () { //tbody?
+        $('.selling-wanted tbody input').on('click', 'tr', function () { //tbody?
             var rows = $(this).children('td').map(function () {
                 return $(this).text();
             }).get();

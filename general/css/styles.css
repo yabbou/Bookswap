@@ -96,8 +96,25 @@ a:hover, a.nav-link:hover, .browse-link a:hover {
 }
 
 .book-buttons {
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
+}
+
+.book-buttons form {
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex form{
+    margin-bottom: 0;
+}
+.flex input{
+    margin-top: 0;
 }
 
 th {

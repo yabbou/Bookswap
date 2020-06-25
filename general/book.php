@@ -27,8 +27,8 @@ if (isset($_GET['isbn'])) {
         </div>
         <div class="tables">
             <?php
-            displayTradingTable(0, 'Selling', $row['ISBN_10'], 'for sale');
-            displayTradingTable(1, 'Wanted', $row['ISBN_10'], 'wanted');
+            displayTradingTable(0, 'Selling', $row['ISBN_10'], 'for sale', 'Sell');
+            displayTradingTable(1, 'Wanted', $row['ISBN_10'], 'wanted', 'Ask');
             ?>
         </div>
     </div>

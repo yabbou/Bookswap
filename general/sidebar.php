@@ -7,6 +7,7 @@ include_once 'setLocalDBTables.php';
     <form action="displayBooks.php" method="get">
         <div class="browse-text-sidebar">
             <input type="text" name="browse" placeholder="Browse our titles" required>
+        <div class="browse-link"><a href="displayBooks.php">All books</a></div>
         </div>
     </form>
 

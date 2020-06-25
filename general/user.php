@@ -27,7 +27,7 @@
 if (isset($_POST['logout'])) {
     session_destroy();
     $_SESSION['loggedIn'] = FALSE;
-    echo "<meta http-equiv=\"refresh\" content=\"0.1\">";
+    refreshPage();
 }
 
 if (isset($_POST['delete'])) {

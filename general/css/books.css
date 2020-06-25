@@ -46,7 +46,8 @@
     border-radius: 3px;
     border: solid .2px #85b2f5de;
     padding: 23px;
-    padding-bottom: 10px;
+    /* padding-bottom: 8px; */
+    padding-bottom: 0;
     /*  padding:        top right, bottom, left    */
     list-style: none;
     box-shadow: 5px 5px 50px #88888871;
@@ -65,6 +66,7 @@
 
 .book-tile p {
     margin: 0;
+    /* margin-bottom: 10px; */
 }
 
 .book-tile-img, .userImage {
@@ -72,7 +74,7 @@
     border: none;
     vertical-align: middle;
     max-height: 300px;
-    margin-bottom: 6px;
+    /* margin-bottom: 6px; */
     border: solid .2px #85b2f5de;
     border-radius: 2px;
 }

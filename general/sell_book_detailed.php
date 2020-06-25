@@ -48,10 +48,9 @@ $profErr = "";
             $profErr = "Only letters and white space allowed";
             } -->
 
-        <div class="book-buttons">
-            <input class="btn-add-book" type="submit" name="sell-book" value="Sell Book">
-            <input class="btn-add-book" type="submit" name="ask-book" value="Book Wanted">
-        </div>
+        <?php
+        include 'methods.php';
+        echo askSellButtons("Sell Book", 'Book Wanted', 'btn-add-book') ?>
     </form>
 
 </div>
