@@ -23,3 +23,10 @@ function linkToBook($isbn, $title)
 {
     return "<a href=book.php?isbn=${isbn}>${title}</a>";
 }
+
+function buySellButtons($isbn,$isWanted){
+
+
+
+    
+}

@@ -34,8 +34,9 @@ for ($i = 0; $i < $size; $i++) {
     echo  linkToBook($isbn, "<img class='book-tile-img' src='" . $rows[$i]['Image'] . "'>");
     echo "<h4>" . linkToBook($isbn, $rows[$i]['Title']) . '</h4>';
     echo '<p>Available: <strong>' . $numAvailable . '</strong></p>';
-    // echo include 'buySellButtons($isbn,0)';
-    // echo include 'buySellButtons($isbn,1)';
+
+    echo include 'buySellButtons($isbn,0)';
+    echo include 'buySellButtons($isbn,1)';
     echo '</li>';
 }
 echo "</ul></div></div></div>";

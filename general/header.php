@@ -32,8 +32,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
-<!-- <script type="text/javascript" src="./hw/js/min/main-min.js"></script> -->
-<!-- <script type="text/javascript" src="./hw/js/modernizr.js"></script> -->
 <script type="text/javascript">
     $(document).ready(function() {
 

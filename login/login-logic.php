@@ -6,8 +6,9 @@ function checkIfValidUser($users, $email, $pwd)
 {
 
     if (isset($users[$email])) {
-        if ($users[$email] == $pwd) { 
-            $_SESSION['currentUser'] = avoidSQLInjection(filter_input(INPUT_POST, 'email'));
+        if ($users[$email] == $pwd) {
+            $_SESSION['currentUser'] = array();
+            $_SESSION['currentUser']['user'] = avoidSQLInjection(filter_input(INPUT_POST, 'email'));
             // setcookie("userCookie", $email, time() + 600); //deprecated
             $_SESSION['loggedIn'] = TRUE;
         } else {
@@ -25,8 +26,4 @@ function checkIfValidUser($users, $email, $pwd)
 
 $_SESSION['users'] = initSessionArray('users');
 
-checkIfValidUser(
-    $_SESSION['users'],
-    filter_input(INPUT_POST, 'email'),
-    filter_input(INPUT_POST, 'pwd')
-);
+checkIfValidUser($_SESSION['users'],filter_input(INPUT_POST, 'email'), filter_input(INPUT_POST, 'pwd'));

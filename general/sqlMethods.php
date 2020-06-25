@@ -91,6 +91,7 @@ function displayUserTable($isWanted, $head, $email, $saying) //dry
     }
     mysqli_free_result($result);
     mysqli_close($conn);
+
 }
 
 function getNumAvailable($isbn10)
