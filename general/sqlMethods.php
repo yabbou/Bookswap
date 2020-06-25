@@ -57,7 +57,7 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
 
     echo "<div class='selling-wanted'><div class='head-and-button flex'>
     <h4 class='head'>$head</h4>
-    <form mehtod='POST'><input type='submit' name='sell' value='${short}'></form>
+    <form method='POST'><input type='submit' name='${short}' value='${short}'></form>
     </div>";
 
     if ($result->num_rows > 0) {
@@ -70,12 +70,20 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
         echo "<h4 class='table-msg'>Not yet ${saying}...</h4></div>";
     }
 
-    if (isset($_POST['sell']) || isset($_POST['ask'])) { //convert to ajax
-        insertBookAvailable($conn, $_SESSION['currentUser']['user'], $isbn, $isWanted);
+    if (isset($_POST['Sell'])) { //convert to ajax
+        insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], 0);
+    } else if (isset($_POST['Ask'])) {
+        insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], 1);
     }
+    resetPOSTButtons();
 
     mysqli_free_result($result);
     mysqli_close($conn);
+}
+function resetPOSTButtons()
+{
+    $_POST['Sell'] = null;
+    $_POST['Ask'] = null;
 }
 
 function displayUserTable($isWanted, $head, $saying) //dry

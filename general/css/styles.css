@@ -100,6 +100,10 @@ a:hover, a.nav-link:hover, .browse-link a:hover {
     display: flex;
 }
 
+.book-buttons .btn-add-book {
+    width: inherit;
+}
+
 .book-buttons form {
     width: 100%;
     margin-bottom: 0;
@@ -112,43 +116,4 @@ a:hover, a.nav-link:hover, .browse-link a:hover {
 
 th {
     background-color: aliceblue;
-}
-
-.userPage {
-    display: flex;
-    align-content: space-between;
-}
-
-.userInfo {
-    width: 300px;
-    margin-right: 10px;
-}
-
-.userInfo h4 {
-    margin: 10px 0;
-}
-
-.userPage input {
-    color: #7c160f;
-    background-color: #ff8b8b;
-}
-
-td>form {
-    margin-bottom: 4px;
-}
-
-/* login */
-
-.login-form {
-    width: 55%;
-}
-
-#l-form input {
-    margin: 20px 0;
-}
-
-/* errors */
-
-.error {
-    color: #FF0000;
 }

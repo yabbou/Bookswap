@@ -1,9 +1,60 @@
-#book-form{
-    width: 45%;
+#book-form div{
+    display: flex;
 }
-#book-form input, .ask-sell-buttons input{
+.ask-sell-buttons input{
     width: 100%;
 }
-#book-form input[type=submit]{
-    /* border-radius: 30px!important; */
+#book-form input[type=text],#book-form input[type=number], .book-buttons{
+    width: 40%;
+}
+
+#book-form[err] .input{
+    /* border: ; */
+}
+
+/* account */
+
+.userPage {
+    display: flex;
+    align-content: space-between;
+}
+
+.userInfo {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.userInfo h4 {
+    margin: 10px 0;
+}
+
+.userPage input {
+    color: #7c160f;
+    background-color: #ff8b8b;
+}
+
+td>form {
+    margin-bottom: 4px;
+}
+
+/* login */
+
+.login-form {
+    width: 55%;
+}
+
+#l-form input {
+    margin: 20px 0;
+}
+
+/* errors */
+
+.error {
+    color: #c92432;
+    padding: 15px 30px;
+    background: #f99a6938;
+    margin: 5px 10px;
+    border: solid .5px #c92432;
+    border-radius: 3px;
+    display: none;
 }
