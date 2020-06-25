@@ -55,7 +55,7 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
     where booksAvailable.isbn_10 = ${isbn} and booksavailable.isWanted = $isWanted";
     $result = mysqli_query($conn, $sql);
 
-    echo "<div class='selling-wanted'><div class='flex'>
+    echo "<div class='selling-wanted'><div class='head-and-button flex'>
     <h4 class='head'>$head</h4>
     <form mehtod='POST'><input type='submit' name='sell' value='${short}'></form>
     </div>";
@@ -67,7 +67,7 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
         }
         echo "</table></div>";
     } else {
-        echo "<h4>Not yet ${saying}...</h4></div>";
+        echo "<h4 class='table-msg'>Not yet ${saying}...</h4></div>";
     }
 
     if (isset($_POST['sell']) || isset($_POST['ask'])) {
