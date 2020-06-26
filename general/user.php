@@ -31,14 +31,5 @@ if (isset($_POST['logout'])) {
 }
 
 if (isset($_POST['remove'])) {
-    $conn = initDb();
-    exitIfErr($conn);
-
-    $sql = "DELETE FROM booksAvailable WHERE email = " . $_SESSION['currentUser']['user'] . " AND ISBN_10 = " . $_POST['isbn']  . " AND isWanted = " . $_SESSION['currentUser']['isWanted'];
-    $result = mysqli_query($conn, $sql);
-
-    mysqli_free_result($result);
-    mysqli_close($conn);
-    
-    // refreshPage();
+    deleteBook();
 }

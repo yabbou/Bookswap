@@ -87,8 +87,8 @@ a, .cd-stretchy-nav.nav-is-visible ul a.active, .cd-stretchy-nav span {
     color: #0c5c9ed7;
 }
 
-a:hover, a.nav-link:hover, .browse-link a:hover {
-    color: #3aa3e4;
+a:hover, a.nav-link:hover, .browse-link a:hover #menu a:hover, slick-slide a:hover{
+    color: #3aa3e4!important;
 }
 
 .btn-add-book {

@@ -101,7 +101,14 @@ function displayUserTable($isWanted, $head, $saying) //dry
     if ($result->num_rows > 0) {
         echo "<table><tr><th>Title</th><th>ISBN 10</th><th></th></tr>";
         while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td><td>" . $row["ISBN_10"] . "</td><td>" . file_get_contents("deleteButton.html") . "</td></tr>";
+            echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td>
+            <td>" . $row["ISBN_10"] . "</td>
+            
+            <td><form method='POST'>
+            <input type = 'hidden' name = 'isbn' value = '${row['ISBN_10']}' />
+            <input type = 'hidden' name = 'isWanted' value = '${isWanted}' />
+            <input name='remove' type='submit' value='Remove' />
+            </form></td></tr>";
         }
         echo "</table></div>";
     } else {
@@ -135,6 +142,16 @@ function getRowCount($table, $col, $val)
 
 function getTopBooks($qty)
 {
-    $sql = "SELECT book.Title, book.ISBN_10, book.Image, count(*) as c FROM booksAvailable join book on book.ISBN_10 = booksavailable.ISBN_10 WHERE isWanted = 0 GROUP BY ISBN_10 ORDER BY c LIMIT $qty";
+    $sql = "SELECT book.Title, book.ISBN_10, book.Image, count(*) as c FROM booksAvailable join book on book.ISBN_10 = booksavailable.ISBN_10 WHERE isWanted = 0 GROUP BY ISBN_10 ORDER BY c DESC LIMIT $qty";
     return sqlToArray($sql);
+}
+
+function deleteBook()
+{
+    $conn = initDb();
+    exitIfErr($conn);
+
+    $sql = "DELETE FROM booksAvailable WHERE userEmail = '{$_SESSION['currentUser']['user']}' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
+    mysqli_query($conn, $sql);
+    mysqli_close($conn);
 }
