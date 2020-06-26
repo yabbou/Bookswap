@@ -15,6 +15,10 @@
 
         <div class="tables">
             <?php
+            if (isset($_POST['remove'])) {
+                deleteBook();
+            }
+
             displayUserTable(0, 'Selling', 'for sale');
             displayUserTable(1, 'Wanted', 'wanted');
             ?>
@@ -28,8 +32,4 @@ if (isset($_POST['logout'])) {
     session_destroy();
     $_SESSION['loggedIn'] = FALSE;
     refreshPage();
-}
-
-if (isset($_POST['remove'])) {
-    deleteBook();
 }

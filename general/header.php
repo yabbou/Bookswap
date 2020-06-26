@@ -12,8 +12,8 @@
 
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css" type="text/css" />
     <link rel="stylesheet" href="css/stretchyNav.css" type="text/css" />
+    <!-- <link rel="svg" href="./img/home-icon.svg"> -->
 
-    <!-- <script type="text/javascript" src="validate.js"></script> -->
 </head>
 
 <header>

@@ -27,6 +27,13 @@ if (isset($_GET['isbn'])) {
         </div>
         <div class="tables">
             <?php
+
+            if (isset($_POST['Sell'])) { //convert to ajax
+                insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], 0);
+            } else if (isset($_POST['Ask'])) {
+                insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], 1);
+            }
+
             displayTradingTable(0, 'Selling', $row['ISBN_10'], 'for sale', 'Sell');
             displayTradingTable(1, 'Wanted', $row['ISBN_10'], 'wanted', 'Ask');
             ?>

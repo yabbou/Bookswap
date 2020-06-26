@@ -2,21 +2,17 @@
 include_once 'initMethods.php';
 // $offset = 5; //incremrent a session var by 5
 
-//convert to using live calling?
-
 $conn = initDb();
 exitIfErr($conn);
 
-setLocalTable('books', '*', 'book');
-setLocalTable('professors', 'name', 'professor');
-setLocalTable('majors', '*', 'major');
+getDBTable('books', 'Title', 'book'); //delete this page adnd call method only when appropriate // rename
+getDBTable('professors', 'name', 'professor');
+getDBTable('majors', '*', 'major');
 mysqli_close($conn);
 
-function setLocalTable($sess, $col, $dbTable) 
+function getDBTable($sess, $col, $dbTable) 
 {
     global $conn;
-    // $_SESSION[$sess] = initSessionArray($sess);
-
     $res = mysqli_query($conn, "SELECT $col FROM $dbTable");
 
     $arr = array();

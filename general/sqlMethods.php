@@ -19,10 +19,10 @@ function insertBook($conn, $title, $category, $isbn10, $prof, $img)
     return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
 }
 
-function insertBookAvailable($conn, $email, $isbn10, $isWanted)
+function insertBookAvailable($conn, $email, $isbn10, $isWanted) //currentUser ALWAYS the email
 {
-    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10,isWanted) VALUES ('$email','$isbn10','$isWanted')";
-    return mysqli_query($conn, $sql) or exit(mysqli_error($conn));
+    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10,isWanted) VALUES ('$email',$isbn10,$isWanted)";
+    return mysqli_query($conn, $sql);
 }
 
 function insertMajor($conn, $category, $id)
@@ -70,20 +70,8 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
         echo "<h4 class='table-msg'>Not yet ${saying}...</h4></div>";
     }
 
-    if (isset($_POST['Sell'])) { //convert to ajax
-        insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], 0);
-    } else if (isset($_POST['Ask'])) {
-        insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], 1);
-    }
-    resetPOSTButtons();
-
     mysqli_free_result($result);
     mysqli_close($conn);
-}
-function resetPOSTButtons()
-{
-    $_POST['Sell'] = null;
-    $_POST['Ask'] = null;
 }
 
 function displayUserTable($isWanted, $head, $saying) //dry
@@ -134,8 +122,6 @@ function getRowCount($table, $col, $val)
     exitIfErr($conn);
 
     $sql = "SELECT * FROM $table where $col = '$val'";
-    // echo $sql; //san
-
     $result = mysqli_query($conn, $sql);
     return mysqli_num_rows($result);
 }
