@@ -18,7 +18,7 @@ if (isset($_GET['isbn'])) {
             <?php
             $row = $_SESSION['bookByISBN'][0]; //global var instead of sess
 
-            echo "<div><img class='book-tile-img' src='". $row['Image'] ."'></div>";
+            echo "<div><img class='book-tile-img' src='" . $row['Image'] . "'></div>";
             echo '<div class=\'book-dets\'><p>Title: ' . $row['Title'] . ' </p>';
             echo '<p>ISBN-10: ' . $row['ISBN_10'] . ' </p>';
             echo "<p>Professor: " . $row['Professor'] . ' </p>';
@@ -27,15 +27,17 @@ if (isset($_GET['isbn'])) {
         </div>
         <div class="tables">
             <?php
+            if (isset($_POST['Sell']) || isset($_POST['Ask'])) { //convert to ajax
+                $conn = initDb();
+                exitIfErr($conn);
 
-            if (isset($_POST['Sell'])) { //convert to ajax
-                insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], 0);
-            } else if (isset($_POST['Ask'])) {
-                insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], 1);
+                insertBookAvailable($conn, $_SESSION['currentUser']['user'], $_GET['isbn'], isset($_POST['Sell']) ? 0 : 1);
+                mysqli_close($conn);
             }
 
             displayTradingTable(0, 'Selling', $row['ISBN_10'], 'for sale', 'Sell');
             displayTradingTable(1, 'Wanted', $row['ISBN_10'], 'wanted', 'Ask');
+
             ?>
         </div>
     </div>

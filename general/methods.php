@@ -6,10 +6,10 @@ if (session_status() != PHP_SESSION_ACTIVE) { //better, move sessoin to header.p
     session_start();
 }
 
-function redirectToHomepage()
+function redirectTo($page)
 {
     echo "Redirecting...";
-    echo "<meta http-equiv=\"refresh\" content=\"3;URL=index.php\" />";
+    echo "<meta http-equiv=\"refresh\" content=\"3;URL=$page\" />";
 }
 
 function refreshPage()
