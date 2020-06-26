@@ -7,12 +7,12 @@ include_once 'initMethods.php';
 $conn = initDb();
 exitIfErr($conn);
 
-// setLocalTable('books', '*', 'book');
+setLocalTable('books', '*', 'book');
 setLocalTable('professors', 'name', 'professor');
 setLocalTable('majors', '*', 'major');
 mysqli_close($conn);
 
-function setLocalTable($sess, $col, $dbTable) //fix this <<<<<<<
+function setLocalTable($sess, $col, $dbTable) 
 {
     global $conn;
     // $_SESSION[$sess] = initSessionArray($sess);

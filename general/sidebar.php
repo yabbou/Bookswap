@@ -16,7 +16,7 @@ include_once 'setLocalDBTables.php';
         <?php
         foreach ($_SESSION['majors'] as $m) { //convert to full name
             // if ($m['Category'] != null) 
-                echo "<div><a href=displayBooks.php?major=" . toHref($m['ID']) . ">" . $m['ID'] . '</a></div>';
+            echo "<div><a href=displayBooks.php?major=" . toHref($m['ID']) . ">" . $m['ID'] . '</a></div>';
         }
         ?>
     </div>

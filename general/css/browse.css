@@ -33,13 +33,18 @@
     width: 100%;
 }
 
+.browse-text input::-webkit-calendar-picker-indicator,
+    .browse-text-sidebar input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
 .browse-link {
     margin-right: 10px;
     display: inline;
     font-size: large;
 }
 
-.browse-text-sidebar a{
+.browse-text-sidebar a {
     font-size: initial!important;
 }
 
