@@ -1,7 +1,6 @@
 <div class='inner-body'>
     <div class='userPage'>
         <div class="userInfo">
-            <!-- filter_input(INPUT_COOKIE, 'userCookie')  -->
             <div>
                 <img class="userImage" src="img/no-image.png">
                 <?php echo "<h4>Welcome " . $_COOKIE['userEmail'] . "</h4>"; //get name from php query

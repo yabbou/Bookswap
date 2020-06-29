@@ -10,7 +10,7 @@ $formEntries = array(
 
 foreach ($formEntries as $i => $entry) {
     if (!isset($entry) || empty($entry)) {
-        echo 'All fields are required.';
+        echo '<h3>All fields are required.</h3>';
         break;
     } else if ($entry === $formEntries['msg']) {
         $format = "From: %s\nEmail: %s\n\n Message: %s";
