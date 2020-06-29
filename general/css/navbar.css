@@ -10,11 +10,11 @@ header {
 
 .logo-and-title {
     display: flex;
-    margin: 8px;
-    margin-left: 16px;
+    margin-top: 23px;
+    margin-left: 28px;
     /* align-items: flex-end; */
     align-items: center;
-    height: 55px;
+    /* height: 55px; */
 }
 
 .logo-and-title a, .logo-and-title a:visited {

@@ -19,6 +19,7 @@
 .userPage {
     display: flex;
     align-content: space-between;
+    margin-top: 10px;
 }
 
 .userInfo {
