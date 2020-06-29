@@ -4,6 +4,8 @@ include 'methods.php';
 ?>
 
 <div class="inner-body">
+    <h2 class="admin">Admin Settings: </h2>
+    <!-- <h3>All Books Selling & Wanted</h3> -->
     <div class="tables all">
         <?php
         if (isset($_POST['remove'])) {

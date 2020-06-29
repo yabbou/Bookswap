@@ -41,7 +41,7 @@ td>form {
 
 /* login */
 
-.login-form{
+.login-form {
     width: 35%;
 }
 
@@ -76,7 +76,12 @@ h3.error {
     border-radius: 3px;
     /* display: none; */
 }
-.all{
+
+.all {
     width: 93%;
     margin-left: 10px;
+}
+
+h2.admin {
+    margin-top: 0;
 }
