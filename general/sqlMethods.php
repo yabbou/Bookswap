@@ -51,7 +51,7 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
     exitIfErr($conn);
 
     $sql = "SELECT user.name, user.email
-    FROM booksAvailable join user on booksAvailable.userInfo']['Email'] = user.email
+    FROM booksAvailable join user on booksAvailable.userEmail = user.email
     where booksAvailable.isbn_10 = ${isbn} and booksavailable.isWanted = $isWanted";
     $result = mysqli_query($conn, $sql);
 
@@ -82,7 +82,7 @@ function displayUserTable($isWanted, $head, $saying) //dry
     $email = $_COOKIE['userInfo'];
     $sql = "SELECT book.title, book.ISBN_10
     FROM booksAvailable join book on booksAvailable.ISBN_10 = book.ISBN_10
-    where booksAvailable.userInfo']['Email'] = '$email' and booksavailable.isWanted = $isWanted";
+    where booksAvailable.userEmail = '$email' and booksavailable.isWanted = $isWanted";
     $result = mysqli_query($conn, $sql);
 
     echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
@@ -125,7 +125,7 @@ function displayUserTable_All($isWanted, $head, $saying) //dry!!!
             echo "<tr>
             <td>" . linkToBook($row["ISBN_10"], $row["Title"])  . "</td>
             <td>" . $row["ISBN_10"] . "</td>
-            <td>" . $row["userInfo']['Email']"] . "</td>
+            <td>" . $row["userEmail"] . "</td>
             
             <td><form method='POST'>
             <input type = 'hidden' name = 'isbn' value = '${row['ISBN_10']}' />
@@ -188,5 +188,5 @@ function isAdmin()
     $sql = "SELECT Admin_status FROM user WHERE Email = '{$_COOKIE['userInfo']}' AND Admin_status = 1";
     $res = mysqli_query($conn, $sql);
     mysqli_close($conn);
-    return $res->num_rows > 0; //later, compare with count(rows) in displayBooks...
+    return $res->num_rows > 0; //note: specified col, unlike "count(sqltoarray)" in displayBooks where actually need table data
 }

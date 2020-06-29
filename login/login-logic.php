@@ -18,14 +18,17 @@
         //session
         getDBTable('user', 'Email, Password', "user WHERE Email = '$email'"); //get other cols in later query?
 
-        $user = $_SESSION['user'][0];
-        if (isset($user)) {
-            if ($user['Password'] === $pwd) {
-                //to cookie...
-                setcookie("userInfo", $user['Email'], time() + (60 * 60 * 3)); // hour (60sec*60) * 3 //another var with all user data?
-                $_SESSION['loggedIn'] = TRUE;
-            } else {
-                $_SESSION['loginError'] = "<h3 class='error'>The email and password do not match. Please try again.</h3>";
+        if (!empty($_SESSION['user'])) {
+            $user =  $_SESSION['user'][0];
+            
+            if (isset($user)) {
+                if ($user['Password'] === $pwd) {
+                    //to cookie...
+                    setcookie("userInfo", $user['Email'], time() + (60 * 60 * 3)); // hour (60sec*60) * 3 //another var with all user data?
+                    $_SESSION['loggedIn'] = TRUE;
+                } else {
+                    $_SESSION['loginError'] = "<h3 class='error'>The email and password do not match. Please try again.</h3>";
+                }
             }
         }
 
