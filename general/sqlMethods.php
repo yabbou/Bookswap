@@ -21,7 +21,7 @@ function insertBook($conn, $title, $category, $isbn10, $prof, $img)
 
 function insertBookAvailable($conn, $email, $isbn10, $isWanted) //currentUser ALWAYS the email
 {
-    $sql = "INSERT INTO booksAvailable (userInfo']['Email'],ISBN_10,isWanted) VALUES ('$email',$isbn10,$isWanted)";
+    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10,isWanted) VALUES ('$email',$isbn10,$isWanted)";
     return mysqli_query($conn, $sql);
 }
 
@@ -86,7 +86,7 @@ function displayUserTable($isWanted, $head, $saying) //dry
     $result = mysqli_query($conn, $sql);
 
     echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
-    if (!empty($result)) { //&& $result->num_rows > 0
+    if ($result->num_rows > 0){
         echo "<table><tr><th>Title</th><th>ISBN 10</th><th></th></tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td>
@@ -102,9 +102,9 @@ function displayUserTable($isWanted, $head, $saying) //dry
     } else {
         echo "<h4>Not yet ${saying}...</h4></div>";
     }
-    if (!empty($result)) {
+    // if (!empty($result)) {
         mysqli_free_result($result);
-    }
+    // }
     mysqli_close($conn);
 }
 
@@ -141,9 +141,6 @@ function displayUserTable_All($isWanted, $head, $saying) //dry!!!
     mysqli_close($conn);
 }
 
-
-
-
 function getNumAvailable($isbn10)
 {
     return getRowCount('booksAvailable', 'ISBN_10', "$isbn10' and isWanted = '0");
@@ -175,7 +172,7 @@ function deleteBook($user)
     $conn = initDb();
     exitIfErr($conn);
 
-    $sql = "DELETE FROM booksAvailable WHERE userInfo']['Email'] = '$user' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
+    $sql = "DELETE FROM booksAvailable WHERE userEmail = '$user' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
     mysqli_query($conn, $sql);
     mysqli_close($conn);
 }
