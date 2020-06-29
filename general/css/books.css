@@ -68,7 +68,7 @@
     padding-bottom: 0;
     /*  padding:        top right, bottom, left    */
     list-style: none;
-    box-shadow: 5px 5px 50px #88888871;
+    box-shadow: 4px 12px 20px 5px #8888883b;
     height: 300px;
     display: grid;
     line-height: 8px;
