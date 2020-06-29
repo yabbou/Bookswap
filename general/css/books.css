@@ -13,6 +13,7 @@
     border-radius: 2px;
     padding: 30px 15px;
     width: 65%;
+    height: fit-content;
 }
 
 .tables h4.head {

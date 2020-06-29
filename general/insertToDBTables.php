@@ -14,7 +14,7 @@ exitIfErr($conn);
 $table = 'book';
 if (isNotYetInDatabase($table, 'ISBN_10', "$isbn10' or title = '$title")) { 
     insertBook($conn, $title, $category, $isbn10, $prof, $img);
-    insertBookAvailable($conn, $_COOKIE['userEmail'], $isbn10, $isWanted);
+    insertBookAvailable($conn, $_COOKIE['userInfo'], $isbn10, $isWanted);
 }
 
 $table = 'major';

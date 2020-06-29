@@ -10,14 +10,18 @@ getDBTable('professors', 'name', 'professor');
 getDBTable('majors', '*', 'major');
 mysqli_close($conn);
 
-function getDBTable($sess, $col, $dbTable) 
+function getDBTable($sess, $col, $dbTable)
 {
-    global $conn;
-    $res = mysqli_query($conn, "SELECT $col FROM $dbTable");
+    $conn = initDb();
+    exitIfErr($conn);
+
+    $sql = "SELECT $col FROM $dbTable";
+    $res = mysqli_query($conn, $sql);
 
     $arr = array();
     while ($row = mysqli_fetch_assoc($res)) { //lvl 2: only add new rows
         $arr[] = $row;
     }
     $_SESSION[$sess] = $arr;
+    mysqli_close($conn);
 }

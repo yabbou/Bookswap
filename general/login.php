@@ -6,7 +6,6 @@
         <input class="btn-login" type="submit" value="Login">
 
         <!--<p><a href="register-action.php">Create account</a> | <a href="login-action.php">Login</a></p>-->
-
     </form>
 </div>
 </div>

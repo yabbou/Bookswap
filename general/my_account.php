@@ -1,15 +1,13 @@
 <?php
 include "header.php";
-include_once "methods.php";
-include_once "setLocalDBTables.php";
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
-$_SESSION['users'] = initSessionArray('users'); //necc?
-initUsers();
-
-if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+// echo isset($_SESSION['loggedIn']) ?'yes':'no';
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) { 
     include 'user.php';
 } else {
-    $_SESSION['loggedIn'] = FALSE;
     include "../login/login-logic.php";
     include "login.php";
 }

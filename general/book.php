@@ -15,7 +15,7 @@ if (isset($_GET['isbn'])) {
 <div class="sidebar-and-content">
     <?php include 'sidebar.php'; ?>
     <div class="book-and-tables">
-        <?php echo isset($_POST['sell-book']) || isset($_POST['ask-book']) ? "<h3 class='confim-msg'>Thanks for your contribution!</h3>" : ''; ?>
+        <?php echo isset($_POST['sell-book']) || isset($_POST['ask-book']) ? "<h3 class='confim-msg success'>Thanks for your contribution!</h3>" : ''; ?>
         <div class="book-information">
             <?php
             $row = $bookByISBN[0]; 
@@ -29,11 +29,11 @@ if (isset($_GET['isbn'])) {
         </div>
         <div class="tables">
             <?php
-            if (isset($_POST['Sell']) || isset($_POST['Ask'])) { //convert to ajax
+            if (isset($_POST['Sell']) || isset($_POST['Ask'])) { //convert to ajax?
                 $conn = initDb();
                 exitIfErr($conn);
 
-                insertBookAvailable($conn, $_COOKIE['userEmail'], $_GET['isbn'], isset($_POST['Sell']) ? 0 : 1);
+                insertBookAvailable($conn, $_COOKIE['userInfo'], $_GET['isbn'], isset($_POST['Sell']) ? 0 : 1);
                 mysqli_close($conn);
             }
 

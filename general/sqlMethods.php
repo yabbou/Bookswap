@@ -21,7 +21,7 @@ function insertBook($conn, $title, $category, $isbn10, $prof, $img)
 
 function insertBookAvailable($conn, $email, $isbn10, $isWanted) //currentUser ALWAYS the email
 {
-    $sql = "INSERT INTO booksAvailable (userEmail,ISBN_10,isWanted) VALUES ('$email',$isbn10,$isWanted)";
+    $sql = "INSERT INTO booksAvailable (userInfo']['Email'],ISBN_10,isWanted) VALUES ('$email',$isbn10,$isWanted)";
     return mysqli_query($conn, $sql);
 }
 
@@ -51,7 +51,7 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
     exitIfErr($conn);
 
     $sql = "SELECT user.name, user.email
-    FROM booksAvailable join user on booksAvailable.userEmail = user.email
+    FROM booksAvailable join user on booksAvailable.userInfo']['Email'] = user.email
     where booksAvailable.isbn_10 = ${isbn} and booksavailable.isWanted = $isWanted";
     $result = mysqli_query($conn, $sql);
 
@@ -79,14 +79,14 @@ function displayUserTable($isWanted, $head, $saying) //dry
     $conn = initDb();
     exitIfErr($conn);
 
-    $email = $_COOKIE['userEmail'];
+    $email = $_COOKIE['userInfo'];
     $sql = "SELECT book.title, book.ISBN_10
     FROM booksAvailable join book on booksAvailable.ISBN_10 = book.ISBN_10
-    where booksAvailable.userEmail = '$email' and booksavailable.isWanted = $isWanted";
+    where booksAvailable.userInfo']['Email'] = '$email' and booksavailable.isWanted = $isWanted";
     $result = mysqli_query($conn, $sql);
 
     echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
-    if ($result->num_rows > 0) {
+    if (!empty($result)) { //&& $result->num_rows > 0
         echo "<table><tr><th>Title</th><th>ISBN 10</th><th></th></tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td>
@@ -102,7 +102,9 @@ function displayUserTable($isWanted, $head, $saying) //dry
     } else {
         echo "<h4>Not yet ${saying}...</h4></div>";
     }
-    mysqli_free_result($result);
+    if (!empty($result)) {
+        mysqli_free_result($result);
+    }
     mysqli_close($conn);
 }
 
@@ -113,7 +115,7 @@ function displayUserTable_All($isWanted, $head, $saying) //dry!!!
 
     $sql = "SELECT *
     FROM booksAvailable join book on booksAvailable.ISBN_10 = book.ISBN_10
-    where booksavailable.isWanted = $isWanted"; 
+    where booksavailable.isWanted = $isWanted";
     $result = mysqli_query($conn, $sql);
 
     echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
@@ -123,7 +125,7 @@ function displayUserTable_All($isWanted, $head, $saying) //dry!!!
             echo "<tr>
             <td>" . linkToBook($row["ISBN_10"], $row["Title"])  . "</td>
             <td>" . $row["ISBN_10"] . "</td>
-            <td>" . $row["userEmail"] . "</td>
+            <td>" . $row["userInfo']['Email']"] . "</td>
             
             <td><form method='POST'>
             <input type = 'hidden' name = 'isbn' value = '${row['ISBN_10']}' />
@@ -173,7 +175,7 @@ function deleteBook($user)
     $conn = initDb();
     exitIfErr($conn);
 
-    $sql = "DELETE FROM booksAvailable WHERE userEmail = '$user' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
+    $sql = "DELETE FROM booksAvailable WHERE userInfo']['Email'] = '$user' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
     mysqli_query($conn, $sql);
     mysqli_close($conn);
 }
@@ -183,8 +185,8 @@ function isAdmin()
     $conn = initDb();
     exitIfErr($conn);
 
-    $sql = "SELECT Admin_status FROM user WHERE Email = '{$_COOKIE['userEmail']}'";
+    $sql = "SELECT Admin_status FROM user WHERE Email = '{$_COOKIE['userInfo']}' AND Admin_status = 1";
     $res = mysqli_query($conn, $sql);
     mysqli_close($conn);
-    return $res;
+    return $res->num_rows > 0; //later, compare with count(rows) in displayBooks...
 }
