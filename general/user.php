@@ -9,6 +9,7 @@
             <div>
                 <?php 
                 include_once 'methods.php';
+                include_once 'sqlMethods.php';
                 echo isAdmin() ? "<h4 class='admin'><a href='admin_settings.php'>Admin settings</a></h4>" : "";
                 ?>
             </div>
