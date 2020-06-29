@@ -1,3 +1,5 @@
+<div class='inner-body'><h2>Login</h2>
+
 <?php
 
 include_once 'methods.php';
@@ -8,11 +10,11 @@ function checkIfValidUser($users, $email, $pwd)
     if (isset($users[$email])) {
         if ($users[$email] == $pwd) {
             $_SESSION['currentUser'] = array();
-            $_SESSION['currentUser']['user'] = avoidSQLInjection(filter_input(INPUT_POST, 'email'));
-            // setcookie("userCookie", $email, time() + 600); //deprecated
+            // $_SESSION['currentUser']['user'] = avoidSQLInjection(filter_input(INPUT_POST, 'email'));
+            setcookie("userEmail", $email, time() + (60 * 60 * 3)); // hour (60sec*60) * 3
             $_SESSION['loggedIn'] = TRUE;
         } else {
-            echo "The email and password do not match. Please try again.";
+            echo "<h3>The email and password do not match. Please try again.</h3>";
         }
     }
 
@@ -26,4 +28,6 @@ function checkIfValidUser($users, $email, $pwd)
 
 $_SESSION['users'] = initSessionArray('users');
 
-checkIfValidUser($_SESSION['users'],filter_input(INPUT_POST, 'email'), filter_input(INPUT_POST, 'pwd'));
+$e = avoidSQLInjection(filter_input(INPUT_POST, 'email'));
+$p = avoidSQLInjection(filter_input(INPUT_POST, 'pwd'));
+checkIfValidUser($_SESSION['users'], $e, $p);

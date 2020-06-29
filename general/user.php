@@ -4,7 +4,7 @@
             <!-- filter_input(INPUT_COOKIE, 'userCookie')  -->
             <div>
                 <img class="userImage" src="img/no-image.png">
-                <?php echo "<h4>Welcome " . $_SESSION['currentUser']['user'] . "</h4>"; //get name from php query
+                <?php echo "<h4>Welcome " . $_COOKIE['userEmail'] . "</h4>"; //get name from php query
                 ?>
             </div>
 

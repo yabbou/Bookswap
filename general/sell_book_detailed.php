@@ -6,7 +6,7 @@ $profErr = "";
 
 <!-- fix pattern mathcing... -->
 <div class="inner-body">
-    <h3>Trade Book</h3>
+    <h2>Trade Book</h2>
     <form id="book-form" action="sell_book_confim.php" method="post">
 
         <!-- err='Only letters, numbers, and white space allowed.' -->
@@ -50,7 +50,7 @@ $profErr = "";
         function validateName(name, pattern) {
             var errors;
             if (name == "" || pattern.test(name)) {
-                $('.' + name).show()
+                $('.error.' + name).show()
                 // $('#mySpan').css('display', 'block');
 
                 // errors = document.getElementsByClassName("error");

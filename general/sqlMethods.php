@@ -79,7 +79,7 @@ function displayUserTable($isWanted, $head, $saying) //dry
     $conn = initDb();
     exitIfErr($conn);
 
-    $email = $_SESSION['currentUser']['user'];
+    $email = $_COOKIE['userEmail'];
     $sql = "SELECT book.title, book.ISBN_10
     FROM booksAvailable join book on booksAvailable.ISBN_10 = book.ISBN_10
     where booksAvailable.userEmail = '$email' and booksavailable.isWanted = $isWanted";
@@ -137,7 +137,7 @@ function deleteBook()
     $conn = initDb();
     exitIfErr($conn);
 
-    $sql = "DELETE FROM booksAvailable WHERE userEmail = '{$_SESSION['currentUser']['user']}' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
+    $sql = "DELETE FROM booksAvailable WHERE userEmail = '{$_COOKIE['userEmail']}' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
     mysqli_query($conn, $sql);
     mysqli_close($conn);
 }
