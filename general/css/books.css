@@ -150,6 +150,7 @@
     margin-bottom: 4px;
 }
 
-.sidebar a:hover, .book-tile a:hover {
+.sidebar a:hover {
+    /* .book-tile a:hover */
     text-decoration: underline;
 }
