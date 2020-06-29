@@ -15,11 +15,11 @@ if (isset($_GET['isbn'])) {
 <div class="sidebar-and-content">
     <?php include 'sidebar.php'; ?>
     <div class="book-and-tables">
+        <?php echo isset($_POST['sell-book']) || isset($_POST['ask-book']) ? "<h3 class='confim-msg'>Thanks for your contribution!</h3>" : ''; ?>
         <div class="book-information">
             <?php
-            $row = $bookByISBN[0]; //yes?
+            $row = $bookByISBN[0]; 
 
-            echo "<p class='confim-msg'>Thanks for your contribution!</p>";
             echo "<div><img class='book-tile-img' src='" . $row['Image'] . "'></div>";
             echo '<div class=\'book-dets\'><p>Title: ' . $row['Title'] . ' </p>';
             echo '<p>ISBN-10: ' . $row['ISBN_10'] . ' </p>';

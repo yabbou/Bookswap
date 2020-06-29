@@ -135,3 +135,7 @@ a:hover, a.nav-link:hover, .browse-link a:hover #menu a:hover, slick-slide a:hov
 th {
     background-color: aliceblue;
 }
+
+.admin a:hover{
+    text-decoration: underline;
+}

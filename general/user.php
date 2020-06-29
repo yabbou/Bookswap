@@ -6,9 +6,13 @@
                 <?php echo "<h4>Welcome " . $_COOKIE['userEmail'] . "</h4>"; //get name from php query
                 ?>
             </div>
+            <div>
+                <?php echo isAdmin() ? "<h4 class='admin'><a href='admin_settings.php'>Admin settings</a></h4>" : "";
+                ?>
+            </div>
 
             <form method="POST">
-                <input name="logout" type="submit" value="Logout" />
+                <input id="logout" name="logout" type="submit" value="Logout" />
             </form>
         </div>
 

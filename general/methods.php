@@ -29,14 +29,6 @@ function linkToBook($isbn, $title)
     return "<a href=book.php?isbn=${isbn}>${title}</a>";
 }
 
-function askSellButtons($sell, $ask, $class)
-{
-    echo "<div class='book-buttons'>
-            <input class='$class' type='submit' name='sell-book' value='${sell}'>
-            <input class='$class' type='submit' name='ask-book' value='${ask}'>
-        </div>";
-}
-
 function askSellButtonsForm($sell, $ask, $class)
 {
     echo "<div class='book-buttons'><form action='book'>

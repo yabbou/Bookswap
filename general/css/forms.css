@@ -28,7 +28,7 @@
     margin: 10px 0;
 }
 
-.userPage input {
+#remove, #logout {
     color: #7c160f;
     background-color: #ff8b8b;
 }

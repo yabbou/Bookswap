@@ -56,9 +56,9 @@ function displayTradingTable($isWanted, $head, $isbn, $saying, $short)
     $result = mysqli_query($conn, $sql);
 
     echo "<div class='selling-wanted'><div class='head-and-button flex'>
-    <h4 class='head'>$head</h4>
-    <form method='POST'><input type='submit' name='${short}' value='${short}'></form>
-    </div>";
+    <h4 class='head'>$head</h4>";
+    echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true ? "<form method='POST'><input type='submit' name='${short}' value='${short}'></form>" : '';
+    echo "</div>";
 
     if ($result->num_rows > 0) {
         echo "<table><tr><th>Name</th><th>Email</th></tr>";
@@ -95,7 +95,7 @@ function displayUserTable($isWanted, $head, $saying) //dry
             <td><form method='POST'>
             <input type = 'hidden' name = 'isbn' value = '${row['ISBN_10']}' />
             <input type = 'hidden' name = 'isWanted' value = '${isWanted}' />
-            <input name='remove' type='submit' value='Remove' />
+            <input id='remove' name='remove' type='submit' value='Remove' />
             </form></td></tr>";
         }
         echo "</table></div>";
@@ -105,6 +105,40 @@ function displayUserTable($isWanted, $head, $saying) //dry
     mysqli_free_result($result);
     mysqli_close($conn);
 }
+
+function displayUserTable_All($isWanted, $head, $saying) //dry!!!
+{
+    $conn = initDb();
+    exitIfErr($conn);
+
+    $sql = "SELECT book.title, book.ISBN_10
+    FROM booksAvailable join book on booksAvailable.ISBN_10 = book.ISBN_10
+    where booksavailable.isWanted = $isWanted"; //iswanted keep?
+    $result = mysqli_query($conn, $sql);
+
+    echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
+    if ($result->num_rows > 0) {
+        echo "<table><tr><th>Title</th><th>ISBN 10</th><th></th></tr>";
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td>
+            <td>" . $row["ISBN_10"] . "</td>
+            
+            <td><form method='POST'>
+            <input type = 'hidden' name = 'isbn' value = '${row['ISBN_10']}' />
+            <input type = 'hidden' name = 'isWanted' value = '${isWanted}' />
+            <input id='remove' name='remove' type='submit' value='Remove' />
+            </form></td></tr>";
+        }
+        echo "</table></div>";
+    } else {
+        echo "<h4>Not yet ${saying}...</h4></div>";
+    }
+    mysqli_free_result($result);
+    mysqli_close($conn);
+}
+
+
+
 
 function getNumAvailable($isbn10)
 {
@@ -140,4 +174,15 @@ function deleteBook()
     $sql = "DELETE FROM booksAvailable WHERE userEmail = '{$_COOKIE['userEmail']}' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
     mysqli_query($conn, $sql);
     mysqli_close($conn);
+}
+
+function isAdmin()
+{
+    $conn = initDb();
+    exitIfErr($conn);
+
+    $sql = "SELECT Admin_status FROM user WHERE Email = '{$_COOKIE['userEmail']}'";
+    $res = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return $res;
 }
