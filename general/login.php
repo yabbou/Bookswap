@@ -1,3 +1,8 @@
+<?php
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+    redirectTo('my_account.php');
+} ?>
+
 <div class="login-form">
     <form id="login-form" method="post">
 

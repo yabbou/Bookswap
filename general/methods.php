@@ -5,8 +5,7 @@ if (session_status() != PHP_SESSION_ACTIVE) { //better, move sessoin to header.p
 
 function redirectTo($page)
 {
-    // echo "Redirecting...";
-    echo "<meta http-equiv=\"refresh\" content=\".1;URL=$page\" />";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=$page\" />";
 }
 
 function refreshPage()
