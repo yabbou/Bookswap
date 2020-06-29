@@ -1,15 +1,12 @@
 <?php
-// include_once 'sqlMethods.php';
-include_once 'initMethods.php';
-
 if (session_status() != PHP_SESSION_ACTIVE) { //better, move sessoin to header.php?
     session_start();
 }
 
 function redirectTo($page)
 {
-    echo "Redirecting...";
-    echo "<meta http-equiv=\"refresh\" content=\"3;URL=$page\" />";
+    // echo "Redirecting...";
+    echo "<meta http-equiv=\"refresh\" content=\".1;URL=$page\" />";
 }
 
 function refreshPage()
@@ -29,7 +26,7 @@ function linkToBook($isbn, $title)
     return "<a href=book.php?isbn=${isbn}>${title}</a>";
 }
 
-function askSellButtonsForm($sell, $ask, $class)
+function askSellButtonsForm($sell, $ask, $class) //unnecc as method
 {
     echo "<div class='book-buttons'><form action='book'>
             <input class='$class' type='submit' name='sell-book' value='${sell}'>
@@ -37,3 +34,6 @@ function askSellButtonsForm($sell, $ask, $class)
         </div>";
 }
 
+function isAddingBook(){
+    return isset($_POST['sell-book']) || isset($_POST['ask-book']);
+}

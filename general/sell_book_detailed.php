@@ -1,13 +1,11 @@
 <?php
 include "setLocalDBTables.php";
-$titleErr = "";
-$profErr = "";
 ?>
 
 <!-- fix pattern mathcing... -->
 <div class="inner-body">
     <h2>Trade Book</h2>
-    <form id="book-form" action="sell_book_confim.php" method="post">
+    <form id="book-form" action="book.php?isbn=$isbn10" method="post">
 
         <!-- err='Only letters, numbers, and white space allowed.' -->
         <div><input list="books" type="text" name="title" placeholder="Title" pattern="[\w\d\s]+" onblur="validateName(this.name,this.name,'/[\w\d\s]+/')" onchange="validateName(this.name,'[\w\d\s]+')" required>

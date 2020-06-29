@@ -1,5 +1,5 @@
 <?php
-include_once 'initMethods.php';
+include_once 'sqlMethods.php';
 // $offset = 5; //incremrent a session var by 5
 
 $conn = initDb();

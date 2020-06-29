@@ -161,10 +161,33 @@ function getRowCount($table, $col, $val)
     return mysqli_num_rows($result);
 }
 
+function sqlToArray($sql) 
+{
+    $conn = initDb();
+    exitIfErr($conn);
+    $res = mysqli_query($conn, $sql);
+
+    $arr = array();
+    while ($row = mysqli_fetch_assoc($res)) {
+        $arr[] = $row;
+    }
+    return $arr;
+}
+
 function getTopBooks($qty)
 {
     $sql = "SELECT book.Title, book.ISBN_10, book.Image, count(*) as c FROM booksAvailable join book on book.ISBN_10 = booksavailable.ISBN_10 WHERE isWanted = 0 GROUP BY ISBN_10 ORDER BY c DESC LIMIT $qty";
     return sqlToArray($sql);
+}
+
+function isInDb($isbn){
+    $conn = initDb();
+    exitIfErr($conn);
+
+    $sql = "SELECT ISBN_10 FROM book WHERE ISBN_10 = '$isbn'";
+    $res = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    return $res->num_rows > 0; 
 }
 
 function deleteBook($user)

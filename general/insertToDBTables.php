@@ -1,4 +1,6 @@
 <?php
+include_once 'methods.php';
+include_once 'sqlMethods.php';
 
 $title = avoidSQLInjection(filter_input(INPUT_POST, 'title'));
 $category = avoidSQLInjection(filter_input(INPUT_POST, 'cat'));
