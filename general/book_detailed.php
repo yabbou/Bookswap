@@ -1,5 +1,5 @@
 <div class="book-and-tables">
-    <?php echo $_SESSION['congrats'] ? "<h3 class='success'>Thanks for your contribution!</h3>" : '';
+    <?php echo isset($_SESSION['congrats']) && $_SESSION['congrats']  ? "<h3 class='success'>Thanks for your contribution!</h3>" : '';
     $_SESSION['congrats'] = false; ?>
     <div class="book-information">
         <?php
