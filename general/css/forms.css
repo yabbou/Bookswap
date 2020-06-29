@@ -1,14 +1,16 @@
-#book-form div{
+#book-form div {
     display: flex;
 }
-.ask-sell-buttons input{
+
+.ask-sell-buttons input {
     width: 100%;
 }
-#book-form input[type=text],#book-form input[type=number], .book-buttons{
+
+#book-form input[type=text], #book-form input[type=number], .book-buttons {
     width: 40%;
 }
 
-#book-form[err] .input{
+#book-form[err] .input {
     /* border: ; */
 }
 
@@ -39,22 +41,41 @@ td>form {
 
 /* login */
 
-.login-form {
-    width: 55%;
+.login-form{
+    width: 35%;
 }
 
-#l-form input {
+#login-form input {
     margin: 20px 0;
 }
 
 /* errors */
 
-.error {
+.error, h3.error {
     color: #c92432;
     padding: 15px 30px;
     background: #f99a6938;
     margin: 5px 10px;
     border: solid .5px #c92432;
     border-radius: 3px;
-    display: none;
+    /* display: none; */
+}
+
+h3.error {
+    margin: auto 0;
+    font-size: smaller;
+    width: 30%;
+}
+
+.success, h3.success {
+    color: #24c969;
+    padding: 15px 30px;
+    background: #7af184b7;
+    margin: 5px 10px;
+    border: solid .5px #24c969;
+    border-radius: 3px;
+    /* display: none; */
+}
+.all{
+    width: 100%;
 }

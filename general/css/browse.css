@@ -1,7 +1,7 @@
 /* browse form */
 
 .b-form-container {
-    height: 100%;
+    height: 75%;
     width: 100%;
     background-image: url('../img/snow-peaks.jpg');
     /* background-image: url('../img/hand-to-hand.jpg'); */
@@ -26,8 +26,8 @@
 }
 
 .browse-text input {
-    width: 60%;
-    /* height: 45px; */
+    width: 80%;
+    height: 54px;
     background-color: #f2f2f262;
     margin: 0;
     width: 100%;

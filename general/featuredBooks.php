@@ -2,8 +2,8 @@
 include_once 'methods.php';
 
 echo "<div class='carousel-and-title'><h3 class='featured'>Featured</h3><div class='jcarousel'>";
-$topFive = getTopBooks(10);
-foreach ($topFive as $book) {
+$topBooks = getTopBooks(10);
+foreach ($topBooks as $book) {
     $isbn = $book['ISBN_10'];
 
     echo  "<div>";

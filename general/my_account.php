@@ -11,7 +11,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
 } else {
     $_SESSION['loggedIn'] = FALSE;
     include "../login/login-logic.php";
-    include "login.html";
+    include "login.php";
 }
 
 include "footer.php";

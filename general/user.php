@@ -19,7 +19,7 @@
         <div class="tables">
             <?php
             if (isset($_POST['remove'])) {
-                deleteBook();
+                deleteBook($_COOKIE['userEmail']);
             }
 
             displayUserTable(0, 'Selling', 'for sale');

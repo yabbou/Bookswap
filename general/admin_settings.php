@@ -4,14 +4,15 @@ include 'methods.php';
 ?>
 
 <div class="inner-body">
-    <div class="tables">
+    <div class="tables all">
         <?php
         if (isset($_POST['remove'])) {
-            deleteBook();
+            //js here to get other user's email
+            deleteBook('');
         }
 
-        displayUserTable(0, 'Selling', 'for sale');
-        displayUserTable(1, 'Wanted', 'wanted');
+        displayUserTable_All(0, 'Selling', 'for sale');
+        displayUserTable_All(1, 'Wanted', 'wanted');
         ?>
     </div>
 </div>

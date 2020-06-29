@@ -111,17 +111,19 @@ function displayUserTable_All($isWanted, $head, $saying) //dry!!!
     $conn = initDb();
     exitIfErr($conn);
 
-    $sql = "SELECT book.title, book.ISBN_10
+    $sql = "SELECT *
     FROM booksAvailable join book on booksAvailable.ISBN_10 = book.ISBN_10
-    where booksavailable.isWanted = $isWanted"; //iswanted keep?
+    where booksavailable.isWanted = $isWanted"; 
     $result = mysqli_query($conn, $sql);
 
     echo "<div class='selling-wanted'><h4 class='head'>$head</h4>";
     if ($result->num_rows > 0) {
-        echo "<table><tr><th>Title</th><th>ISBN 10</th><th></th></tr>";
+        echo "<table><tr><th>Title</th><th>ISBN 10</th><th>User</th><th></th></tr>";
         while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . linkToBook($row["ISBN_10"], $row["title"])  . "</td>
+            echo "<tr>
+            <td>" . linkToBook($row["ISBN_10"], $row["Title"])  . "</td>
             <td>" . $row["ISBN_10"] . "</td>
+            <td>" . $row["userEmail"] . "</td>
             
             <td><form method='POST'>
             <input type = 'hidden' name = 'isbn' value = '${row['ISBN_10']}' />
@@ -166,12 +168,12 @@ function getTopBooks($qty)
     return sqlToArray($sql);
 }
 
-function deleteBook()
+function deleteBook($user)
 {
     $conn = initDb();
     exitIfErr($conn);
 
-    $sql = "DELETE FROM booksAvailable WHERE userEmail = '{$_COOKIE['userEmail']}' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
+    $sql = "DELETE FROM booksAvailable WHERE userEmail = '$user' AND ISBN_10 = {$_POST['isbn']} AND isWanted = {$_POST['isWanted']} LIMIT 1"; //for now limit one, until enable qty col
     mysqli_query($conn, $sql);
     mysqli_close($conn);
 }
