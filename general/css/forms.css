@@ -81,6 +81,11 @@ h3.error {
     font-size: medium;
 }
 
+.title{
+    margin: 0;
+    /* font-size: x-large; */
+}
+
 .all {
     width: 93%;
     margin-left: 10px;

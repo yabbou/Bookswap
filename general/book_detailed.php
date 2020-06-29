@@ -6,10 +6,10 @@
         $row = $bookByISBN[0];
 
         echo "<div><img class='book-tile-img' src='" . $row['Image'] . "'></div>";
-        echo '<div class=\'book-dets\'><p>Title: ' . $row['Title'] . ' </p>';
-        echo '<p>ISBN-10: ' . $row['ISBN_10'] . ' </p>';
-        echo "<p>Professor: " . $row['Professor'] . ' </p>';
-        echo "<p>Major: " . $row['Category'] . ' </p></div>';
+        echo "<div class='book-dets'><h2 class='title'> ${row['Title']} </h2>";
+        echo '<p><b>ISBN-10</b>: ' . $row['ISBN_10'] . ' </p>';
+        echo "<p><b>Professor</b>: " . $row['Professor'] . ' </p>';
+        echo "<p><b>Major</b>: " . $row['Category'] . ' </p></div>';
         ?>
     </div>
     <div class="tables">
