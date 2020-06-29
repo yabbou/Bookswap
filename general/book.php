@@ -10,10 +10,6 @@ $bookByISBN;
 echo "<div class='sidebar-and-content'>";
 include 'sidebar.php';
 
-if (isAddingBook()) {
-    include 'insertToDbTables.php';
-}
-
 if (isset($_GET['isbn']) && isInDb($_GET['isbn'])) {
     $sql = "SELECT * FROM book WHERE ISBN_10 = '{$_GET['isbn']}'";
     $bookByISBN = sqlToArray($sql);

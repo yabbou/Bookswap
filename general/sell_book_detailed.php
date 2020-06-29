@@ -5,7 +5,7 @@ include "setLocalDBTables.php";
 <!-- fix pattern mathcing... -->
 <div class="inner-body">
     <h2>Trade Book</h2>
-    <form id="book-form" action="book.php?isbn=$isbn10" method="post">
+    <form id="book-form" method="post">
 
         <!-- err='Only letters, numbers, and white space allowed.' -->
         <div><input list="books" type="text" name="title" placeholder="Title" pattern="[\w\d\s]+" onblur="validateName(this.name,this.name,'/[\w\d\s]+/')" onchange="validateName(this.name,'[\w\d\s]+')" required>
@@ -37,7 +37,7 @@ include "setLocalDBTables.php";
             </datalist>
             <span class="error prof">Only letters and white space allowed.</span>
         </div>
-        
+
         <div class='book-buttons'>
             <input class='btn-add-book' type='submit' name='sell-book' value='Sell Book'>
             <input class='btn-add-book' type='submit' name='ask-book' value='Book Wanted'>
@@ -63,3 +63,11 @@ include "setLocalDBTables.php";
     </script>
 
 </div>
+
+<?php
+include 'methods.php';
+if (isset($_POST['isbn'])) {
+    include 'insertToDbTables.php';
+    $_SESSION['congrats'] = true; //cookies did not work...
+    redirectTo("book.php?isbn={$_POST['isbn']}");
+}

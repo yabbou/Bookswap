@@ -35,5 +35,6 @@ function askSellButtonsForm($sell, $ask, $class) //unnecc as method
 }
 
 function isAddingBook(){
-    return isset($_POST['sell-book']) || isset($_POST['ask-book']);
+    return isset($_POST['title']);
+    // return isset($_POST['sell-book']) || isset($_POST['ask-book']);
 }

@@ -1,6 +1,6 @@
-
 <div class="book-and-tables">
-    <?php echo isAddingBook() ? "<h3 class='confim-msg success'>Thanks for your contribution!</h3>" : ''; //alt: isset _getisbn?>
+    <?php echo $_SESSION['congrats'] ? "<h3 class='success'>Thanks for your contribution!</h3>" : '';
+    $_SESSION['congrats'] = false; ?>
     <div class="book-information">
         <?php
         $row = $bookByISBN[0];

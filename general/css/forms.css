@@ -69,12 +69,16 @@ h3.error {
 
 .success, h3.success {
     color: #24c969;
-    padding: 15px 30px;
+    padding: 15px 25px;
     background: #7af184b7;
     margin: 5px 10px;
     border: solid .5px #24c969;
     border-radius: 3px;
     /* display: none; */
+    margin-left: 0;
+    margin-right: 72%;
+    margin-bottom: 20px;
+    font-size: medium;
 }
 
 .all {
