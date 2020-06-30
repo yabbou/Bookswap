@@ -2,24 +2,43 @@
 
 .book-and-tables {
     margin: 30px;
+    margin-top: 15px;
     width: 100%;
 }
 
 .tables {
     display: flex;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     justify-content: space-evenly;
     border: solid .9px rgb(192, 222, 248);
     border-radius: 2px;
     padding: 30px 15px;
-    width: 600px;
+    width: 65%;
+    height: fit-content;
 }
 
 .tables h4.head {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 10px;
     text-decoration: underline;
+}
+
+.head-and-button {
+    margin: 0 30%;
+    align-items: baseline;
+}
+
+.flex form {
+    margin-bottom: 0;
+}
+
+.flex input {
+    margin-top: 0;
+    margin-left: 8px;
+}
+
+.table-msg{
+    margin-top: 10px;
 }
 
 .selling-wanted {
@@ -31,6 +50,7 @@
     border: 1px solid black;
     border-collapse: collapse;
     padding: 2px 4px;
+    /* border-radius: 3px; */
 }
 
 .tiles-and-content {
@@ -41,30 +61,41 @@
 .book-tile {
     background-color: aliceblue;
     margin: 15px 10px 20px 36px;
-    width: 200px;
+    /* width: 200px; */
     border-radius: 3px;
-    border: solid .2px #66666696;
-    padding: 15px 12px 0 14px;
-    /*  padding:
-        top right, bottom, left
-    */
+    border: solid .2px #85b2f5de;
+    padding: 23px;
+    /* padding-bottom: 8px; */
+    padding-bottom: 0;
+    /*  padding:        top right, bottom, left    */
     list-style: none;
-    box-shadow: 5px 5px 50px #88888871;
+    box-shadow: 4px 12px 20px 5px #8888883b;
     height: 300px;
-    display: inline-table;
+    display: grid;
+    line-height: 8px;
 }
 
 .book-tile a {
     color: #666666;
 }
 
-.book-tile p {
-    margin: 10px auto;
+.book-tile h4 {
+    margin: 0;
 }
 
-.book-tile-img {
+.book-tile p {
+    margin: 0;
+    /* margin-bottom: 10px; */
+}
+
+.book-tile-img, .userImage {
     width: 170px;
     border: none;
+    vertical-align: middle;
+    max-height: 300px;
+    /* margin-bottom: 6px; */
+    border: solid .2px #85b2f5de;
+    border-radius: 2px;
 }
 
 .book-tiles {
@@ -100,6 +131,10 @@
     border-right: solid 1px aliceblue;
 }
 
+.sidebar a {
+    /* color: #012a41; */
+}
+
 .browse-text-sidebar input {
     width: 100%;
     margin-top: 0;
@@ -109,12 +144,14 @@
 .sidebar-and-content {
     display: flex;
     min-height: 81%;
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
-.sidebar>div>div{
+.sidebar>div>div {
     margin-bottom: 4px;
 }
-.sidebar a:hover{
+
+.sidebar a:hover {
+    /* .book-tile a:hover */
     text-decoration: underline;
 }

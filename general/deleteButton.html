@@ -1,3 +1,20 @@
-<form action="" method="POST">
-    <input name="remove" type="submit" value="Remove" />
-</form>
+<script type="text/javascript">
+    $(document).ready(function getISBNFromTable() {
+        $('.selling-wanted tbody').on('click', 'tr', function () { //tbody?
+            var rows = $(this).children('td').map(function () {
+                return $(this).text();
+            }).get();
+
+            var isbnIndex = 1;
+            console.log(getISBNFromTable());
+
+            // return rows[isbnIndex];
+        });
+    });
+
+    // $.ajax({
+    //     // url: "user.php",
+    //     method: "post",
+    //     data: { isbn: getISBNFromTable() }
+    // });
+</script>

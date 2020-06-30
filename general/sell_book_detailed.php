@@ -1,57 +1,73 @@
 <?php
 include "setLocalDBTables.php";
-$titleErr = "";
-$profErr = "";
 ?>
 
 <!-- fix pattern mathcing... -->
 <div class="inner-body">
-    <h3>Trade Book</h3>
-    <form id="book-form" action="sell_book_confim.php" method="post">
+    <h2>Trade Book</h2>
+    <form id="book-form" method="post">
 
-        <input list="books" type="text" name="title" placeholder="Title" required>
-        <!-- pattern="[a-zA-Z0-9 ]" -->
-        <span class="error"><?php echo $titleErr; ?></span>
-        <!-- 
+        <!-- err='Only letters, numbers, and white space allowed.' -->
+        <div><input list="books" type="text" name="title" placeholder="Title" pattern="[\w\d\s]+" onblur="validateName(this.name,this.name,'/[\w\d\s]+/')" onchange="validateName(this.name,'[\w\d\s]+')" required>
+            <span class="error">Only letters, numbers, and white space allowed.</span></div>
 
-        if already in db, then shoudl add from serachbar results...
+        <div><input list="cats" type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" pattern="[A-Z]+" onblur="validateName(this.name,'/[A-Z]+/')" onchange="validateName(this.name,'[A-Z]+')" required>
+            <datalist id="cats">
+                <?php
+                foreach ($_SESSION['majors'] as $major) {
+                    echo '<option value="' . $major['ID'] . '">';
+                }
+                ?>
+            </datalist>
+            <span class="error books">Only capital letters allowed.</span></div>
 
-        if (!preg_match("/^[a-zA-Z0-9 ]*$/", $_POST["title"])) {
-            $titleErr = "Only letters, numbers, and white space allowed.";
-        } -->
 
-        <input list="cats" type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" required>
-        <!-- pattern="[a-zA-Z ]" -->
-        <datalist id="cats">
-            <?php
-            foreach ($_SESSION['majors'] as $major) {
-                echo '<option value="' . $major['ID'] . '">';
-            }
-            ?>
-        </datalist>
-
-        <!-- should really also check if not taken by other book -->
+        <!-- <div> -->
         <input type="number" name="isbn" placeholder="ISBN-10" min="1000000000" max="9999999999" required>
+        <!-- <span class="error">Only letters, numbers, and white space allowed.</span></div> -->
+        <!-- should really also check if not taken by other book... live -->
 
-        <input list="profs" type="text" name="prof" placeholder="Professor" required>
-        <!-- pattern="[a-zA-Z ]"  -->
-        <datalist id="profs">
-            <?php
-            foreach ($_SESSION['professors'] as $prof) {
-                echo '<option value="' . $prof['name'] . '">';
-            }
-            ?>
-        </datalist>
-        <span class="error"><?php echo $profErr; ?></span>
-        <!-- 
-            if (!preg_match("/^[a-zA-Z ]*$/", avoidSQLInjection($_POST["prof"]))) {
-            $profErr = "Only letters and white space allowed";
-            } -->
+        <div><input list="profs" type="text" name="prof" placeholder="Professor" pattern="[\w\s]+" onblur="validateName(this.name,'/[\w\s]+/')" onchange="validateName(this.name,'[\w\s]+')" required>
+            <datalist id="profs">
+                <?php
+                foreach ($_SESSION['professors'] as $prof) {
+                    echo '<option value="' . $prof['name'] . '">';
+                }
+                ?>
+            </datalist>
+            <span class="error prof">Only letters and white space allowed.</span>
+        </div>
 
-        <div class="book-buttons">
-            <input class="btn-add-book" type="submit" name="sell-book" value="Sell Book">
-            <input class="btn-add-book" type="submit" name="ask-book" value="Book Wanted">
+        <div class='book-buttons'>
+            <input class='btn-add-book' type='submit' name='sell-book' value='Sell Book'>
+            <input class='btn-add-book' type='submit' name='ask-book' value='Book Wanted'>
         </div>
     </form>
 
+    <script type="text/javascript">
+        //how to find index?
+        function validateName(name, pattern) {
+            var errors;
+            if (name == "" || pattern.test(name)) {
+                $('.error.' + name).show()
+                // $('#mySpan').css('display', 'block');
+
+                // errors = document.getElementsByClassName("error");
+                // errors[0].innerHTML.style.visibility = "visible";
+            } else {
+                errors = document.getElementsByClassName("error");
+                errors[0].innerHTML.style.visibility = "hidden";
+            }
+            return true;
+        }
+    </script>
+
 </div>
+
+<?php
+include 'methods.php';
+if (isset($_POST['isbn'])) {
+    include 'insertToDbTables.php';
+    $_SESSION['congrats'] = true; //cookies did not work...
+    redirectTo("book.php?isbn={$_POST['isbn']}");
+}

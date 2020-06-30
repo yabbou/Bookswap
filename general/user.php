@@ -1,38 +1,41 @@
-
 <div class='inner-body'>
     <div class='userPage'>
-        <div><?php echo "<h3>Hello " . $_SESSION['currentUser'] . "!<br>Feel free to browse our books, or sell your own :)</h3>"; ?>
-            <!-- filter_input(INPUT_COOKIE, 'userCookie')  -->
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                <input name="logout" type="submit" type="button" value="Logout" />
+        <div class="userInfo">
+            <div>
+                <img class="userImage" src="img/no-image.png">
+                <?php echo "<h4>Welcome " . $_COOKIE['userInfo'] . "</h4>"; //get name from php query
+                ?>
+            </div>
+            <div>
+                <?php 
+                include_once 'methods.php';
+                include_once 'sqlMethods.php';
+                echo isAdmin() ? "<h4 class='admin'><a href='admin_settings.php'>Admin settings</a></h4>" : "";
+                ?>
+            </div>
+
+            <form method="POST">
+                <input id="logout" name="logout" type="submit" value="Logout" />
             </form>
         </div>
+
         <div class="tables">
             <?php
-            displayUserTable(0, 'Selling', $_SESSION['currentUser'], 'for sale');
-            displayUserTable(1, 'Wanted', $_SESSION['currentUser'], 'wanted');
+            if (isset($_POST['remove'])) {
+                deleteBook($_COOKIE['userInfo']);
+            }
+
+            displayUserTable(0, 'Selling', 'selling');
+            displayUserTable(1, 'Wanted', 'asking');
             ?>
         </div>
+
     </div>
 </div>
 
 <?php
-if (isset($_POST['logout'])) { 
+if (isset($_POST['logout'])) {
     session_destroy();
     $_SESSION['loggedIn'] = FALSE;
-
-    $page = $_SERVER['PHP_SELF'];
-    header("url=$page");
-    echo "<meta http-equiv=\"refresh\">";
-}
-
-if (isset($_POST['delete'])) {
-    $conn = initDb();
-    exitIfErr($conn);
-
-    $sql = "DELETE FROM booksAvailable WHERE email = '${$_SESSION['currentUser']}' AND ISBN_10 = '$isbn' AND isWanted = '$isWanted'";
-    $result = mysqli_query($conn, $sql);
-
-    mysqli_free_result($result);
-    mysqli_close($conn);
+    refreshPage();
 }

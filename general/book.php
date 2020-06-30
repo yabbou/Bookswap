@@ -1,38 +1,26 @@
 <?php
 include 'header.php';
 include_once 'methods.php';
+include 'sqlMethods.php';
 
 $conn = initDb();
 exitIfErr($conn);
 
-if (isset($_GET['isbn'])) {
-    $sql = "SELECT * FROM book WHERE ISBN_10 =" . $_GET['isbn'];
-    $_SESSION['bookByISBN'] = sqlToArray($sql);
+$bookByISBN;
+echo "<div class='sidebar-and-content'>";
+include 'sidebar.php';
+
+if (isset($_GET['isbn']) && isInDb($_GET['isbn'])) {
+    $sql = "SELECT * FROM book WHERE ISBN_10 = '{$_GET['isbn']}'";
+    $bookByISBN = sqlToArray($sql);
+    include 'book_detailed.php';
+}
+else {
+echo "<div class='book-tiles'>
+<h3>Sorry, that book is not in our system.<br>Consider adding it <a href='sell_book.php'>here.</a></h3>
+</div></div>";
 }
 ?>
-
-<div class="sidebar-and-content">
-    <?php include 'sidebar.php'; ?>
-    <div class="book-and-tables">
-        <div class="book-information">
-            <?php
-            $row = $_SESSION['bookByISBN'][0]; //global var instead of sess
-
-            echo "<div><img class='book-tile-img' src='". $row['Image'] ."'></div>";
-            echo '<div class=\'book-dets\'><p>Title: ' . $row['Title'] . ' </p>';
-            echo '<p>ISBN-10: ' . $row['ISBN_10'] . ' </p>';
-            echo "<p>Professor: " . $row['Professor'] . ' </p>';
-            echo "<p>Major: " . $row['Category'] . ' </p></div>';
-            ?>
-        </div>
-        <div class="tables">
-            <?php
-            displayTradingTable(0, 'Selling', $row['ISBN_10'], 'for sale');
-            displayTradingTable(1, 'Wanted', $row['ISBN_10'], 'wanted');
-            ?>
-        </div>
-    </div>
-</div>
 
 <?php
 include 'footer.php';

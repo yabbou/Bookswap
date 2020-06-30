@@ -8,4 +8,4 @@ if ($_SESSION['loggedIn']) {
     echo "Hello " . filter_input(INPUT_COOKIE, 'userCookie');
 }
 
-redirectToHomepage();
+// redirectToHomepage();

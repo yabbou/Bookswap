@@ -10,9 +10,11 @@ header {
 
 .logo-and-title {
     display: flex;
-    margin: 8px;
-    margin-left: 16px;
-    align-items: flex-end;
+    margin-top: 23px;
+    margin-left: 28px;
+    /* align-items: flex-end; */
+    align-items: center;
+    /* height: 55px; */
 }
 
 .logo-and-title a, .logo-and-title a:visited {
@@ -43,7 +45,7 @@ img.logo {
 }
 
 ul.navbar a:hover {
-    color: #53A7DB;
+    color: #79c3f1;
 }
 
 .nav-title {
@@ -54,7 +56,8 @@ ul.navbar a:hover {
     font-weight: bold;
     margin: 8px;
     text-transform: uppercase;
-    margin-top: 4px;
+    /* margin-top: 4px; */
+    height: fit-content;
 }
 
 .navbar {
@@ -83,7 +86,6 @@ ul.navbar a:hover {
     /* margin-right: 20px; */
     /* justify-content: space-between; */
     margin-top: 50px;
-    
 }
 
 .nav-link {
@@ -94,4 +96,12 @@ ul.navbar a:hover {
 
 .nav-item:hover {
     color: white;
+}
+
+#menu span{
+    font-size: large;
+    /* text-shadow: #ccccccb0 1px 1px; */
+}
+#menu, #menu ul {
+	list-style: none;
 }

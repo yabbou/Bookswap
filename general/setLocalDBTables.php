@@ -1,27 +1,27 @@
 <?php
-include_once 'initMethods.php';
+include_once 'sqlMethods.php';
 // $offset = 5; //incremrent a session var by 5
-
-//convert to using live calling?
 
 $conn = initDb();
 exitIfErr($conn);
 
-// setLocalTable('books', '*', 'book');
-setLocalTable('professors', 'name', 'professor');
-setLocalTable('majors', '*', 'major');
+getDBTable('books', 'Title', 'book'); //delete this page adnd call method only when appropriate // rename
+getDBTable('professors', 'name', 'professor');
+getDBTable('majors', '*', 'major');
 mysqli_close($conn);
 
-function setLocalTable($sess, $col, $dbTable) //fix this <<<<<<<
+function getDBTable($sess, $col, $dbTable)
 {
-    global $conn;
-    // $_SESSION[$sess] = initSessionArray($sess);
+    $conn = initDb();
+    exitIfErr($conn);
 
-    $res = mysqli_query($conn, "SELECT $col FROM $dbTable");
+    $sql = "SELECT $col FROM $dbTable";
+    $res = mysqli_query($conn, $sql);
 
     $arr = array();
     while ($row = mysqli_fetch_assoc($res)) { //lvl 2: only add new rows
         $arr[] = $row;
     }
     $_SESSION[$sess] = $arr;
+    mysqli_close($conn);
 }
