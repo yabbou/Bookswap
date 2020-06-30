@@ -88,8 +88,9 @@ h3.error {
 }
 
 .all {
-    width: 93%;
-    margin-left: 10px;
+    width: 95%;
+    /* margin-left: 10px; */
+    justify-content: space-between;
 }
 
 h2.admin {

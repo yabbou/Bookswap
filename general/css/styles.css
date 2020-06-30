@@ -135,6 +135,10 @@ a:hover, a.nav-link:hover, .browse-link a:hover #menu a:hover, slick-slide a:hov
     text-align: center;
 }
 
+input.btn-login{
+    margin-top: 0!important;
+}
+
 /* .h-icon::after,.h-icon.active::after  {
     background: url(../img/icons/home-icon.svg) no-repeat 0 0;
 }

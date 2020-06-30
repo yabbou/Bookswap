@@ -1,5 +1,5 @@
 <div class="inner-body">
-    <h2 class="admin">Admin Settings: </h2>
+    <h2 class="admin">Admin Settings </h2>
     <!-- <h3>All Books Selling & Wanted</h3> -->
     <div class="tables all">
         <?php
