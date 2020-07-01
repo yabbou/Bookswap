@@ -8,10 +8,10 @@ include "setLocalDBTables.php";
     <form id="book-form" method="post">
 
         <!-- err='Only letters, numbers, and white space allowed.' -->
-        <div><input list="books" type="text" name="title" placeholder="Title" pattern="[\w\d\s]+" onblur="validateName(this.name,this.name,'/[\w\d\s]+/')" onchange="validateName(this.name,'[\w\d\s]+')" required>
-            <span class="error">Only letters, numbers, and white space allowed.</span></div>
+        <div><input list="books" type="text" name="title" placeholder="Title" pattern="[\w\d\s]+" title="Only letters, numbers, and white space allowed." required>
+            <span id="t-id" class="error">Only letters, numbers, and white space allowed.</span></div>
 
-        <div><input list="cats" type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" pattern="[A-Z]+" onblur="validateName(this.name,'/[A-Z]+/')" onchange="validateName(this.name,'[A-Z]+')" required>
+        <div><input list="cats" type="text" name="cat" placeholder="Category" minlength="4" maxlength="4" pattern="[A-Z]{4}" title="Must be 4 capital letters." required>
             <datalist id="cats">
                 <?php
                 foreach ($_SESSION['majors'] as $major) {
@@ -19,15 +19,15 @@ include "setLocalDBTables.php";
                 }
                 ?>
             </datalist>
-            <span class="error books">Only capital letters allowed.</span></div>
+            <span id="c-id" class="error books">Must be 4 capital letters.</span></div>
 
+        <div>
+            <input type="number" name="isbn" placeholder="ISBN-10" min="1000000000" max="9999999999" title="Must be a 10-digit number." required>
+            <span id="i-id" class="error isbn">Must be a 10-digit number.</span>
+            <!-- should really also check if not taken by other book... live -->
+        </div>
 
-        <!-- <div> -->
-        <input type="number" name="isbn" placeholder="ISBN-10" min="1000000000" max="9999999999" required>
-        <!-- <span class="error">Only letters, numbers, and white space allowed.</span></div> -->
-        <!-- should really also check if not taken by other book... live -->
-
-        <div><input list="profs" type="text" name="prof" placeholder="Professor" pattern="[\w\s]+" onblur="validateName(this.name,'/[\w\s]+/')" onchange="validateName(this.name,'[\w\s]+')" required>
+        <div><input list="profs" type="text" name="prof" id="p-id" placeholder="Professor" pattern="[\w\s]+" title="Only letters and white space allowed." required>
             <datalist id="profs">
                 <?php
                 foreach ($_SESSION['professors'] as $prof) {
@@ -35,32 +35,16 @@ include "setLocalDBTables.php";
                 }
                 ?>
             </datalist>
-            <span class="error prof">Only letters and white space allowed.</span>
+            <span id="p-id" class="error prof">Only letters and white space allowed.</span>
         </div>
 
         <div class='book-buttons'>
             <input class='btn-add-book' type='submit' name='sell-book' value='Sell Book'>
             <input class='btn-add-book' type='submit' name='ask-book' value='Book Wanted'>
         </div>
+
+        <script src="error.js" type="text/javascript"></script>
     </form>
-
-    <script type="text/javascript">
-        //how to find index?
-        function validateName(name, pattern) {
-            var errors;
-            if (name == "" || pattern.test(name)) {
-                $('.error.' + name).show()
-                // $('#mySpan').css('display', 'block');
-
-                // errors = document.getElementsByClassName("error");
-                // errors[0].innerHTML.style.visibility = "visible";
-            } else {
-                errors = document.getElementsByClassName("error");
-                errors[0].innerHTML.style.visibility = "hidden";
-            }
-            return true;
-        }
-    </script>
 
 </div>
 

@@ -62,6 +62,11 @@ td>form {
     /* display: none; */
 }
 
+/* temp solution... */
+#book-form .error{
+    display: none;
+}
+
 h3.error {
     margin: auto 0;
     font-size: smaller;

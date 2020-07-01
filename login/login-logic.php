@@ -5,7 +5,8 @@
     include_once 'methods.php';
     include 'setLocalDBTables.php';
 
-    if (isset($_SESSION['loginError']) && isset($_POST['Login'])) {
+    // echo  isset($_SESSION['loginError']) ? 'yes' : 'no';
+    if (isset($_SESSION['loginError'])) { //should check post[login]
         echo $_SESSION['loginError'];
     }
 
@@ -20,12 +21,14 @@
 
         if (!empty($_SESSION['user'])) {
             $user =  $_SESSION['user'][0];
-            
+
             if (isset($user)) {
                 if ($user['Password'] === $pwd) {
                     //to cookie...
                     setcookie("userInfo", $user['Email'], time() + (60 * 60 * 3)); // hour (60sec*60) * 3 //another var with all user data?
                     $_SESSION['loggedIn'] = TRUE;
+                    refreshPage();
+                    // redirectTo('my_account.php');
                 } else {
                     $_SESSION['loginError'] = "<h3 class='error'>The email and password do not match. Please try again.</h3>";
                 }
