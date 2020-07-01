@@ -9,7 +9,7 @@ body {
     margin: 0;
     background-color: white;
     max-width: 100%;
-    min-height: 100%;
+    /* min-height: 100%; */
     overflow-x: hidden;
     z-index: 1;
 }
@@ -21,13 +21,11 @@ body {
 }
 
 footer {
-    /* bottom: 0; */
     /* width: 100%; */
     background: #2D2D2D;
     border-top: 2px solid #3E3E3E;
     text-align: center;
     padding: 18px;
-    /* display: inline-flex; */
 
     clear: both;
     position: relative;
