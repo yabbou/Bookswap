@@ -87,9 +87,42 @@
     /* text-align: center; */
     padding: 45px 45px 25px;
     font-size: x-large;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     margin-top: 16px;
     /* convert to ::before */
+}
+
+.landing-options {
+    font-size: x-large;
+    margin-top: 16px;
+    display: table;
+    margin: auto;
+}
+
+.landing-options>div {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+    padding-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+    /* border: 1px solid #FF0000; */
+}
+.landing-options>div>div {
+margin-bottom: 10px;
+}
+
+.landing-text {
+    /* text-align: right; */
+    text-transform: uppercase;
+    padding: 20px;
+    margin: 60px;
+    margin-top: 110px;
+    margin-left: 10px;
+    font-size: 50px;
+    font-weight: bolder;
+    color: aliceblue;
+    text-shadow: 3px 3px 10px #adabab44;
 }
 
 .slick-slide {

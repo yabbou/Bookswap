@@ -2,7 +2,7 @@
 
 function getAllBooks()
 {
-    $sql = "SELECT * FROM book";
+    $sql = "SELECT * FROM book ORDER BY Title ASC";
     return sqlToArray($sql);
 }
 

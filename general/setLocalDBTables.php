@@ -5,17 +5,18 @@ include_once 'sqlMethods.php';
 $conn = initDb();
 exitIfErr($conn);
 
-getDBTable('books', 'Title', 'book'); //delete this page adnd call method only when appropriate // rename
-getDBTable('professors', 'name', 'professor');
-getDBTable('majors', '*', 'major');
+getDBTable('books', 'Title', 'book', ''); //delete this page adnd call method only when appropriate // rename
+getDBTable('professors', 'name', 'professor', '');
+getDBTable('majors', '*', 'major', 'ID');
 mysqli_close($conn);
 
-function getDBTable($sess, $col, $dbTable)
+function getDBTable($sess, $col, $dbTable, $o)
 {
     $conn = initDb();
     exitIfErr($conn);
 
-    $sql = "SELECT $col FROM $dbTable";
+    $order = $o === '' ? $col : $o; 
+    $sql = "SELECT $col FROM $dbTable ORDER BY $order ASC";
     $res = mysqli_query($conn, $sql);
 
     $arr = array();

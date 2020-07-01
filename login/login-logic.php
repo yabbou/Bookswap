@@ -17,7 +17,7 @@
     function checkIfValidUser($email, $pwd) //move to another class //need as methods?
     {
         //session
-        getDBTable('user', 'Email, Password', "user WHERE Email = '$email'"); //get other cols in later query?
+        getDBTable('user', 'Email, Password', "user WHERE Email = '$email'",''); //get other cols in later query?
 
         if (!empty($_SESSION['user'])) {
             $user =  $_SESSION['user'][0];
