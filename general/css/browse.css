@@ -33,8 +33,7 @@
     width: 100%;
 }
 
-.browse-text input::-webkit-calendar-picker-indicator,
-    .browse-text-sidebar input::-webkit-calendar-picker-indicator {
+.browse-text input::-webkit-calendar-picker-indicator, .browse-text-sidebar input::-webkit-calendar-picker-indicator {
     display: none;
 }
 
@@ -109,12 +108,10 @@
 }
 
 .slick-slide img {
-    height: 180px;
+    height: 190px;
     border-radius: 1px;
-    /* border: solid #ccc 1px; */
-    /* margin: 18px 0 18px 17px; */
-    width: 170px;
-    border: none;
+    /* border: solid .05px #85b2f5de; */
+    border-radius: 1px;
     margin: 30px auto 10px;
 }
 

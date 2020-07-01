@@ -94,6 +94,7 @@ input[type=submit]:hover, button:hover {
 
 .contact-form {
     width: 60%;
+    margin-bottom: 20px;
 }
 
 .slick-prev {

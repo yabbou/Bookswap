@@ -6,7 +6,7 @@
     include 'setLocalDBTables.php';
 
     // echo  isset($_SESSION['loginError']) ? 'yes' : 'no';
-    if (isset($_SESSION['loginError'])) { //should check post[login]
+    if (isset($_SESSION['loginError'])) { 
         echo $_SESSION['loginError'];
     }
 
@@ -28,7 +28,6 @@
                     setcookie("userInfo", $user['Email'], time() + (60 * 60 * 3)); // hour (60sec*60) * 3 //another var with all user data?
                     $_SESSION['loggedIn'] = TRUE;
                     refreshPage();
-                    // redirectTo('my_account.php');
                 } else {
                     $_SESSION['loginError'] = "<h3 class='error'>The email and password do not match. Please try again.</h3>";
                 }
