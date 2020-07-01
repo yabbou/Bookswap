@@ -38,7 +38,7 @@ function isAddingBook(){
     // return isset($_POST['sell-book']) || isset($_POST['ask-book']);
 }
 
-function displayBanner($table,$link,$col){ //remove $link...
+function displayBanner($table,$link,$col){ //remove $link... //manage too many to fit on one page!
     $i = 0;
     foreach ($_SESSION[$table] as $t) { 
         if ($i % 6 == 0) {
