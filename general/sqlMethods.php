@@ -128,6 +128,7 @@ function displayUserTable_All($isWanted, $head, $saying) //dry!!!
             <td>" . $row["userEmail"] . "</td>
             
             <td><form method='POST'>
+            <input type = 'hidden' name = 'email' value = '${row['userEmail']}' />
             <input type = 'hidden' name = 'isbn' value = '${row['ISBN_10']}' />
             <input type = 'hidden' name = 'isWanted' value = '${isWanted}' />
             <input id='remove' name='remove' type='submit' value='Remove' />

@@ -5,7 +5,7 @@
         <?php
         if (isset($_POST['remove'])) {
             //js here to get other user's email
-            deleteBook('');
+            deleteBook($_POST['email']);
         }
 
         displayUserTable_All(0, 'Selling', 'for sale');
