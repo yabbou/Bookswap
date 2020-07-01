@@ -37,3 +37,17 @@ function isAddingBook(){
     return isset($_POST['title']);
     // return isset($_POST['sell-book']) || isset($_POST['ask-book']);
 }
+
+function displayBanner($table,$link,$col){ //remove $link...
+    $i = 0;
+    foreach ($_SESSION[$table] as $t) { 
+        if ($i % 6 == 0) {
+            echo "<div>";
+        }
+        echo "<div><a href=displayBooks.php?$link=" . toHref($t[$col]) . ">" . $t[$col] . '</a></div>';
+        $i++;
+        if ($i % 6 == 0) {
+            echo "</div>";
+        }
+    }
+}

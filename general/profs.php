@@ -1,5 +1,9 @@
-<div class="routing-group">
+<div class="routing-group profs">
 
-<h3 class="routing-title">Professors</h3>
-
+    <h1 class="routing-title">Professors</h1>
+    <div class="landing-options">
+        <?php
+        displayBanner('professors', 'prof', 'name');
+        ?>
+    </div>
 </div>

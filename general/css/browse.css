@@ -77,6 +77,10 @@
     /* background-color: #e6f3ffcf; */
     background-color: aliceblue;
 }
+.routing-group.profs>div{
+    margin-bottom: 50px;
+    vertical-align: top;
+}
 
 .jcarousel {
     /* padding: 18px 21%; */
