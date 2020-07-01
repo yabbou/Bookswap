@@ -34,6 +34,7 @@
 #remove, #logout {
     color: #7c160f;
     background-color: #ff8b8b;
+    border: solid .3px #7c160f;
 }
 
 td>form {

@@ -1,8 +1,3 @@
-<?php
-// if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
-// } 
-?>
-
 <div class="login-form">
     <form id="login-form" method="post">
     <!--  action="./" -->

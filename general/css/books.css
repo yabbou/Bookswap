@@ -91,7 +91,7 @@
 .book-tile-img, .userImage {
     width: 170px;
     vertical-align: middle;
-    max-height: 300px;
+    max-height: 230px;
     /* margin-bottom: 6px; */
     border: solid .2px #85b2f5de;
     border-radius: 2px;

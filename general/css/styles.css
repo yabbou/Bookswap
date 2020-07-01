@@ -73,11 +73,15 @@ textarea {
 }
 
 button, input[type=submit] {
-    background-color: #70C3F6;
-    color: white;
+    /* background-color: #70C3F6;
+    color: white; */
+    background-color: #e6f3ff;
+    color: #2587c3;
+    border: solid 1px #4da5ee;
+
     font-size: 14px;
     opacity: 0.75;
-    border: 0;
+    /* border: 0; */
     border-radius: 85px;
     height: 30px;
     padding: 0 10px;
