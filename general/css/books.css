@@ -75,6 +75,17 @@
     line-height: 8px;
 }
 
+.book-tile:hover{
+    transform: translateY(-5px);
+    -webkit-transition: transform 0.3s ease-out;
+
+    /* transition: ease;
+    transition-timing-function: ease; */
+}
+.book-tile:blur{
+    -webkit-transition: transform 1s ease;
+}
+
 .book-tile a {
     color: #666666;
 }

@@ -12,6 +12,8 @@ include "header.php"; ?>
         <div class='browse-link'><a href='displayBooks.php?prof=#'>By professor </a></div>
         <div class='browse-link'><a href='displayBooks.php'>All books </a></div>
     </form>
+<h1 class="landing-text">Buy This Semester's Books<br>From Last Semester's Students</h1>
+
 </div>
 
 <?php
