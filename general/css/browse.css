@@ -68,18 +68,15 @@
     height: fit-content;
 }
 
-.routing-group, carousel-and-title {
-    /* margin-top: -200px; */
-    height: 400px;
-}
-
 .routing-group.majors {
     /* background-color: #e6f3ffcf; */
     background-color: aliceblue;
+    padding-top: 1px;
 }
 
-.routing-group.profs>div {
-    margin-bottom: 30px;
+.routing-group.profs>div,  
+    .routing-group.majors>div {
+    padding-bottom: 40px;
 }
 
 .jcarousel {
@@ -97,18 +94,20 @@
 }
 
 .landing-options {
-    font-size: x-large;
+    font-size: large;
     margin-top: 16px;
-    display: table;
+    /* display: table; */
     margin: auto;
+    margin-left: 25px;
 }
 
+/* option commented out for centering text */
 .landing-options>div {
     display: table-cell;
     /* vertical-align: top; */
     padding: 20px;
     padding-top: 5px;
-    text-align: center;
+    /* text-align: center; */
     margin-left: 5px;
     /* border: 1px solid #FF0000; */
 }
